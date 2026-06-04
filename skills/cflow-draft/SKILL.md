@@ -7,7 +7,7 @@ description: CFlow 成稿系统。用于从 brief、angle、大纲、原始笔�
 
 ## 边界
 
-只负责第一版完整草稿。除非完成草稿必须需要，否则不要生成大量选题或标题。
+只负责第一版完整草稿。除非完成草稿必须需要，否则不要生成大量选题或标题。硬广/软广、offer、CTA 强度和转化路径先交给 `$cflow-marketing` 判断。
 
 从稳定 brief 开始写。如果选题或角度明显弱，先做轻量修复并说明假设。
 
@@ -19,7 +19,8 @@ description: CFlow 成稿系统。用于从 brief、angle、大纲、原始笔�
 4. 先写具体例子，再抽象总结。
 5. 保留作者声音，去掉泛泛的填充。
 6. 检查是否只有一个主张、是否适配平台、是否有证据、结尾是否成立。
-7. 深度修改交给 `$cflow-edit`；标题和 hook 交给 `$cflow-package`。
+7. 如果内容有转化目标，先确认 `$cflow-marketing` 已定义 offer、CTA 和 funnel stage。
+8. 深度修改交给 `$cflow-edit`；标题和 hook 交给 `$cflow-package`。
 
 ## 输出
 
