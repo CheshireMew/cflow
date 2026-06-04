@@ -86,6 +86,7 @@ Drop-off points：
 | 某个封面或配图明显拉动点击 | 视觉策略 | `$cflow-image` |
 | 某个 CTA 带来转化 | 转化路径规则 | `$cflow-marketing` |
 | 某段话特别像作者 | Voice profile 证据 | `$cflow-voice` |
+| 某个拆解 prompt 或采访问题反复提高产出质量 | 生产资产 | `$cflow-benchmark` |
 | 某个平台持续不匹配 | 平台适配判断 | `$cflow` |
 | 某个复盘暴露了 skill 行为缺陷 | 维护建议或测试用例 | `$cflow-maintain` |
 
@@ -102,6 +103,20 @@ Drop-off points：
 是否需要写入文件：
 是否需要交给 cflow-maintain：
 ```
+
+### 生产资产
+
+复盘发现某个结构、hook 机制、拆解 prompt、采访问题或变体生成流程持续有效时，可以沉淀为生产资产。
+
+生产资产不是 skill 规则。先记录：
+
+- 它解决了哪个生产问题。
+- 依赖哪些输入素材和上下文。
+- 哪些平台、格式或读者场景已经验证过。
+- 哪些部分只是单次案例，不能直接泛化。
+- 下一次如何复用和验证。
+
+如果生产资产要变成长期 CFlow 行为约束，必须作为维护建议交给 `$cflow-maintain`，不能由 `$cflow-review` 直接写入 `skills/`。
 
 ## 写入权限
 
