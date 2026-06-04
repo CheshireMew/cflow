@@ -1,4 +1,4 @@
 interface:
   display_name: "CFlow 选题系统"
-  short_description: "Find content topics from audience pain and source material"
-  default_prompt: "Use $cflow-topic to turn my raw direction into strong content topics."
+  short_description: "从读者痛点、真实素材和内容栏目中发现高价值内容选题"
+  default_prompt: "Use $cflow-topic 帮我把这个模糊方向变成一组选题。"

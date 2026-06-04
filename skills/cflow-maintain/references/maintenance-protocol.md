@@ -1,35 +1,35 @@
-# Maintenance Protocol
+# 维护协议
 
-## Input Classification
+## 输入分类
 
-Classify each user-provided item as one of:
+把用户提供的每一项归类为：
 
-- **Rule**: A durable instruction that should constrain future behavior.
-- **Workflow step**: A repeatable sequence action.
-- **Decision criterion**: A test for choosing between options.
-- **Platform note**: Guidance specific to RED, short video, LinkedIn, Twitter/X, blog, newsletter, or another platform.
-- **Voice guideline**: Instruction about preserving or shaping author voice.
-- **Defect report**: A failure observed during use of a CFlow skill.
-- **Test case**: A realistic example that should be used to validate behavior.
-- **Deletion request**: A rule or resource that should be removed.
-- **Architecture request**: A change to boundaries, routing, naming, or repository structure.
+- **规则**：会长期约束行为的指令。
+- **流程步骤**：可重复执行的动作序列。
+- **决策标准**：用于在选项之间做选择的判断。
+- **平台笔记**：小红书/RED、短视频、LinkedIn、Twitter/X、blog、newsletter 等平台专用规则。
+- **声音准则**：关于保留或塑造作者声音的说明。
+- **缺陷报告**：使用 CFlow skill 时观察到的失败。
+- **测试用例**：可用于验证行为的真实例子。
+- **删除请求**：应该移除的规则或资源。
+- **架构请求**：边界、路由、命名或仓库结构变化。
 
-## Placement Decision
+## 归属判断
 
-Place each item at the narrowest durable boundary.
+把每项内容放到最窄、最耐用的边界。
 
-- Put orchestration and suite routing in `cflow-content`.
-- Put discovery and scoring in `cflow-topic`.
-- Put claim and reader tension in `cflow-angle`.
-- Put structure-to-draft guidance in `cflow-draft`.
-- Put revision diagnosis and voice preservation in `cflow-edit`.
-- Put titles, hooks, CTAs, and platform package variants in `cflow-package`.
-- Put performance learning and next experiments in `cflow-review`.
-- Put maintenance procedures in `cflow-maintain`.
+- 统筹和套件路由放 `cflow-content`。
+- 发现和评分放 `cflow-topic`。
+- 主张和读者张力放 `cflow-angle`。
+- 从结构到草稿的指导放 `cflow-draft`。
+- 修改诊断和声音保留放 `cflow-edit`。
+- 标题、hook、CTA 和平台发布变体放 `cflow-package`。
+- 表现学习和下一次实验放 `cflow-review`。
+- 维护流程放 `cflow-maintain`。
 
-## Source Layout
+## 源码布局
 
-Use the monorepo as the only editable source:
+唯一可编辑真源是 monorepo：
 
 ```text
 D:\Code\cflow
@@ -44,60 +44,72 @@ D:\Code\cflow
     └── cflow-maintain
 ```
 
-Codex discovery links may exist under `C:\Users\Lenovo\.codex\skills`, but do not edit through those links unless the user explicitly asks. Edit the monorepo source, then validate and commit from `D:\Code\cflow`.
+`C:\Users\Lenovo\.codex\skills` 下可以有 Codex 发现链接，但不要通过链接编辑。修改 `D:\Code\cflow` 中的源码，然后校验并提交。
 
-If the item seems to fit multiple skills, identify the root behavior. Add one primary rule and only a short routing note elsewhere if needed.
+如果一条规则似乎适合多个 skill，先判断根行为。只添加一个主要规则；只有路由需要时才在其他 skill 加短提示。
 
-## Coverage States
+## 语言规则
 
-Use these labels:
+CFlow 使用中文作为唯一正文真源：
 
-- **Already covered**: No edit needed.
-- **Partially covered**: Existing rule should be tightened or extended.
-- **Duplicate**: Merge into the best existing location and delete repetition.
-- **Conflict**: Choose the rule that preserves the CFlow boundary; ask the user if business intent is unclear.
-- **New rule**: Add it to the narrowest skill or reference file.
-- **Obsolete**: Remove it if it no longer matches the architecture.
+- `SKILL.md` 和 `references/` 用中文写规则。
+- `name` 保持英文技术名。
+- `description` 用中文描述，同时保留必要英文触发关键词。
+- `agents/openai.yaml` 的展示文案用中文。
+- 不维护中英双语全文，不创建平行 `zh` / `en` 真源。
+- 如果未来需要英文版，作为独立导出版生成。
 
-## Refactor Rules
+## 覆盖状态
 
-- Keep one source of truth for each rule.
-- Do not preserve old helper language, deprecated flows, or compatibility explanations after a migration.
-- Prefer moving a rule over copying it.
-- Keep `SKILL.md` concise and put detailed patterns in `references/`.
-- Update `cflow-content` routing only when suite boundaries change.
-- Regenerate or edit `agents/openai.yaml` only when display metadata becomes stale.
+使用这些标签：
 
-## Approval Standard
+- **已覆盖**：不用改。
+- **部分覆盖**：收紧或扩展现有规则。
+- **重复**：合并到最佳位置并删除重复。
+- **冲突**：选择符合 CFlow 边界的规则；业务意图不清时问用户。
+- **新规则**：添加到最窄 skill 或 reference。
+- **过时**：不再符合架构时删除。
 
-The user must approve:
+## 重构规则
 
-- Affected repositories
-- Files to edit
-- Rules to add, move, merge, or delete
-- Validation plan
-- Commit plan
+- 每条规则只保留一个事实源。
+- 迁移后不要保留旧 helper、旧流程或兼容解释。
+- 优先移动规则，不复制规则。
+- `SKILL.md` 保持精简，详细模式放 `references/`。
+- 只有套件边界变化时才更新 `cflow-content` 路由。
+- 只有展示 metadata 过时时才更新 `agents/openai.yaml`。
 
-If the user changes the plan, revise the plan and ask again before editing.
+## 审批标准
 
-## Validation
+用户必须批准：
 
-Run:
+- 受影响仓库或目录
+- 要编辑的文件
+- 要新增、移动、合并或删除的规则
+- 校验计划
+- 提交计划
+
+如果用户修改计划，先重写计划并再次请求批准。
+
+## 校验
+
+运行：
 
 ```powershell
 $env:PYTHONPATH='D:\Code\.codex-python-libs'
 python 'C:\Users\Lenovo\.codex\skills\.system\skill-creator\scripts\quick_validate.py' '<skill-path>'
 ```
 
-Validate every changed skill. Validate all CFlow skills when suite routing, ownership boundaries, or shared conventions changed.
+校验所有变更 skill。只要套件路由、所有权边界或共享约定变化，就校验全部 CFlow skills。
 
-## Commit Guidance
+## 提交
 
-Commit only after validation passes. Use focused messages:
+校验通过后再提交。commit message 保持聚焦：
 
 - `Update <skill> <rule-area>`
 - `Move <rule> into <skill>`
 - `Refine CFlow routing`
 - `Remove duplicate <rule-area> guidance`
+- `Localize CFlow skills to Chinese source`
 
-When multiple repositories change, commit each repository separately unless the user explicitly wants a different release workflow.
+多个仓库变化时分别提交。当前 CFlow 是 monorepo，通常提交一次即可。

@@ -1,24 +1,24 @@
-# Draft Structures
+# 成稿结构
 
-## Brief Contract
+## Brief 合同
 
 ```text
-Goal:
-Audience:
-Platform:
-Format:
-Core claim:
-Reader tension:
-Evidence:
-Voice:
-Constraints:
+目标：
+读者：
+平台：
+格式：
+核心主张：
+读者张力：
+证据：
+声音：
+约束：
 ```
 
-## Structures
+## 结构
 
-### AIDA Sales Draft
+### AIDA 销售稿
 
-Use when the draft needs to sell, convert, or persuade.
+当草稿需要销售、转化或说服时使用。
 
 ```text
 Attention
@@ -29,97 +29,97 @@ Proof
 Action
 ```
 
-Build desire before introducing product, price, or CTA. If the product appears too early, the draft will feel like a pitch before the reader has agreed there is a problem.
+先建立 desire，再引入产品、价格或 CTA。如果产品出现太早，读者会在还没承认问题前就感到被推销。
 
-### Diagnostic
-
-```text
-Symptom
-Wrong diagnosis
-Root cause
-Mechanism
-What to do instead
-Example
-Closing line
-```
-
-### Practical Guide
+### 诊断型
 
 ```text
-Problem
-Why common advice fails
-Principle
-Steps
-Example
-Trap
-Next action
+症状
+错误诊断
+根因
+机制
+应该怎么做
+例子
+收束句
 ```
 
-### Opinion
+### 实用指南型
 
 ```text
-Claim
-Why it matters
-What others miss
-Reasoning
-Implication
-Counterpoint
-Final position
+问题
+常见建议为什么失败
+原则
+步骤
+例子
+陷阱
+下一步动作
 ```
 
-### Story to Insight
+### 观点型
 
 ```text
-Scene
-Tension
-Change
-Insight
-Lesson
-Application
-Ending
+主张
+为什么重要
+别人忽略了什么
+推理
+影响
+反方观点
+最终立场
 ```
 
-### Story Sales
-
-Use when a product, community, service, or offer should be positioned through narrative.
+### 故事到洞察型
 
 ```text
-Customer or creator scene
-Problem or pressure
-Failed solution
-Turning point
-Guide, tool, or mechanism
-New outcome
-Proof
-Action
+场景
+张力
+变化
+洞察
+经验
+应用
+结尾
 ```
 
-The customer is the hero. The brand, product, or community is the guide. Do not make the product the hero unless the format is explicitly a product demo.
+### 故事销售型
 
-## Drafting Mechanics
+当产品、社群、服务或 offer 需要通过故事定位时使用。
 
-- Long is acceptable when the piece stays interesting. Diagnose boring sections before cutting only for length.
-- Every sentence should either advance the story, clarify the claim, increase desire, handle an objection, or move the reader toward the next sentence.
-- Use "but" and "therefore" logic to keep stories moving. Avoid flat "and then" chronology when there is no tension.
-- Make complex claims simple enough to understand on first read.
-- Use one sentence for one point where possible.
-- For sales or educational drafts, include likely objections inside the flow instead of leaving them all for the end.
+```text
+客户或创作者场景
+问题或压力
+失败解决方案
+转折点
+guide、工具或机制
+新结果
+证据
+行动
+```
 
-## Platform Adjustments
+客户是 hero。品牌、产品或社群是 guide。除非格式明确是产品演示，不要让产品成为主角。
 
-- **Short video**: Write for spoken rhythm, short beats, and scene-to-point movement.
-- **Xiaohongshu/RED**: Use scannable sections, concrete benefit, and lived detail.
-- **LinkedIn**: Use professional tension, decision logic, and restrained confidence.
-- **Twitter/X**: Use one idea per post and maintain sequence pressure.
-- **Newsletter/blog**: Use context, continuity, examples, and durable usefulness.
+## 成稿机制
 
-## Draft Quality Check
+- 长可以，前提是一直有意思。先诊断哪里无聊，不要只因为长就删。
+- 每句话都应该推进故事、澄清主张、增加欲望、处理异议，或把读者带到下一句。
+- 用 “but / therefore” 逻辑推进故事。没有张力时，避免平铺直叙的 “and then”。
+- 复杂主张要简单到第一次读就能懂。
+- 尽量一句话只表达一个点。
+- 销售或教育型草稿要把关键异议放进正文流动里，不要全部堆到结尾。
 
-- One main claim
-- Clear target reader
-- Concrete evidence
-- No unsupported certainty
-- No generic motivational filler
-- Ending shows what changed
-- Desire exists before CTA
-- Objections are answered with proof, story, or direct acknowledgement
+## 平台调整
+
+- **短视频**：为口语节奏、短拍点、从场景到观点的移动写。
+- **小红书/RED**：用可扫读结构、具体利益和生活细节。
+- **LinkedIn**：用职业张力、决策逻辑和克制自信。
+- **Twitter/X**：一条推进一个想法，保持顺序压力。
+- **Newsletter/blog**：重视上下文、连续论证、例子和长期价值。
+
+## 草稿质量检查
+
+- 一个核心主张
+- 目标读者清楚
+- 有具体证据
+- 没有无证据的确定性
+- 没有泛泛鸡血
+- 结尾说明发生了什么变化
+- CTA 前已经建立 desire
+- 异议已经通过证据、故事或直接承认处理

@@ -1,95 +1,95 @@
 ---
 name: cflow-content
-description: Complete content creation workflow for turning rough ideas, notes, transcripts, diagnosis outputs, or source material into publishable content. Use when Codex needs to help with topic selection, angle finding, content briefs, outlines, drafts, rewrites, editing, platform adaptation, content series planning, repurposing, publishing packages, or post-publication review for articles, social posts, newsletters, scripts, short videos, Xiaohongshu/RED, LinkedIn, Twitter/X, blogs, or other creator workflows.
+description: CFlow 内容创作总入口。用于把想法、笔记、转录、诊断结果、素材或草稿推进为可发布内容。触发场景包括：完整内容流程、选题、角度、brief、大纲、成稿、改稿、标题、hook、CTA、平台适配、内容系列、复用、发布包、复盘。适用于文章、社交媒体帖子、newsletter、短视频脚本、小红书/RED、LinkedIn、Twitter/X、blog 等 creator workflow。
 ---
 
 # CFlow Content
 
-## Core Rule
+## 核心规则
 
-Diagnose the content task type before writing. Do not start by polishing surface language if the real problem is unclear intent, weak audience, wrong platform, missing evidence, or an unfocused angle.
+先判断内容任务类型，再开始写。不要在目标、读者、平台、素材或角度不清时直接润色表面语言。
 
-Work from one source of truth:
+每次内容生产只承认一个事实源：
 
-1. User goal
-2. Target audience
-3. Platform and format
-4. Raw material
-5. Author voice
-6. Publishing constraint
+1. 用户目标
+2. 目标读者
+3. 平台和格式
+4. 原始素材
+5. 作者声音
+6. 发布约束
 
-If one is missing, infer conservatively from context and state the assumption. Ask only when the missing item would materially change the output.
+如果缺少某项，先根据上下文保守推断并说明假设。只有当缺失信息会实质改变交付物时才提问。
 
-## Workflow
+## 工作流
 
-Use the smallest workflow that solves the request.
+用能解决问题的最小流程。
 
-1. **Classify**: Identify whether the request is strategy, topic selection, angle, outline, draft, rewrite, edit, packaging, repurposing, or review.
-2. **Clarify Boundary**: Define the deliverable: post, thread, article, script, series plan, content calendar, rewrite, or critique.
-3. **Extract Material**: Pull useful facts, claims, scenes, tensions, examples, and audience pain points from the user's material.
-4. **Select Angle**: Choose the argument, contradiction, question, or practical transformation that makes the piece worth reading.
-5. **Build Structure**: Create only the structure needed for the target format.
-6. **Produce**: Draft or edit in the author's likely voice, preserving useful roughness instead of over-smoothing.
-7. **Package**: Add title, opening, CTA, platform-specific framing, or variants only when useful.
-8. **Review**: Check whether the output matches goal, audience, platform, evidence, and voice.
+1. **分类**：判断用户要的是策略、选题、角度、brief、大纲、草稿、改稿、包装、复用还是复盘。
+2. **定边界**：明确交付物是帖子、长文、thread、脚本、系列计划、内容日历、改稿还是诊断。
+3. **抽素材**：从用户材料中提取事实、观点、场景、冲突、例子、读者痛点。
+4. **定角度**：选择让内容值得读的论点、矛盾、问题或转变。
+5. **搭结构**：只为目标格式搭必要结构。
+6. **生产**：用接近作者的声音写作或编辑，保留有价值的毛边，不要过度抛光。
+7. **包装**：必要时补标题、hook、CTA、封面文案或平台版本。
+8. **复查**：检查目标、读者、平台、证据和声音是否一致。
 
-## CFlow Suite Routing
+## CFlow 套件路由
 
-Use `cflow-content` as the coordinator when the user asks for a complete content workflow or the task type is ambiguous. For narrow requests, route mentally to the matching CFlow boundary:
+当用户要完整流程或任务类型不清时，用 `cflow-content` 统筹。窄任务按边界分给对应 skill：
 
-- `$cflow-topic`: find and evaluate content topics.
-- `$cflow-angle`: turn a topic into a readable angle.
-- `$cflow-draft`: write a publishable draft from a brief or source material.
-- `$cflow-edit`: diagnose and improve an existing draft.
-- `$cflow-package`: create titles, hooks, CTAs, and platform variants.
-- `$cflow-review`: analyze published results and extract reusable lessons.
-- `$cflow-maintain`: update, refactor, merge, delete, and validate CFlow skill guidance with approval before edits.
+- `$cflow-topic`：找选题、评估选题、建立选题池。
+- `$cflow-angle`：把话题变成有阅读理由的角度。
+- `$cflow-draft`：从 brief 或素材写成完整草稿。
+- `$cflow-edit`：诊断并修改已有草稿。
+- `$cflow-package`：做标题、hook、CTA、封面文案和平台版本。
+- `$cflow-review`：分析发布结果并提炼复用经验。
+- `$cflow-maintain`：在用户批准后更新、合并、删除、重构和校验 CFlow skill。
 
-Do not duplicate the specialized skill's full workflow inside `cflow-content`. Use this skill to coordinate, compose, and preserve the end-to-end source of truth.
+不要在 `cflow-content` 中复制专门 skill 的完整流程。它只负责统筹、组合和维护端到端事实源。
 
-## Operating Modes
+## 工作模式
 
-### From Scratch
+### 从零开始
 
-Use when the user has only a vague topic or intention. Convert it into a production brief before drafting.
+当用户只有模糊主题或意图时，先把它转成 production brief，再写内容。
 
-Output a compact brief with:
+输出紧凑 brief：
 
-- Target reader
-- Reader problem
-- Core claim
-- Angle
-- Evidence or examples needed
-- Format
-- Draft plan
+- 目标读者
+- 读者问题
+- 核心主张
+- 角度
+- 所需证据或例子
+- 格式
+- 草稿计划
 
-### From Raw Material
+### 从素材开始
 
-Use when the user provides notes, transcript, screenshots, previous diagnosis, or rough bullets. Preserve the strongest original material and reorder it around the chosen angle.
+当用户提供笔记、转录、截图、诊断结果或零散要点时，保留最强原始材料，并围绕角度重新排序。
 
-Do not treat all input as equal. Separate:
+先区分：
 
-- Usable facts
-- Personal voice
-- Examples and stories
-- Claims needing support
-- Noise to ignore
+- 可用事实
+- 个人声音
+- 例子和故事
+- 需要证据支撑的主张
+- 应忽略的噪音
 
-### Editing Existing Drafts
+### 编辑已有草稿
 
-Use when the user provides a draft. Diagnose first, then edit at the minimum depth needed:
+当用户给出草稿时，先诊断，再选择最小修改深度：
 
-- Structure surgery for wrong order or unclear argument
-- Paragraph surgery for weak flow
-- Sentence surgery for style, rhythm, and clarity
-- Packaging for title, opening, ending, or platform fit
+- 结构手术：顺序错误或论点不清
+- 段落手术：推进弱、衔接弱
+- 句子手术：清晰度、节奏、表达
+- 包装手术：标题、开头、结尾、平台适配
 
-Do not rewrite everything unless the draft's structure cannot carry the goal.
+除非原结构无法承载目标，否则不要整篇重写。
 
-### Platform Adaptation
+### 平台适配
 
-Use when the same idea must become different formats. Keep the source claim stable, then change only structure, pacing, surface conventions, and CTA.
+同一想法改成不同格式时，核心主张不变，只调整结构、节奏、平台习惯和 CTA。
 
-## References
+## 参考
 
-Read `references/cflow-framework.md` when building a multi-step content plan, diagnosing a weak content idea, designing a repeatable workflow, or turning scattered material into a publishable piece.
+当需要做多步骤内容计划、诊断弱选题、设计可复用流程，或把零散素材变成可发布内容时，读取 `references/cflow-framework.md`。

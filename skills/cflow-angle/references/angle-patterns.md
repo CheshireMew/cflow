@@ -1,63 +1,63 @@
-# Angle Patterns
+# 角度模式
 
-## Strong Angle Forms
+## 强角度类型
 
-- **Contradiction**: "People think X, but in practice Y."
-- **Cost**: "This unnoticed mistake costs the reader time, trust, money, or attention."
-- **Transformation**: "Move from A to B through a specific mechanism."
-- **Distinction**: "Two similar things produce different outcomes."
-- **Scene**: "A concrete moment reveals the larger pattern."
-- **Decision**: "Given tradeoffs, choose this and avoid that."
-- **Mechanism**: "This works because of a hidden process."
-- **Open loop**: "This surprising setup requires the reader to continue for resolution."
-- **Failed solution**: "The reader tried a reasonable fix, but it failed because a hidden ingredient was missing."
-- **Framebreak**: "The example violates what the audience thinks success, expertise, or scale should look like."
+- **矛盾**：大家以为是 X，但实践中是 Y。
+- **代价**：一个没被注意到的错误正在消耗时间、信任、金钱或注意力。
+- **转变**：通过具体机制从 A 到 B。
+- **区分**：两个相似东西会产生不同结果。
+- **场景**：一个具体时刻揭示更大的模式。
+- **决策**：面对取舍，选择这个，避开那个。
+- **机制**：它有效是因为背后有一个隐藏过程。
+- **Open loop**：一个意外开局让读者必须继续看才能得到解答。
+- **失败解决方案**：读者试过一个合理办法，但因为缺少隐藏条件而失败。
+- **Framebreak**：例子打破了读者对成功、专业或规模的想象。
 
-## Selection Criteria
+## 选择标准
 
-Choose the angle that has:
+选择同时具备这些条件的角度：
 
-- A specific reader
-- A visible problem
-- A clear claim
-- Author-owned evidence
-- A natural next structure
-- Enough tension for the platform
-- A payoff that can resolve the curiosity it creates
-- A proof path through data, story, example, or lived experience
+- 具体读者
+- 可见问题
+- 清晰主张
+- 作者拥有的证据
+- 自然延伸出的结构
+- 足够的平台张力
+- 好奇心能被真正兑现
+- 有数据、故事、例子或经历组成的证据路径
 
-## Rejection Rules
+## 淘汰规则
 
-Reject angles that:
+淘汰这些角度：
 
-- Are only topic labels
-- Depend on inflated certainty
-- Sound like generic advice
-- Cannot be supported by the user's material
-- Need a different target reader than the user wants
-- Are really titles rather than arguments
-- Create curiosity without a real payoff
-- Lead with product before establishing desire or reader tension
+- 只是话题标签
+- 依赖夸张确定性
+- 听起来像泛泛建议
+- 无法被用户素材支撑
+- 需要换成另一个目标读者
+- 其实是标题，不是论点
+- 制造好奇但没有真实 payoff
+- 在建立欲望或读者张力前就推产品
 
-## Desire And Objection Angles
+## 欲望和异议角度
 
-Use these when the content is persuasive or sales-oriented:
+当内容有说服或销售目标时：
 
-- Build the reader's desire before showing the solution.
-- Name the objection the reader is already thinking.
-- Handle objections with story, proof, or concrete personal detail.
-- Prefer "here is what happened" over abstract reassurance.
-- If a fact is invented, uncertain, or unsupported, mark it as a placeholder rather than treating it as evidence.
+- 先建立读者欲望，再展示解决方案。
+- 点名读者心里已经有的异议。
+- 用故事、证据或具体个人细节处理异议。
+- 优先说“发生了什么”，少用抽象保证。
+- 如果事实是编造、未知或无证据，标成占位，不要当证据使用。
 
-## Angle Output Format
+## 角度输出格式
 
 ```text
-Topic:
-Reader:
-Tension:
-Angle:
-Claim:
-Evidence:
-Best structure:
-Packaging direction:
+话题：
+读者：
+张力：
+角度：
+主张：
+证据：
+最佳结构：
+包装方向：
 ```

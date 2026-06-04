@@ -1,161 +1,151 @@
-# CFlow Framework
+# CFlow 框架
 
-## Task Types
+## 任务类型
 
-Use this map to keep the response scoped.
+用这张表控制边界。
 
-- **Strategy**: The user needs a direction, content lane, cadence, or repeatable system.
-- **Topic**: The user needs a concrete subject to write or record about.
-- **Angle**: The topic exists, but the reason to read it is weak or generic.
-- **Brief**: The user needs a production-ready plan before drafting.
-- **Draft**: The user wants a full piece.
-- **Rewrite**: The user wants an existing draft transformed while preserving intent.
-- **Edit**: The user wants critique, cleanup, or targeted improvement.
-- **Package**: The user needs title, hook, CTA, cover text, captions, or variants.
-- **Repurpose**: The user wants one source converted into multiple formats.
-- **Review**: The user wants to know what is working, what is weak, and what to do next.
+- **策略**：用户需要方向、内容栏目、节奏或可重复系统。
+- **选题**：用户需要一个具体可做的内容对象。
+- **角度**：选题已存在，但阅读理由弱或泛。
+- **Brief**：用户需要成稿前的生产计划。
+- **草稿**：用户需要完整内容。
+- **改稿**：用户想保留意图但改造已有草稿。
+- **编辑**：用户需要诊断、清理或局部提升。
+- **包装**：用户需要标题、hook、CTA、封面文案或平台变体。
+- **复用**：用户要把一个素材变成多个格式。
+- **复盘**：用户想知道哪里有效、哪里弱、下一步怎么做。
 
-## Content Brief Contract
+## Content Brief 合同
 
-Before a substantial draft, create or infer:
-
-```text
-Goal:
-Audience:
-Platform:
-Format:
-Core claim:
-Reader tension:
-Evidence:
-Voice:
-Constraints:
-Deliverable:
-```
-
-Skip the visible brief only when the user explicitly asks for direct output and the missing context is recoverable.
-
-## Angle Selection
-
-A usable angle usually contains at least one of:
-
-- A contradiction: "People think X, but the useful truth is Y."
-- A cost: "This mistake quietly burns time, trust, money, or attention."
-- A transformation: "Here is how to move from A to B."
-- A distinction: "These two things look similar but produce different outcomes."
-- A concrete scene: "This happened, and it reveals a larger pattern."
-- A decision: "Given tradeoffs, choose this path and avoid that one."
-
-Reject angles that only restate the topic, imitate platform trends without substance, or depend on exaggerated certainty.
-
-## Draft Patterns
-
-Choose one structure; do not stack structures unless the format is long.
-
-### Diagnostic
-
-Use for business, creator, or personal workflow problems.
+写较长草稿前先创建或推断：
 
 ```text
-Symptom
-Wrong diagnosis
-Root cause
-Concrete mechanism
-What to do instead
-Example
-Closing line
+目标：
+读者：
+平台：
+格式：
+核心主张：
+读者张力：
+证据：
+声音：
+约束：
+交付物：
 ```
 
-### Practical Guide
+只有当用户明确要求直接输出，且缺失信息可从上下文恢复时，才省略可见 brief。
 
-Use when the reader wants action.
+## 角度选择
+
+可用角度通常至少包含一种机制：
+
+- **矛盾**：大家以为是 X，但真正有用的是 Y。
+- **代价**：这个错误正在消耗时间、信任、金钱或注意力。
+- **转变**：从 A 走到 B 的具体机制。
+- **区分**：两个看似相似的东西会带来不同结果。
+- **场景**：一个具体事件揭示更大的规律。
+- **决策**：在取舍中选择这条路，避开那条路。
+
+拒绝只复述话题、模仿平台套路但没有实质，或依赖夸张确定性的角度。
+
+## 草稿结构
+
+选择一个结构，不要无必要地叠结构。
+
+### 诊断型
 
 ```text
-Problem
-Why common advice fails
-Principle
-Steps
-Example
-Common trap
-Next action
+症状
+错误诊断
+根因
+具体机制
+应该怎么做
+例子
+收束句
 ```
 
-### Opinion
-
-Use when the core value is a sharp claim.
+### 实用指南型
 
 ```text
-Claim
-Why it matters now
-What others miss
-Reasoning
-Implication
-Counterpoint
-Final position
+问题
+常见建议为什么失败
+原则
+步骤
+例子
+常见陷阱
+下一步动作
 ```
 
-### Story to Insight
-
-Use when the user's material contains a scene or personal experience.
+### 观点型
 
 ```text
-Scene
-Tension
-What changed
-Insight
-Generalizable lesson
-Application
-Ending
+主张
+为什么现在重要
+别人忽略了什么
+推理
+影响
+反方观点
+最终立场
 ```
 
-## Editing Depth
+### 故事到洞察型
 
-Pick the shallowest edit that solves the real issue.
+```text
+场景
+张力
+变化
+洞察
+可迁移经验
+应用
+结尾
+```
 
-- **Level 1: Clean**: Fix clarity, grammar, rhythm, and redundancy.
-- **Level 2: Reorder**: Move blocks, improve transitions, strengthen opening and ending.
-- **Level 3: Reframe**: Change angle, claim, or target reader while preserving material.
-- **Level 4: Rebuild**: Use the source material to write a new piece because the original structure is not salvageable.
+## 编辑深度
 
-State the chosen level when doing diagnosis or substantial editing.
+选择能解决根因的最浅编辑级别。
 
-## Voice Preservation
+- **Level 1 清理**：清晰度、语法、节奏、冗余。
+- **Level 2 重排**：移动段落、修转场、加强开头和结尾。
+- **Level 3 重构角度**：改变角度、主张或目标读者，同时保留素材。
+- **Level 4 重写**：原结构无法承载目标，用素材重建。
 
-Preserve:
+诊断或大改时说明选择了哪一级。
 
-- Specific phrasing that sounds personal
-- Concrete examples
-- Useful uncertainty
-- Natural unevenness when it carries authority
-- Domain vocabulary the author actually uses
+## 声音保留
 
-Remove:
+保留：
 
-- Generic motivation
-- Inflated claims
-- Smooth but empty transitions
-- Repeated abstract nouns
-- Platform cliches
-- AI-like symmetry where every paragraph has the same rhythm
+- 有个人感的原句
+- 具体例子
+- 有用的不确定感
+- 自然的不平整
+- 作者真实使用的领域词
 
-## Platform Notes
+删除：
 
-Adapt structure, not truth.
+- 泛泛鸡血
+- 夸大主张
+- 光滑但空的转场
+- 重复抽象名词
+- 平台套话
+- 每段节奏过度对称的 AI 感
 
-- **Short video**: Prioritize spoken rhythm, immediate tension, and scene-to-point movement.
-- **Xiaohongshu/RED**: Prioritize title pressure, concrete reader benefit, scannable sections, and lived detail.
-- **LinkedIn**: Prioritize professional tension, decision logic, practical takeaway, and restrained confidence.
-- **Twitter/X**: Prioritize compression, sequence, and one idea per post.
-- **Newsletter/blog**: Prioritize context, argument continuity, examples, and durable usefulness.
+## 平台说明
 
-## Review Checklist
+调整结构，不改事实。
 
-Before finalizing, check:
+- **短视频**：重视口语节奏、即时张力、从场景到观点。
+- **小红书/RED**：重视标题压力、具体利益、可扫读结构、生活细节。
+- **LinkedIn**：重视职业张力、决策逻辑、实用收获、克制自信。
+- **Twitter/X**：重视压缩、顺序推进、一条一个想法。
+- **Newsletter/blog**：重视上下文、论证连续性、例子和长期价值。
 
-- Does the piece have one main claim?
-- Is the target reader obvious?
-- Is the opening earning attention without fake drama?
-- Is there enough concrete material?
-- Are unsupported claims marked, softened, or removed?
-- Does the structure fit the platform?
-- Does the ending tell the reader what changed?
-- Does the voice still sound like the author, not a generic assistant?
+## 终检清单
+
+- 是否只有一个主张？
+- 目标读者是否明显？
+- 开头是否用真实张力换取注意力？
+- 具体素材是否足够？
+- 无证据主张是否被标记、软化或删除？
+- 结构是否适合平台？
+- 结尾是否说明发生了什么变化？
+- 声音是否还像作者，而不是泛用助手？

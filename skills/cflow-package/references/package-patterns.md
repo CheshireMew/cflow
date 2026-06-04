@@ -1,103 +1,103 @@
-# Package Patterns
+# 包装模式
 
-## Packaging Assets
+## 包装资产
 
-- Title
+- 标题
 - Hook
-- Opening paragraph
-- Cover text
-- Subtitle
+- 开头段
+- 封面文案
+- 副标题
 - CTA
 - Caption
-- Thread first post
-- Short-video first 3 seconds
-- Platform-specific variant
+- Thread 第一条
+- 短视频前三秒
+- 平台专用版本
 
-## Truthful Tension Sources
+## 真实张力来源
 
-- Reader mistake
-- Hidden cost
-- Before-after transformation
-- Counterintuitive distinction
-- Specific audience situation
-- Decision tradeoff
-- Concrete result
-- Common belief challenged by experience
+- 读者错误
+- 隐藏代价
+- 前后对比转变
+- 反直觉区分
+- 具体受众处境
+- 决策取舍
+- 具体结果
+- 被经验挑战的常见认知
 
-## Copywriting Mechanics
+## Copywriting 机制
 
-- **Mind the gap**: Create a specific unresolved tension that the reader must continue to resolve. A hook should not merely summarize the content.
-- **Punch first**: Make the first line strong enough to interrupt attention. Avoid soft setup unless the platform rewards context.
-- **Slippery slope**: Each sentence should make the next sentence feel natural to read. If a line does not pull forward, cut or rewrite it.
-- **Target through the headline**: A title can name a narrow person, status, place, identity, problem, or desire. It is acceptable if the wrong reader ignores it.
-- **Specificity beats intensity**: Prefer concrete thresholds, scenes, identities, and proof over louder adjectives.
-- **Open loops need payoff**: Do not create fake curiosity. Resolve the promised tension in the piece.
+- **Mind the gap**：制造一个具体、未解决的张力，让读者必须继续看。Hook 不能只是总结内容。
+- **Punch first**：第一句要能打断注意力。除非平台奖励上下文，否则不要软铺垫。
+- **Slippery slope**：每句话都应该让下一句自然被读下去。不能推进的句子就删或改。
+- **用标题筛选读者**：标题可以点名窄人群、身份、地点、状态、问题或欲望。无关读者不点进来是好事。
+- **具体性胜过强烈程度**：用具体门槛、场景、身份和证据，不要只加形容词。
+- **Open loop 必须兑现**：不要制造假好奇。正文必须解决 hook 承诺的张力。
 
-## AIDA For Sales Packaging
+## AIDA 销售包装
 
-Use AIDA when the content has a sales or conversion goal:
+当内容有销售或转化目标时使用 AIDA：
 
 ```text
-Attention: interrupt the exact reader
-Interest: describe a familiar situation or unresolved problem
-Desire: build belief, proof, transformation, and emotional pull
-Action: ask for the next step only after desire exists
+Attention：打断准确读者
+Interest：描述熟悉处境或未解决问题
+Desire：建立信念、证据、转变和情绪拉力
+Action：欲望存在后再要求下一步
 ```
 
-Do not introduce product, price, or CTA before the reader has a reason to care. When price must appear, frame it inside the desired outcome or experience rather than as a naked discount.
+不要在读者还没有理由关心前就抛产品、价格或 CTA。价格必须出现时，把它放进结果或体验里，而不是裸折扣。
 
 ## Proof Before Claims
 
-When packaging products, services, or persuasive content, prefer:
+包装产品、服务或说服型内容时，优先使用：
 
-- Before and after evidence
-- Screenshots or metrics
-- Concrete customer scenes
-- Social proof from a specific audience
-- Personal anecdotes that answer likely objections
-- Visible transformation instead of product description
+- 前后对比证据
+- 截图或指标
+- 具体客户场景
+- 来自特定人群的 social proof
+- 能回答异议的个人轶事
+- 可见转变，而不是产品描述
 
-If proof is missing, mark the claim as risky rather than covering it with stronger wording.
+如果证据缺失，把主张标为风险，不要用更猛的词遮盖。
 
-## Platform Patterns
+## 平台模式
 
-### Xiaohongshu/RED
+### 小红书/RED
 
-- Make the reader and benefit concrete.
-- Use scannable phrasing.
-- Avoid vague productivity or growth claims.
-- Cover text should be shorter and more direct than the title.
+- 读者和利益要具体。
+- 文案要方便扫读。
+- 避免模糊的成长、效率、逆袭承诺。
+- 封面文案应比标题更短、更直接。
 
-### Short Video
+### 短视频
 
-- Start with tension or scene.
-- Use spoken language.
-- Avoid long setup.
-- One beat per sentence.
-- For high-retention scripts, refresh attention with a new detail, turn, or open loop before the viewer has time to leave.
+- 从张力或场景开始。
+- 用口语。
+- 避免长铺垫。
+- 一句话一个拍点。
+- 高留存脚本要在观众离开前，用新细节、转折或 open loop 刷新注意力。
 
 ### LinkedIn
 
-- Use professional stakes.
-- Keep confidence restrained.
-- Avoid exaggerated confession or fake vulnerability.
+- 使用职业张力。
+- 自信要克制。
+- 避免夸张自曝和假脆弱。
 
 ### Twitter/X
 
-- Compress the claim.
-- Make each post advance one idea.
-- The first post should create curiosity without hiding the subject.
+- 压缩主张。
+- 每条只推进一个想法。
+- 第一条要制造好奇，但不能隐藏主题。
 
-### Newsletter or Blog
+### Newsletter 或 Blog
 
-- Prioritize durable promise and clear scope.
-- Avoid social-platform hype.
+- 优先耐用承诺和清晰范围。
+- 避免社交平台式兴奋。
 
-## Variant Rules
+## 变体规则
 
-- Generate options with different strategies, not synonyms.
-- Keep the claim honest.
-- Do not overstate evidence.
-- Prefer specificity over intensity.
-- Make the best option easy to choose.
-- Separate hook quality from body quality: a weak hook can kill a strong piece, and a strong hook cannot save an empty piece.
+- 生成不同策略的选项，不要只换同义词。
+- 保持主张真实。
+- 不夸大证据。
+- 具体性优先于刺激感。
+- 让最佳选项容易被选择。
+- 区分 hook 质量和正文质量：弱 hook 会杀死强内容，强 hook 也救不了空内容。

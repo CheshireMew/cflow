@@ -1,64 +1,72 @@
 ---
 name: cflow-maintain
-description: CFlow skill-suite maintenance workflow for updating, refactoring, merging, deleting, or reorganizing CFlow skills based on new writing rules, workflow defects, user feedback, observed failures, or process improvements. Use when Codex needs to inspect the CFlow skill projects, decide which skill should receive new guidance, detect duplicate or conflicting rules, propose removals or merges, generate an update plan, request explicit user approval before editing, apply approved changes, validate skills, and commit the maintenance work.
+description: CFlow skill 套件维护系统。用于根据新的写作准则、流程缺陷、用户反馈、使用失败或流程改进，更新、重构、合并、删除或重新组织 CFlow skills。触发场景包括：判断新规则应该加入哪个 skill、检测重复或冲突规则、提出删除/合并方案、生成更新计划、正式编辑前征求用户明确批准、应用变更、校验 skills、提交维护 commit。
 ---
 
 # CFlow Maintain
 
-## Boundary
+## 边界
 
-Own changes to the CFlow skill suite itself. Do not use this skill to write, edit, package, or review ordinary content unless that work is needed to diagnose a skill defect.
+只负责 CFlow skill 套件本身的变更。不要用本 skill 写内容、改内容、做标题或复盘普通内容，除非这些操作是为了诊断 skill 缺陷。
 
-The source of truth is the CFlow monorepo at `D:\Code\cflow\skills`. Inspect source files there before proposing changes. Treat `C:\Users\Lenovo\.codex\skills\cflow-*` as discovery links only, not as editable source.
+唯一真实源码是 `D:\Code\cflow\skills`。先检查这里的源码，再提出更新计划。`C:\Users\Lenovo\.codex\skills\cflow-*` 只是 Codex 发现用的链接，不是编辑入口。
 
-## Hard Gate
+## 语言规则
 
-Do not edit any CFlow skill file until the user explicitly approves a concrete update plan.
+CFlow 以中文为真源。
 
-Allowed before approval:
+- `name` 保持英文技术名。
+- `description`、`SKILL.md` 正文、`references/` 用中文书写。
+- 保留必要英文关键词，例如 hook、title、CTA、brief、draft、review、retention、copywriting。
+- 不维护中英双份全文，避免规则漂移。
+- 如果将来需要英文版，应生成独立发布版本，而不是在主 skill 内维护双语正文。
 
-- Read CFlow skill files
-- Classify new guidance
-- Detect duplicates, conflicts, obsolete rules, and missing workflows
-- Propose a patch plan
-- Explain expected files and sections to change
+## 硬门槛
 
-Not allowed before approval:
+在用户明确批准具体更新计划前，禁止修改任何 CFlow skill 文件。
 
-- Modify `SKILL.md`
-- Modify `references/`
-- Delete or merge files
-- Commit changes
-- Regenerate metadata
+批准前允许：
 
-## Workflow
+- 读取 CFlow skill 文件
+- 分类新准则
+- 检测重复、冲突、过时规则和缺失流程
+- 提出 patch 计划
+- 说明预计修改的文件和位置
 
-1. **Inventory**: List all relevant CFlow skills and read their `SKILL.md` plus only the needed reference files.
-2. **Classify Input**: Decide whether the user's new material is a rule, workflow step, decision criterion, platform note, voice guideline, defect report, test case, or deletion request.
-3. **Locate Boundary**: Assign each item to exactly one primary skill. Use cross-references only when a second skill needs to route to it.
-4. **Check Existing Coverage**: Determine whether the guidance already exists, partially exists, conflicts with existing rules, or creates a new need.
-5. **Plan Refactor**: Prefer one clean migration over compatibility layers. If a rule belongs elsewhere, move it rather than duplicate it.
-6. **Request Approval**: Present a concrete change plan and wait for user approval before editing.
-7. **Apply Changes**: Edit only approved files. Remove obsolete or duplicate rules when the approved plan requires it.
-8. **Validate**: Run `quick_validate.py` for every changed skill, and for all CFlow skills when routing or shared boundaries changed.
-9. **Commit**: Commit each affected repository with a clear message if the user approved implementation and validation passes.
+批准前禁止：
 
-## Routing Rules
+- 修改 `SKILL.md`
+- 修改 `references/`
+- 删除或合并文件
+- 提交 commit
+- 重新生成 metadata
 
-Use these ownership boundaries:
+## 工作流
 
-- `cflow-content`: Suite coordinator, end-to-end routing, source-of-truth preservation.
-- `cflow-topic`: Topic discovery, topic scoring, content lanes, topic pools.
-- `cflow-angle`: Reader tension, core claim, angle selection, premise sharpening.
-- `cflow-draft`: First complete draft from brief, notes, transcripts, or source material.
-- `cflow-edit`: Existing draft diagnosis, rewrite depth, voice preservation, anti-AI cleanup.
-- `cflow-package`: Titles, hooks, CTAs, cover text, publishing variants, platform packaging.
-- `cflow-review`: Post-publication learning, metrics interpretation, feedback loop.
-- `cflow-maintain`: CFlow skill architecture, rule placement, refactor, validation, commits.
+1. **盘点**：列出相关 CFlow skills，读取 `SKILL.md` 和必要 reference。
+2. **分类输入**：判断用户材料是规则、流程步骤、决策标准、平台笔记、声音准则、缺陷报告、测试用例或删除请求。
+3. **定位边界**：每条规则只分配一个主要归属。只有路由需要时才在第二个 skill 中交叉引用。
+4. **检查覆盖**：判断是否已覆盖、部分覆盖、冲突、重复或需要新增。
+5. **规划重构**：优先一次性迁移，不保留兼容层。规则属于别处就移动，不复制。
+6. **请求批准**：给出具体修改计划，等待用户明确批准。
+7. **应用变更**：只修改批准范围内的文件。按计划删除过时或重复规则。
+8. **校验**：对所有变更 skill 跑 `quick_validate.py`；如果路由或共享边界变化，校验全部 CFlow skills。
+9. **提交**：校验通过后提交清晰 commit。
 
-## Approval Plan Format
+## 路由边界
 
-Before editing, return:
+- `cflow-content`：总入口、端到端路由、事实源维护。
+- `cflow-topic`：选题发现、选题评分、内容栏目、选题池。
+- `cflow-angle`：读者张力、核心主张、角度选择、premise 强化。
+- `cflow-draft`：从 brief、笔记、转录或素材写完整一稿。
+- `cflow-edit`：已有草稿诊断、编辑深度、声音保留、降低 AI 味。
+- `cflow-package`：标题、hook、CTA、封面文案、平台发布版本。
+- `cflow-review`：发布后学习、指标解释、反馈循环。
+- `cflow-maintain`：CFlow 架构、规则归属、重构、校验、提交。
+
+## 审批计划格式
+
+编辑前返回：
 
 ```text
 Proposed update:
@@ -75,8 +83,8 @@ Commit plan:
 Approval needed:
 ```
 
-Ask for explicit approval after the plan. Do not proceed on vague agreement; wait for a clear approval to apply the listed changes.
+计划后必须请求明确批准。模糊同意不算批准；等待用户清楚表示同意后才能执行。
 
-## Reference
+## 参考
 
-Read `references/maintenance-protocol.md` when classifying a rule, planning a refactor, deciding whether to merge/delete guidance, or preparing the approval plan.
+当需要分类规则、规划重构、判断合并/删除，或准备审批计划时，读取 `references/maintenance-protocol.md`。

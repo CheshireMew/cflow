@@ -1,37 +1,37 @@
 ---
 name: cflow-draft
-description: Content drafting workflow for writing publishable articles, posts, threads, newsletters, scripts, short-video scripts, Xiaohongshu/RED posts, LinkedIn posts, Twitter/X threads, or blog drafts from a brief, angle, outline, raw notes, transcript, diagnosis output, or source material. Use when Codex needs to produce a complete first draft while preserving the author's intent, evidence, and voice.
+description: CFlow 成稿系统。用于从 brief、angle、大纲、原始笔记、转录、诊断结果或素材中写出可发布的一稿。适用于文章、帖子、thread、newsletter、脚本、短视频脚本、小红书/RED、LinkedIn、Twitter/X、blog 等。触发场景包括：帮我写成一篇、根据素材成稿、从 brief 写 draft、把转录整理成内容。
 ---
 
-# CFlow Draft
+# CFlow 成稿
 
-## Boundary
+## 边界
 
-Own first complete drafts. Do not spend time generating large topic lists or title batches unless needed to finish the draft.
+只负责第一版完整草稿。除非完成草稿必须需要，否则不要生成大量选题或标题。
 
-Draft from a stable brief. If the topic or angle is weak, briefly repair it before writing and state the assumption.
+从稳定 brief 开始写。如果选题或角度明显弱，先做轻量修复并说明假设。
 
-## Workflow
+## 工作流
 
-1. Confirm or infer goal, reader, platform, format, claim, evidence, voice, and constraints.
-2. Choose one structure that fits the format.
-3. Extract and order source material around the claim.
-4. Draft with concrete examples before abstraction.
-5. Preserve useful author voice and remove generic filler.
-6. Check the draft for one main claim, platform fit, evidence, and ending.
-7. Hand off to `$cflow-edit` for deeper revision or `$cflow-package` for titles and hooks.
+1. 确认或推断目标、读者、平台、格式、主张、证据、声音和约束。
+2. 选择一个适合格式的结构。
+3. 围绕主张抽取并排序素材。
+4. 先写具体例子，再抽象总结。
+5. 保留作者声音，去掉泛泛的填充。
+6. 检查是否只有一个主张、是否适配平台、是否有证据、结尾是否成立。
+7. 深度修改交给 `$cflow-edit`；标题和 hook 交给 `$cflow-package`。
 
-## Output
+## 输出
 
-For substantial drafts, return:
+写长内容时返回：
 
-- Brief assumptions
-- Draft
-- Notes on missing evidence or risky claims
-- Suggested next edit or package step
+- brief 假设
+- 草稿
+- 缺失证据或高风险主张
+- 下一步编辑或包装建议
 
-For short-form direct requests, return the draft first and keep notes minimal.
+短内容直出时，先给草稿，说明保持最少。
 
-## Reference
+## 参考
 
-Read `references/draft-structures.md` when selecting structure or drafting across formats.
+当需要选择结构或跨平台成稿时，读取 `references/draft-structures.md`。

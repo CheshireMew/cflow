@@ -1,38 +1,38 @@
 ---
 name: cflow-edit
-description: Content editing and rewriting workflow for improving existing drafts while preserving author voice. Use when Codex needs to diagnose why a draft is weak, perform structure surgery, rewrite paragraphs, reduce AI-like wording, clarify arguments, strengthen openings or endings, improve flow, adapt tone, preserve rough human texture, or edit articles, social posts, newsletters, scripts, and platform drafts.
+description: CFlow 改稿系统。用于诊断和修改已有草稿，同时保留作者声音。触发场景包括：结构手术、段落重排、降低 AI 味、澄清论点、强化开头或结尾、改善节奏、调整语气、保留人味和毛边、改文章/帖子/newsletter/脚本/平台草稿。关键词：rewrite、edit、voice、clarity、anti-AI。
 ---
 
 # CFlow Edit
 
-## Boundary
+## 边界
 
-Own revision of existing drafts. Do not invent a new topic or replace the author's argument unless the current draft cannot serve the stated goal.
+只负责修改已有草稿。除非当前草稿无法服务目标，否则不要发明新选题或替换作者原始论点。
 
-Diagnose before rewriting. Choose the shallowest edit that fixes the root problem.
+先诊断，再重写。选择能解决根因的最浅修改深度。
 
-## Workflow
+## 工作流
 
-1. Identify the draft's intended reader, claim, platform, and current failure mode.
-2. Select editing depth: clean, reorder, reframe, or rebuild.
-3. Preserve the author's strongest phrases, examples, and domain vocabulary.
-4. Remove generic filler, inflated claims, repeated rhythms, and AI-like symmetry.
-5. Edit at the selected depth.
-6. Explain major structural changes only when useful.
-7. Hand off to `$cflow-package` if the draft now needs title, hook, CTA, or platform variants.
+1. 判断草稿的目标读者、主张、平台和当前失败点。
+2. 选择编辑深度：清理、重排、重构角度、重写。
+3. 保留作者最强的原句、例子和领域词。
+4. 删除泛泛表达、膨胀主张、重复节奏和 AI 式对称。
+5. 按选定深度修改。
+6. 只有在有帮助时解释主要结构变化。
+7. 需要标题、hook、CTA 或平台版本时交给 `$cflow-package`。
 
-## Output
+## 输出
 
-For diagnosis plus edit:
+诊断加修改时输出：
 
-- Diagnosis
-- Edit level
-- Revised draft
-- What changed
-- Remaining risk
+- 诊断
+- 编辑级别
+- 修改后草稿
+- 主要变化
+- 剩余风险
 
-For direct rewrite requests, return the revised draft first and keep notes short.
+用户要求直接重写时，先给改后稿，说明保持简短。
 
-## Reference
+## 参考
 
-Read `references/edit-system.md` when diagnosing edit depth or preserving voice.
+当需要判断编辑深度或保留声音时，读取 `references/edit-system.md`。

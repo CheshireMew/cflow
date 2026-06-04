@@ -1,4 +1,4 @@
 interface:
   display_name: "CFlow 改稿系统"
-  short_description: "Edit drafts by structure voice clarity and platform fit"
-  default_prompt: "Use $cflow-edit to diagnose and improve this draft while preserving my voice."
+  short_description: "按结构、作者声音、表达节奏和清晰度诊断并修改内容草稿"
+  default_prompt: "Use $cflow-edit 帮我诊断并修改这篇草稿，同时保留我的声音。"

@@ -1,39 +1,39 @@
 ---
 name: cflow-angle
-description: Content angle development workflow for turning a topic into a clear claim, contradiction, reader tension, or point of view. Use when Codex needs to make a topic less generic, choose the strongest perspective, define the central argument, sharpen a content idea, find a non-obvious hookable premise, compare possible angles, or prepare a topic for drafting without writing the full piece yet.
+description: CFlow 角度系统。用于把普通话题变成清晰主张、矛盾、读者张力或观点。触发场景包括：选题太泛、想法不够有阅读理由、需要找到核心观点、比较多个 angle、强化 premise、为 draft 做准备但还不直接写全文。关键词：angle、claim、reader tension、hookable premise、open loop。
 ---
 
 # CFlow Angle
 
-## Boundary
+## 边界
 
-Own the reason a reader should care. Do not write the full draft unless asked.
+只负责“为什么读者要看”。除非用户要求，否则不要写完整草稿。
 
-An angle is the central tension or claim that makes a topic readable. It must be more specific than the topic and more structural than a title.
+角度是让话题变得可读的核心张力或主张。它要比话题更具体，也要比标题更结构化。
 
-## Workflow
+## 工作流
 
-1. Restate the topic in one concrete sentence.
-2. Identify the reader's live tension: confusion, cost, decision, fear, desire, or mistake.
-3. Generate candidate angles using contradiction, cost, transformation, distinction, scene, and decision patterns.
-4. Reject angles that only restate the topic or overpromise.
-5. Select the strongest angle based on reader tension, author evidence, and platform fit.
-6. Hand off to `$cflow-draft` for writing or `$cflow-package` for titles and hooks.
+1. 用一句具体话重述话题。
+2. 找到读者正在经历的张力：困惑、代价、决策、恐惧、欲望或错误。
+3. 用矛盾、代价、转变、区分、场景、决策等模式生成候选角度。
+4. 淘汰只是在复述话题或过度承诺的角度。
+5. 基于读者张力、作者证据和平台适配选择最强角度。
+6. 需要成稿时交给 `$cflow-draft`；需要标题和 hook 时交给 `$cflow-package`。
 
-## Output
+## 输出
 
-Return:
+返回：
 
-- Topic
-- Target reader
-- Chosen angle
-- Core claim
-- Reader tension
-- Why this angle works
-- Evidence needed
-- Weak angles rejected
-- Draft direction
+- 话题
+- 目标读者
+- 选定角度
+- 核心主张
+- 读者张力
+- 为什么这个角度有效
+- 需要的证据
+- 被淘汰的弱角度
+- 草稿方向
 
-## Reference
+## 参考
 
-Read `references/angle-patterns.md` when comparing angles or fixing a generic premise.
+当需要比较角度或修复泛泛的 premise 时，读取 `references/angle-patterns.md`。

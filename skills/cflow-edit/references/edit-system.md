@@ -1,78 +1,78 @@
-# Edit System
+# 改稿系统
 
-## Edit Levels
+## 编辑级别
 
-- **Level 1: Clean**: Fix clarity, grammar, rhythm, redundancy, and small wording issues.
-- **Level 2: Reorder**: Move blocks, repair transitions, strengthen opening and ending.
-- **Level 3: Reframe**: Change angle, reader, or claim while preserving source material.
-- **Level 4: Rebuild**: Write a new piece from the material because the structure cannot carry the goal.
+- **Level 1 清理**：修清晰度、语法、节奏、冗余和小措辞。
+- **Level 2 重排**：移动段落，修复转场，加强开头和结尾。
+- **Level 3 重构角度**：改变角度、读者或主张，同时保留原素材。
+- **Level 4 重写**：原结构无法承载目标时，用素材重写。
 
-Use the lowest level that fixes the real issue.
+使用能解决真实问题的最低级别。
 
-## Diagnosis Questions
+## 诊断问题
 
-- What is the one claim?
-- Who is the reader?
-- What does the reader gain?
-- Where does the draft become abstract?
-- Which parts sound author-owned?
-- Which claims lack evidence?
-- Is the opening earning attention?
-- Does the ending create closure?
-- Does each sentence pull the reader into the next one?
-- Is the piece actually too long, or is it just boring?
+- 唯一主张是什么？
+- 读者是谁？
+- 读者能得到什么？
+- 哪些地方变抽象了？
+- 哪些部分像作者本人？
+- 哪些主张缺证据？
+- 开头是否真的换来了注意力？
+- 结尾是否形成闭合？
+- 每句话是否把读者带到下一句？
+- 这篇是真的太长，还是只是无聊？
 
-## Preserve
+## 保留
 
-- Specific phrasing that sounds personal
-- Concrete examples
-- Useful uncertainty
-- Domain vocabulary
-- Uneven rhythm when it sounds human
-- Strong original sentences
+- 有个人感的具体说法
+- 具体例子
+- 有用的不确定感
+- 领域词
+- 听起来像人的不均匀节奏
+- 强原句
 
-## Remove
+## 删除
 
-- Generic motivation
-- Smooth but empty transitions
-- Inflated certainty
-- Repeated abstract nouns
-- Platform cliches
-- Balanced paragraph rhythm that feels machine-written
+- 泛泛激励
+- 空转场
+- 膨胀确定性
+- 重复抽象名词
+- 平台套话
+- 机器感很强的均匀段落节奏
 
-## Rhythm And Compression
+## 节奏和压缩
 
-- Vary sentence length: short, medium, long, short.
-- Prefer short sentences when clarity matters.
-- Use a period instead of a comma when a sentence is carrying two thoughts.
-- Start occasional sentences with "And" or "But" when it improves rhythm.
-- Keep one point per sentence where possible.
-- After a full draft, cut roughly one third if the piece feels padded.
-- If it still feels padded, cut again by removing repeated setup, abstract summary, and explanatory throat-clearing.
-- Write freely first, then edit with restraint. Do not try to perfect the first pass.
+- 句长要有变化：短、中、长、短。
+- 清晰比漂亮重要，需要清楚时优先短句。
+- 一个句子承载两个想法时，优先把逗号改成句号。
+- 当节奏更自然时，可以偶尔用 “And” 或 “But” 开句。
+- 尽量一句一个点。
+- 完成一稿后，如果感觉发胖，先删掉约三分之一。
+- 如果仍然发胖，继续删重复铺垫、抽象总结和解释性喉音。
+- 先自由写出来，再克制编辑。不要试图在第一稿就完美。
 
-## Slippery Slope Edit
+## Slippery Slope 编辑
 
-Check each paragraph with this question:
+逐段问：
 
 ```text
-Does this line make the next line easier to read?
+这一句是否让下一句更容易被读下去？
 ```
 
-If not, either:
+如果不能：
 
-- Add tension
-- Add a concrete detail
-- Move the line later
-- Cut it
-- Replace it with a transition that creates forward motion
+- 增加张力
+- 增加具体细节
+- 移到后面
+- 删除
+- 换成能制造前进感的转场
 
-## Edit Report Format
+## 编辑报告格式
 
 ```text
-Diagnosis:
-Edit level:
-Main changes:
-Revised draft:
-Remaining risk:
+诊断：
+编辑级别：
+主要变化：
+修改后草稿：
+剩余风险：
 ```

@@ -1,70 +1,70 @@
-# Topic System
+# 选题系统
 
-## Topic Sources
+## 选题来源
 
-- Repeated client or audience questions
-- Expensive mistakes the audience keeps making
-- Personal decisions with visible tradeoffs
-- Behind-the-scenes process
-- Contrarian lessons from real work
-- Misused concepts in the field
-- Before-and-after transformations
-- Failed attempts and what they revealed
-- Checklists the creator actually uses
-- Comparisons between similar choices
-- Raw behind-the-scenes scenes that break the audience's frame of what success looks like
-- Swipe-file patterns from strong writing, ads, scripts, magazines, stories, comedy, or other genres
-- Audience identity segments that can be named specifically in a headline
-- Failed solutions the audience has already tried
-- Objections the audience repeatedly raises before buying, believing, or acting
+- 客户或读者反复问的问题
+- 读者持续付出代价的错误
+- 有明显取舍的个人决策
+- 幕后流程
+- 来自真实工作的反常识经验
+- 行业内被误用的概念
+- 前后对比式转变
+- 失败尝试和它暴露的问题
+- 创作者真实使用的清单
+- 相似选择之间的比较
+- 打破读者想象的幕后场景
+- 来自优秀广告、脚本、杂志、故事、喜剧或其他领域的 swipe-file 模式
+- 可以在标题中直接点名的受众身份
+- 读者已经尝试过但失败的解决方案
+- 读者在相信、购买或行动前反复提出的异议
 
-## Scoring
+## 评分
 
-Score each topic from 1 to 5.
+每个维度 1 到 5 分。
 
-- **Reader pain**: Does the topic solve or name a real problem?
-- **Specificity**: Can the reader picture the situation?
-- **Credibility**: Can the author speak from earned experience?
-- **Freshness**: Is there a non-obvious distinction or example?
-- **Production cost**: Can it be made with available material?
-- **Proof availability**: Is there a concrete scene, metric, before-after, screenshot, or anecdote?
-- **Targeting power**: Can the topic speak to a narrow reader strongly enough that irrelevant readers self-select out?
+- **读者痛点**：是否解决或命名了真实问题？
+- **具体性**：读者能不能想象这个处境？
+- **可信度**：作者能不能凭真实经验讲这个题？
+- **新鲜度**：是否有非显而易见的区分或例子？
+- **生产成本**：现有素材能不能支撑？
+- **证据可得性**：是否有具体场景、指标、前后对比、截图或轶事？
+- **目标读者强度**：是否能对窄读者说得足够具体，让无关读者自动离开？
 
-Prioritize topics with high pain and high credibility. Do not choose a topic only because it sounds trendy.
+优先选择高痛点、高可信度的题。不要只因为一个题流行就选它。
 
-## Weak Topic Smells
+## 弱选题气味
 
-- It names a broad category, not a situation.
-- It could be written by anyone.
-- It has no reader decision or pain.
-- It depends on generic motivation.
-- It is actually a title, not a topic.
-- It is actually an angle, not a topic.
-- It has no proof path.
-- It is broad because the target reader is too broad.
+- 只是一个大类，不是一个具体处境。
+- 谁都能写。
+- 没有读者决策或痛点。
+- 依赖泛泛激励。
+- 其实是标题，不是选题。
+- 其实是角度，不是选题。
+- 没有证据路径。
+- 因为目标读者太宽而变泛。
 
-## Copywork As Topic Research
+## Copywork 作为选题研究
 
-Use copywork-inspired research when the user wants stronger taste or more original ideas:
+当用户想提升品味或找更原创的想法时，使用 copywork 式研究：
 
-1. Collect admired examples from the target genre or adjacent genres.
-2. Copy or closely study the examples to identify repeatable rules.
-3. Extract topic patterns, audience segments, proof types, pacing, and tension sources.
-4. Translate the pattern into the creator's own domain without copying the original surface.
+1. 收集目标类型或相邻类型中的优秀案例。
+2. 抄写或近距离研究案例，找出可重复规则。
+3. 提取选题模式、受众切片、证据类型、节奏和张力来源。
+4. 把模式迁移到创作者自己的领域，不复制原表面。
 
-Good sources include classic ads, high-performing scripts, short stories, magazine writing, comedy bits, platform-native posts, and creator archives outside the user's immediate niche.
+好来源包括经典广告、高表现脚本、短篇故事、杂志写作、喜剧段子、平台原生帖子，以及用户所在行业之外的创作者档案。
 
-## Topic Pool Format
+## 选题池格式
 
 ```text
-Lane:
-Audience:
-Topic:
-Reader situation:
-Why the author can write this:
-Evidence available:
-Possible angle:
-Production difficulty:
-Proof path:
-Targeting hook:
+栏目：
+读者：
+选题：
+读者处境：
+作者为什么能写：
+已有证据：
+可能角度：
+生产难度：
+证据路径：
+目标读者 hook：
 ```

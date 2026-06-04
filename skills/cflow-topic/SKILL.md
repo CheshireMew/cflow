@@ -1,46 +1,46 @@
 ---
 name: cflow-topic
-description: Content topic discovery and evaluation workflow for finding specific topics from business context, audience pain, personal experience, notes, transcripts, diagnosis outputs, research, or creator goals. Use when Codex needs to generate topic options, evaluate whether a topic is worth making, build topic pools, map content lanes, turn vague directions into concrete topics, or choose the next content idea before angle, draft, edit, packaging, or review work.
+description: CFlow 选题系统。用于从业务背景、读者痛点、个人经历、笔记、转录、诊断结果、研究材料或创作者目标中发现和评估具体内容选题。触发场景包括：生成选题、判断一个题值不值得做、建立选题池、梳理内容栏目、把模糊方向变成具体 topic、选择下一篇内容。后续可交给 cflow-angle / cflow-draft / cflow-package / cflow-review。
 ---
 
 # CFlow Topic
 
-## Boundary
+## 边界
 
-Own topic discovery. Stop before writing the final angle, outline, or draft unless the user explicitly asks to continue.
+只负责选题发现和选题评估。除非用户明确要求继续，否则不要写最终角度、大纲或草稿。
 
-A topic is a concrete subject the creator can make content about. It is not yet the claim, hook, title, or structure.
+选题是创作者可以围绕它做内容的具体对象。它还不是主张、hook、标题或结构。
 
-## Workflow
+## 工作流
 
-1. Identify the creator's domain, audience, and publishing goal.
-2. Extract topic raw material from the user's context: problems, questions, decisions, failures, examples, objections, and repeated explanations.
-3. Group topics by content lane.
-4. Score candidates by reader pain, author credibility, specificity, freshness, and production cost.
-5. Select the strongest topics and explain why each is worth making.
-6. Hand off the chosen topic to `$cflow-angle` when the user needs a sharper point of view.
+1. 明确创作者领域、目标读者和发布目标。
+2. 从上下文中抽取选题原料：问题、决策、失败、例子、异议、反复解释的概念。
+3. 按内容栏目或内容资产类型分组选题。
+4. 用读者痛点、作者可信度、具体性、新鲜度、生产成本评估候选题。
+5. 选出最强选题，并说明为什么值得做。
+6. 当用户需要更锋利的观点时，交给 `$cflow-angle`。
 
-## Output
+## 输出
 
-For topic generation, return:
+生成选题时输出：
 
-- Content lane
-- Topic
-- Target reader
-- Reader problem
-- Why now
-- Source material needed
-- Risk or weakness
-- Best next step
+- 内容栏目
+- 选题
+- 目标读者
+- 读者问题
+- 为什么现在值得做
+- 所需素材
+- 风险或弱点
+- 下一步
 
-For topic evaluation, return:
+评估选题时输出：
 
-- Verdict
-- Strongest use case
-- Weakness
-- Fix
-- Recommended angle direction
+- 判断
+- 最适合的用法
+- 弱点
+- 修法
+- 推荐角度方向
 
-## Reference
+## 参考
 
-Read `references/topic-system.md` when building a topic pool, scoring candidates, or diagnosing why a topic feels generic.
+当需要建立选题池、评分候选题、诊断选题为什么泛时，读取 `references/topic-system.md`。

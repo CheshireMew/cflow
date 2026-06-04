@@ -1,4 +1,4 @@
 interface:
   display_name: "CFlow 复盘系统"
-  short_description: "Review published content and turn feedback into reusable lessons"
-  default_prompt: "Use $cflow-review to analyze this content result and extract lessons for next time."
+  short_description: "分析发布表现、受众反馈和关键指标，提炼下一轮实验经验"
+  default_prompt: "Use $cflow-review 分析这次内容结果，并提炼下一次该怎么改。"

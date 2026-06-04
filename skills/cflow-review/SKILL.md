@@ -1,38 +1,38 @@
 ---
 name: cflow-review
-description: Content review and learning workflow for analyzing published content performance, comments, audience feedback, creator notes, platform metrics, or failed drafts and turning them into reusable lessons. Use when Codex needs to diagnose why content worked or failed, compare expected vs actual results, extract audience signals, update content lanes, recommend next topics, or build a post-publication feedback loop.
+description: CFlow 复盘系统。用于分析已发布内容的表现、评论、受众反馈、创作者笔记、平台数据或失败草稿，并转化为可复用经验。触发场景包括：复盘内容为什么有效/无效、比较预期和实际结果、提取受众信号、更新内容栏目、推荐下一批选题、建立发布后反馈循环。关键词：review、metrics、retention、comments、feedback loop。
 ---
 
-# CFlow Review
+# CFlow 复盘
 
-## Boundary
+## 边界
 
-Own post-output learning. Do not rewrite the content unless the user asks for a revised version.
+只负责产出后的学习。除非用户要求修改版本，否则不要重写内容。
 
-Review should separate evidence from interpretation. Metrics, comments, saves, shares, watch time, replies, and creator observations are different signal types.
+复盘要区分证据和解释。浏览、评论、收藏、转发、watch time、回复、创作者体感是不同信号。
 
-## Workflow
+## 工作流
 
-1. Capture the original content goal, audience, platform, and hypothesis.
-2. Separate available signals: metrics, comments, qualitative feedback, creator notes, and missing data.
-3. Compare expected response with actual response.
-4. Diagnose likely causes: topic, angle, evidence, packaging, timing, platform fit, or audience mismatch.
-5. Extract reusable lessons.
-6. Recommend next actions: repeat, revise, repurpose, test a new angle, or abandon.
-7. Hand off to `$cflow-topic`, `$cflow-angle`, or `$cflow-package` when the next iteration needs production.
+1. 记录原始内容目标、读者、平台和假设。
+2. 区分信号：指标、评论、定性反馈、创作者笔记、缺失数据。
+3. 对比预期反应和实际反应。
+4. 诊断可能原因：选题、角度、证据、包装、发布时间、平台适配或读者错位。
+5. 提炼可复用经验。
+6. 推荐下一步：重复、修改、复用、测试新角度或放弃。
+7. 下一轮生产需要时，交给 `$cflow-topic`、`$cflow-angle` 或 `$cflow-package`。
 
-## Output
+## 输出
 
-Return:
+返回：
 
-- Evidence available
-- What likely worked
-- What likely failed
-- Root cause hypothesis
-- Lessons to keep
-- Next content actions
-- What data is missing
+- 已有证据
+- 可能有效的部分
+- 可能失败的部分
+- 根因假设
+- 应保留的经验
+- 下一步内容动作
+- 缺失数据
 
-## Reference
+## 参考
 
-Read `references/review-loop.md` when analyzing performance data or building a repeatable feedback loop.
+当需要分析表现数据或建立复盘循环时，读取 `references/review-loop.md`。

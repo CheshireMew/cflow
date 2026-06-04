@@ -1,68 +1,68 @@
-# Review Loop
+# 复盘循环
 
-## Signal Types
+## 信号类型
 
-- **Reach**: Did the platform distribute it?
-- **Engagement**: Did people react, comment, save, share, or reply?
-- **Conversion**: Did the piece create the intended next action?
-- **Retention**: Did people keep reading or watching?
-- **Qualitative feedback**: What did people quote, challenge, or ask?
-- **Creator notes**: What felt hard, easy, forced, or repeatable?
-- **Hook retention**: Did viewers or readers stay past the first few seconds or first screen?
-- **Drop-off points**: Where did attention fall sharply?
+- **Reach**：平台是否分发？
+- **Engagement**：是否有人点赞、评论、收藏、转发或回复？
+- **Conversion**：是否产生预期下一步动作？
+- **Retention**：读者或观众是否持续看下去？
+- **定性反馈**：人们引用、质疑、追问了什么？
+- **创作者笔记**：什么感觉困难、顺、假、可重复？
+- **Hook retention**：观众或读者是否留下了前三秒或首屏？
+- **Drop-off points**：注意力在哪里明显下跌？
 
-Do not treat one metric as the whole truth.
+不要把单一指标当成全部真相。
 
-## Diagnosis Map
+## 诊断地图
 
-- Low reach, strong feedback: packaging or distribution issue.
-- High reach, weak engagement: topic may be broad or angle may be shallow.
-- Saves without comments: useful but not socially discussable.
-- Comments with confusion: claim or structure issue.
-- Strong replies from wrong audience: targeting issue.
-- High effort, weak result: production cost issue.
-- Weak 3-second or first-screen retention: hook, opening scene, or target-reader mismatch.
-- Strong early retention with later drop-off: the hook worked, but the body failed to refresh tension or deliver payoff.
-- High watch time but low conversion: content may be interesting without enough desire, proof, or action.
-- Strong conversion from low reach: topic may be narrow but valuable; consider repeating the lane with better packaging.
+- 低 reach、强反馈：可能是包装或分发问题。
+- 高 reach、弱 engagement：选题可能太宽，或角度太浅。
+- 收藏高但评论低：有用，但不够可讨论。
+- 评论里有困惑：主张或结构问题。
+- 强回复来自错误人群：目标读者错位。
+- 高投入、弱结果：生产成本问题。
+- 前三秒或首屏 retention 弱：hook、开场场景或目标读者不匹配。
+- 前期 retention 强、后期掉：hook 有效，但正文没有刷新张力或兑现 payoff。
+- Watch time 高但 conversion 低：内容有趣，但 desire、proof 或 action 不够。
+- 低 reach 但 conversion 强：题可能窄但有价值，值得用更好的包装重复这个栏目。
 
-## Review Snapshot
+## 复盘快照
 
 ```text
-Content:
-Platform:
-Goal:
-Hypothesis:
-Metrics:
-Hook retention:
-Drop-off points:
-Comments:
-Creator notes:
-What worked:
-What failed:
-Likely cause:
-Reusable lesson:
-Next experiment:
+内容：
+平台：
+目标：
+假设：
+指标：
+Hook retention：
+Drop-off points：
+评论：
+创作者笔记：
+有效部分：
+失败部分：
+可能原因：
+可复用经验：
+下一次实验：
 ```
 
-## Short-Video Review
+## 短视频复盘
 
-When metrics are available, inspect:
+有指标时检查：
 
-- 3-second or first-screen retention
-- 5-second retention if the platform exposes it
-- First major drop-off timestamp
-- Average watch time
-- Completion rate
-- Follow or conversion rate from the piece
+- 3 秒或首屏 retention
+- 平台提供时看 5 秒 retention
+- 第一个明显 drop-off 时间点
+- 平均观看时长
+- 完播率
+- 关注或转化率
 
-Use drop-off timestamps to identify where to add a new detail, turn, proof point, open loop, or faster payoff. Do not assume a video is too long until the retention curve shows boredom rather than weak packaging.
+用 drop-off 时间点判断哪里需要加入新细节、转折、证据、open loop 或更快 payoff。不要在 retention 曲线证明无聊前，就假设视频太长。
 
-## Next Action Choices
+## 下一步选择
 
-- Repeat the same lane with a new example.
-- Keep topic, change angle.
-- Keep angle, change packaging.
-- Repurpose to a better platform.
-- Turn comments into follow-up topics.
-- Archive the lesson and stop investing in this lane.
+- 同一栏目换例子重复。
+- 保留选题，换角度。
+- 保留角度，换包装。
+- 复用到更合适的平台。
+- 把评论变成后续选题。
+- 记录经验，停止投入这个栏目。

@@ -1,42 +1,42 @@
 ---
 name: cflow-package
-description: Content packaging workflow for creating titles, hooks, openings, subtitles, CTAs, cover text, captions, thumbnails text, platform variants, and publishing bundles. Use when Codex needs to make finished or nearly finished content more clickable, scannable, platform-native, or ready to publish across Xiaohongshu/RED, short video, LinkedIn, Twitter/X, newsletter, blog, or other social formats.
+description: CFlow 包装系统。用于为接近完成的内容创建 title、hook、opening、subtitle、CTA、cover text、caption、thumbnail text、平台版本和发布包。触发场景包括：起标题、优化开头、短视频前三秒、小红书/RED 封面、LinkedIn headline、Twitter/X thread first post、newsletter/blog 标题、平台适配、提高点击和停留。
 ---
 
 # CFlow Package
 
-## Boundary
+## 边界
 
-Own presentation and platform fit. Do not change the source claim unless packaging reveals that the claim is unclear; then state the issue and propose a minimal fix.
+只负责呈现和平台适配。除非包装过程暴露出核心主张不清，否则不要改内容主张；如果发现问题，只提出最小修法。
 
-Packaging should amplify the real value of the piece, not add fake drama.
+包装应该放大内容真实价值，不制造假刺激。
 
-## Workflow
+## 工作流
 
-1. Identify platform, reader, core claim, and desired action.
-2. Extract the most clickable truthful tension from the content.
-3. Generate packaging options by type: title, hook, cover text, CTA, or platform variant.
-4. Keep options meaningfully different rather than minor wording swaps.
-5. Mark the best option and explain the selection criteria briefly.
-6. Hand off to `$cflow-review` after publication results are available.
+1. 明确平台、读者、核心主张和希望读者采取的行动。
+2. 从内容中提取最可点击但真实的张力。
+3. 按类型生成包装选项：标题、hook、封面文案、CTA 或平台版本。
+4. 选项要策略不同，不要只是同义改写。
+5. 标出最佳选项，并简要说明选择标准。
+6. 发布后有数据时交给 `$cflow-review`。
 
-## Output
+## 输出
 
-For title or hook requests:
+标题或 hook 请求：
 
-- Best option
-- Alternative options
-- Why the best works
-- Risk to avoid
+- 最佳选项
+- 备选项
+- 为什么最佳
+- 需要避免的风险
 
-For publishing bundles:
+发布包请求：
 
-- Title or headline
-- Opening or hook
-- Body framing if needed
+- 标题或 headline
+- 开头或 hook
+- 必要的正文框架
 - CTA
-- Platform notes
+- 平台说明
 
-## Reference
+## 参考
 
-Read `references/package-patterns.md` when creating variants across platforms or avoiding clickbait.
+当需要跨平台生成变体或避免 clickbait 时，读取 `references/package-patterns.md`。
