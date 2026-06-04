@@ -19,6 +19,8 @@ Use the lowest level that fixes the real issue.
 - Which claims lack evidence?
 - Is the opening earning attention?
 - Does the ending create closure?
+- Does each sentence pull the reader into the next one?
+- Is the piece actually too long, or is it just boring?
 
 ## Preserve
 
@@ -37,6 +39,33 @@ Use the lowest level that fixes the real issue.
 - Repeated abstract nouns
 - Platform cliches
 - Balanced paragraph rhythm that feels machine-written
+
+## Rhythm And Compression
+
+- Vary sentence length: short, medium, long, short.
+- Prefer short sentences when clarity matters.
+- Use a period instead of a comma when a sentence is carrying two thoughts.
+- Start occasional sentences with "And" or "But" when it improves rhythm.
+- Keep one point per sentence where possible.
+- After a full draft, cut roughly one third if the piece feels padded.
+- If it still feels padded, cut again by removing repeated setup, abstract summary, and explanatory throat-clearing.
+- Write freely first, then edit with restraint. Do not try to perfect the first pass.
+
+## Slippery Slope Edit
+
+Check each paragraph with this question:
+
+```text
+Does this line make the next line easier to read?
+```
+
+If not, either:
+
+- Add tension
+- Add a concrete detail
+- Move the line later
+- Cut it
+- Replace it with a transition that creates forward motion
 
 ## Edit Report Format
 
