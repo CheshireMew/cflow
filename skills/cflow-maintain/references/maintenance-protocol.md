@@ -31,7 +31,8 @@
 - 修改诊断和声音保留放 `cflow-edit`。
 - 作者声音画像、写作人格、灵魂倾向和表达禁区放 `cflow-voice`。
 - 硬广/软广、offer、CTA 强度、funnel stage 和转化路径放 `cflow-marketing`。
-- 标题、hook、CTA 和平台发布变体放 `cflow-package`。
+- 标题、hook、CTA、caption 和平台文本变体放 `cflow-package`。
+- 封面、插图、配图、文章头图、thumbnail text、cover text、视觉 brief 和图片 prompt 放 `cflow-image`。
 - 表现学习和下一次实验放 `cflow-review`。
 - 维护流程放 `cflow-maintain`。
 

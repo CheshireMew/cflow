@@ -68,7 +68,8 @@ CFlow 以中文为真源。
 - `cflow-edit`：已有草稿诊断、编辑深度、声音保留、降低 AI 味。
 - `cflow-voice`：作者声音画像、写作人格、灵魂倾向、表达禁区。
 - `cflow-marketing`：硬广/软广、offer、CTA、funnel stage、转化路径。
-- `cflow-package`：标题、hook、CTA、封面文案、平台发布版本。
+- `cflow-package`：标题、hook、CTA、caption、平台文本版本。
+- `cflow-image`：封面、插图、配图、文章头图、thumbnail text、cover text、视觉 brief 和图片 prompt。
 - `cflow-review`：发布后学习、指标解释、反馈循环。
 - `cflow-maintain`：CFlow 架构、规则归属、重构、校验、提交。
 

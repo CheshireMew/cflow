@@ -1,4 +1,4 @@
 interface:
   display_name: "CFlow 包装系统"
-  short_description: "生成标题、hook、CTA、封面文案和平台发布版本"
+  short_description: "生成标题、hook、CTA 和平台文本版本"
   default_prompt: "Use $cflow-package 为这篇内容生成标题、hook 和平台发布版本。"

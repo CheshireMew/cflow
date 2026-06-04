@@ -56,7 +56,8 @@ Drop-off points：
 | 某类读者反复提问 | 选题池或栏目 | `$cflow-topic` |
 | 某个冲突特别有效 | 角度模式 | `$cflow-angle` |
 | 某个故事带来强反馈 | 案例库 | `$cflow-case` |
-| 某个标题/封面明显拉动点击 | 包装策略 | `$cflow-package` |
+| 某个标题明显拉动点击 | 包装策略 | `$cflow-package` |
+| 某个封面或配图明显拉动点击 | 视觉策略 | `$cflow-image` |
 | 某个 CTA 带来转化 | 转化路径规则 | `$cflow-marketing` |
 | 某段话特别像作者 | Voice profile 证据 | `$cflow-voice` |
 | 某个平台持续不匹配 | 平台适配判断 | `$cflow-content` |

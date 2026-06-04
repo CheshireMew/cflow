@@ -21,7 +21,7 @@ description: CFlow 内容对标系统。用于寻找、筛选、拆解和迁移�
 4. 筛选对标：优先选同目标读者、同平台、同内容任务、可观察表现强、可拆解、可迁移的对象。
 5. 拆解颗粒度：选题、读者、角度、案例、结构、hook、证据、节奏、voice、CTA、评论反馈、发布频率。
 6. 区分可迁移和不可迁移：能学机制，不复制事实、经历、身份、客户案例或不可验证数据。
-7. 输出迁移方案：把可复用模式交给 `$cflow-topic`、`$cflow-angle`、`$cflow-case`、`$cflow-package`、`$cflow-marketing` 或 `$cflow-voice`。
+7. 输出迁移方案：把可复用模式交给 `$cflow-topic`、`$cflow-angle`、`$cflow-case`、`$cflow-package`、`$cflow-image`、`$cflow-marketing` 或 `$cflow-voice`。
 8. 如果用户只是想“更像某人”，先提醒：学习结构和判断，不复制人格。
 
 ## 输出

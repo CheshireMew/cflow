@@ -237,6 +237,7 @@ CTA
 
 - 需要生成正文：交给 `$cflow-draft`。
 - 需要寻找案例、客户故事、未来预演或反面案例：交给 `$cflow-case`。
-- 需要标题、hook、封面、CTA 文案变体：交给 `$cflow-package`。
+- 需要标题、hook、CTA 文案变体：交给 `$cflow-package`。
+- 需要封面、插图、配图或视觉 brief：交给 `$cflow-image`。
 - 需要判断是否值得营销化：交给 `$cflow-angle` 或 `$cflow-topic`。
 - 需要分析转化结果：交给 `$cflow-review`。

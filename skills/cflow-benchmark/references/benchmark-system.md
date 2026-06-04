@@ -60,7 +60,8 @@
 结构：
 案例/证据：
 句子节奏：
-标题/封面策略：
+标题策略：
+封面/图像策略：
 CTA：
 评论反馈：
 可迁移模式：
@@ -98,7 +99,8 @@ copywork 不是泛泛总结。至少拆到这些层：
 | 选题模式、栏目 | `$cflow-topic` |
 | 核心冲突、主张 | `$cflow-angle` |
 | 案例类型、故事功能 | `$cflow-case` |
-| 标题、hook、封面 | `$cflow-package` |
+| 标题、hook | `$cflow-package` |
+| 封面、插图、配图、thumbnail text、视觉 brief | `$cflow-image` |
 | CTA、offer、转化桥 | `$cflow-marketing` |
 | 作者表达差异 | `$cflow-voice` |
 | 复用经验 | `$cflow-review` |

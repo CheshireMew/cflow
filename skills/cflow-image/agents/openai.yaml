@@ -1,0 +1,4 @@
+interface:
+  display_name: "CFlow 图像系统"
+  short_description: "管理封面、插图、配图、视觉 brief 和图片 prompt"
+  default_prompt: "Use $cflow-image 为这篇内容设计封面和正文插图 brief。"
