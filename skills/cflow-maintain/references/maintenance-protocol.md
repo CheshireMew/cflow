@@ -12,7 +12,7 @@
 - **缺陷报告**：使用 CFlow skill 时观察到的失败。
 - **测试用例**：可用于验证行为的真实例子。
 - **删除请求**：应该移除的规则或资源。
-- **架构请求**：边界、路由、命名或仓库结构变化。
+- **skill 系统架构请求**：skill 边界、路由、命名、目录结构或直接服务 skill 生命周期的工具链变化。
 
 ## 归属判断
 
@@ -39,31 +39,53 @@
 
 ## 源码布局
 
-唯一可编辑真源是 monorepo：
+`$cflow-maintain` 维护的是 CFlow skill 系统，不是整个项目。只有直接服务 skill 生命周期的文件才进入维护范围。
+
+允许处理：
+
+- `skills/` 真源里的 skill 规则、reference 和 agent metadata。
+- skill 路由、规则归属、边界、命名和目录结构。
+- 直接服务 skill 生命周期的 schema、校验脚本、registry/sync 脚本、测试和 README 相关段落。
+
+排除处理：
+
+- 个人复盘资产、截图、指标、评论、私有案例和普通内容产物。
+- 普通 Git hygiene、环境配置、应用代码或与 skill 生命周期无关的仓库工程。
+- 用户没有明确纳入维护计划的项目文件。
+
+唯一可编辑真源是当前仓库：
 
 ```text
-D:\Code\cflow
-└── skills
-    ├── cflow
-    ├── cflow-brief
-    ├── cflow-research
-    ├── cflow-topic
-    ├── cflow-benchmark
-    ├── cflow-viral
-    ├── cflow-seo
-    ├── cflow-case
-    ├── cflow-angle
-    ├── cflow-draft
-    ├── cflow-shortform
-    ├── cflow-edit
-    ├── cflow-voice
-    ├── cflow-marketing
-    ├── cflow-package
-    ├── cflow-review
-    └── cflow-maintain
+<repo-root>/
+└── skills/
+    ├── cflow/
+    ├── cflow-brief/
+    ├── cflow-research/
+    ├── cflow-topic/
+    ├── cflow-benchmark/
+    ├── cflow-viral/
+    ├── cflow-seo/
+    ├── cflow-case/
+    ├── cflow-angle/
+    ├── cflow-draft/
+    ├── cflow-shortform/
+    ├── cflow-edit/
+    ├── cflow-voice/
+    ├── cflow-marketing/
+    ├── cflow-package/
+    ├── cflow-review/
+    └── cflow-maintain/
 ```
 
-`C:\Users\Lenovo\.codex\skills` 下可以有 Codex 发现链接，但不要通过链接编辑。修改 `D:\Code\cflow` 中的源码，然后校验并提交。
+`$HOME\.codex\skills` 下可以有 Codex 发现链接，但不要通过链接编辑。修改当前仓库中的源码，然后校验并提交。其他 AI Agent 或 AI 工具可以按自己的插件、工具、skills 或 prompt 发现机制兼容 CFlow 的 `skills/` 真源。
+
+创建、删除或重命名 skill 后，必须同步 Codex 个人 skill 发现入口：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/sync_personal_skills.ps1 -PruneStale
+```
+
+同步脚本只创建缺失 junction，并且只删除 stale 的 CFlow junction：名字是 `cflow*`、类型是 junction、target 指向本仓库 `skills`、且 target 已不存在。不得手动复制 skill 到个人目录，也不得通过个人目录编辑 skill。
 
 如果一条规则似乎适合多个 skill，先判断根行为。只添加一个主要规则；只有路由需要时才在其他 skill 加短提示。
 
@@ -143,7 +165,7 @@ CFlow 使用中文作为唯一正文真源：
 
 用户必须批准：
 
-- 受影响仓库或目录
+- 受影响 skill 或直接服务 skill 生命周期的文件
 - 要编辑的文件
 - 要新增、移动、合并或删除的规则
 - 校验计划
@@ -156,15 +178,21 @@ CFlow 使用中文作为唯一正文真源：
 运行：
 
 ```powershell
-$env:PYTHONPATH='D:\Code\.codex-python-libs'
-python 'C:\Users\Lenovo\.codex\skills\.system\skill-creator\scripts\quick_validate.py' '<skill-path>'
+python scripts\quick_validate.py
 ```
 
 校验所有变更 skill。只要套件路由、所有权边界或共享约定变化，就校验全部 CFlow skills。
 
+如果创建、删除或重命名了 skill，同步个人 skill 链接后再校验一次：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\sync_personal_skills.ps1 -PruneStale
+python scripts\quick_validate.py
+```
+
 ## 提交
 
-校验通过后再提交。commit message 保持聚焦：
+只有用户明确要求提交，或批准计划包含提交时，才在校验通过后提交。commit message 保持聚焦：
 
 - `Update <skill> <rule-area>`
 - `Move <rule> into <skill>`
@@ -172,4 +200,4 @@ python 'C:\Users\Lenovo\.codex\skills\.system\skill-creator\scripts\quick_valida
 - `Remove duplicate <rule-area> guidance`
 - `Localize CFlow skills to Chinese source`
 
-多个仓库变化时分别提交。当前 CFlow 是 monorepo，通常提交一次即可。
+如果同一次维护计划同时改了 skill 规则和 skill 生命周期工具链，提交说明要覆盖完整维护范围；不把普通项目维护混进本 skill 的提交计划。

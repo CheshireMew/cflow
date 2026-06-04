@@ -1,0 +1,12 @@
+[project]
+name = "cflow"
+version = "0.1.0"
+description = "CFlow skill suite maintenance harness"
+requires-python = ">=3.10"
+
+[tool.cflow]
+skills_dir = "skills"
+
+[tool.unittest]
+start-directory = "tests"
+

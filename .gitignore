@@ -6,3 +6,9 @@ __pycache__/
 node_modules/
 .env
 .env.*
+build/
+
+# Local personal CFlow content assets
+/local-reviews/
+/local-assets/
+/.cflow-local/

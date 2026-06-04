@@ -7,9 +7,21 @@ description: CFlow skill 套件维护系统。用于根据新的写作准则、�
 
 ## 边界
 
-只负责 CFlow skill 套件本身的变更。不要用本 skill 写内容、改内容、做标题或复盘普通内容，除非这些操作是为了诊断 skill 缺陷。
+只负责 CFlow skill 系统本身的变更，不维护整个项目。不要用本 skill 写内容、改内容、做标题或复盘普通内容，除非这些操作是为了诊断 skill 缺陷。
 
-唯一真实源码是 `D:\Code\cflow\skills`。先检查这里的源码，再提出更新计划。`C:\Users\Lenovo\.codex\skills\cflow-*` 只是 Codex 发现用的链接，不是编辑入口。
+唯一真实源码是当前仓库根目录下的 `skills/`。先检查这里的源码，再提出更新计划。`$HOME\.codex\skills\cflow-*` 只是 Codex 发现用的链接，不是编辑入口；其他 AI Agent 或工具可以按自己的发现机制兼容。
+
+允许处理的范围：
+
+- `skills/` 真源里的 skill 规则、reference 和 agent metadata。
+- skill 路由、规则归属、边界、命名和目录结构。
+- 直接服务 skill 生命周期的 schema、校验脚本、registry/sync 脚本、测试和 README 相关段落。
+
+排除范围：
+
+- 个人复盘资产、截图、指标、评论、私有案例和普通内容产物。
+- 普通 Git hygiene、环境配置、应用代码或与 skill 生命周期无关的仓库工程。
+- 用户没有明确纳入维护计划的项目文件。
 
 ## 语言规则
 
@@ -44,7 +56,7 @@ CFlow 以中文为真源。
 ## 工作流
 
 1. **盘点**：列出相关 CFlow skills，读取 `SKILL.md` 和必要 reference。
-2. **分类输入**：判断用户材料是规则、流程步骤、决策标准、平台笔记、声音准则、缺陷报告、测试用例或删除请求。
+2. **分类输入**：判断用户材料是规则、流程步骤、决策标准、平台笔记、声音准则、缺陷报告、测试用例、删除请求或 skill 系统架构请求。
 3. **缺陷归因**：如果输入来自失败案例，先命名根行为，区分是已有规则未执行、规则缺失、路由缺失、边界冲突还是测试用例不足。
 4. **泛化检查**：禁止把失败案例里的具体平台、格式、对象、行业或文案场景直接固化为规则条件。先做同类替换测试，能跨场景成立的必须写成可迁移规则；原案例只作为测试用例或例子。
 5. **定位边界**：每条规则只分配一个主要归属。只有路由需要时才在第二个 skill 中交叉引用。
@@ -52,8 +64,9 @@ CFlow 以中文为真源。
 7. **规划重构**：优先一次性迁移，不保留兼容层。规则属于别处就移动，不复制。
 8. **请求批准**：给出具体修改计划，等待用户明确批准。
 9. **应用变更**：只修改批准范围内的文件。按计划删除过时或重复规则。
-10. **校验**：对所有变更 skill 跑 `quick_validate.py`；如果路由或共享边界变化，校验全部 CFlow skills。
-11. **提交**：校验通过后提交清晰 commit。
+10. **同步发现入口**：只有创建、删除或重命名 skill 时，才运行 `powershell -ExecutionPolicy Bypass -File scripts/sync_personal_skills.ps1 -PruneStale`，补齐新增 skill 的个人 junction，并清理已删除 skill 的 stale junction。
+11. **校验**：对所有变更 skill 跑 `quick_validate.py`；如果路由或共享边界变化，校验全部 CFlow skills。
+12. **提交**：只有用户明确要求提交，或批准计划包含提交时，才在校验通过后提交清晰 commit。
 
 ## 路由边界
 
@@ -74,7 +87,7 @@ CFlow 以中文为真源。
 - `cflow-package`：标题、hook、CTA、caption、平台文本版本。
 - `cflow-image`：封面、插图、配图、文章头图、thumbnail text、cover text、视觉 brief 和图片 prompt。
 - `cflow-review`：发布后学习、指标解释、反馈循环。
-- `cflow-maintain`：CFlow 架构、规则归属、重构、校验、提交。
+- `cflow-maintain`：CFlow skill 系统架构、规则归属、重构和校验。
 
 ## 审批计划格式
 
@@ -91,6 +104,7 @@ Rules to add:
 Rules to move:
 Rules to delete:
 Validation plan:
+Personal skill sync plan:
 Commit plan:
 Approval needed:
 ```
