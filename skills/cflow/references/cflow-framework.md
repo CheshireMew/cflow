@@ -12,6 +12,7 @@
 - offer / funnel / 转化路径：`$cflow-marketing`
 - 搜索 / 核查 / 来源：`$cflow-research`
 - 作者声音：`$cflow-voice`
+- 写作前采访 / 讨论 / brief：`$cflow-brief`
 - 其他能力层交给对应 skill
 
 内容生产、改写、包装、营销、短内容、传播、SEO、案例写入和对标迁移共享 `content-production-contract.md`。专项 skill 只维护自己的应用规则，不另立一套通用写作纪律。
@@ -33,6 +34,7 @@
 例子：
 
 - 用户点 `$cflow`：先拆任务层，再组合专项 skill。
+- 用户说“先聊聊”“采访我”“我不知道怎么说”：先交给 `$cflow-brief`。
 - 用户点 `$cflow-package`：如果 CTA、offer 或 funnel 不清，先交给 `$cflow-marketing`。
 - 用户点 `$cflow-marketing`：如果要写 hook 或简介第一句，交给 `$cflow-package`。
 - 用户点 `$cflow-draft`：如果主张弱，先交给 `$cflow-angle`；如果需要证据包，交给 `$cflow-research`。
@@ -45,6 +47,7 @@
 | 能力层 | 判断问题 | 主要 skill |
 |---|---|---|
 | 内容生产合同 | 目标、读者、平台、格式、主张、表达强度和共享写作纪律 | `$cflow` |
+| 写作前简报 | 是否需要采访、讨论、追问缺失信息或整理素材包 | `$cflow-brief` |
 | 素材边界 | 用户提供了什么，哪些不能新增 | `$cflow` |
 | 事实核查 | 是否需要搜索、来源、引用、最新信息 | `$cflow-research` |
 | 选题 | 内容对象是否具体、值得做 | `$cflow-topic` |
@@ -72,6 +75,8 @@
 适合有明确前后依赖的任务。
 
 ```text
+brief -> topic -> angle
+brief -> draft
 angle -> draft -> package
 marketing -> package
 research -> draft -> seo
@@ -95,6 +100,7 @@ voice + edit -> draft rewrite
 ```text
 package 发现 offer 不清 -> marketing
 draft 发现主张弱 -> angle
+draft 发现 brief 不稳或素材缺口会改变方向 -> brief
 edit 发现素材越界 -> cflow
 marketing 发现需要第一句 hook -> package
 ```

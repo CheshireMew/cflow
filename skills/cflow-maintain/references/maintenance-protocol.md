@@ -19,6 +19,7 @@
 把每项内容放到最窄、最耐用的边界。
 
 - 统筹、套件路由、任务编排和能力层拆解放 `cflow`。
+- 写作前采访、讨论、追问缺失信息、素材盘点和 content brief 构建放 `cflow-brief`。
 - 资料搜寻、事实核查、来源评估、证据包和引用整理放 `cflow-research`。
 - 发现和评分放 `cflow-topic`。
 - 内容对标、账号拆解、爆款结构拆解和 copywork 颗粒度检查放 `cflow-benchmark`。
@@ -44,6 +45,7 @@
 D:\Code\cflow
 └── skills
     ├── cflow
+    ├── cflow-brief
     ├── cflow-research
     ├── cflow-topic
     ├── cflow-benchmark

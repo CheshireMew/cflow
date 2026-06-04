@@ -58,6 +58,7 @@ CFlow 以中文为真源。
 ## 路由边界
 
 - `cflow`：CFlow 总入口、任务编排、能力层拆解、协作调度和端到端边界维护。
+- `cflow-brief`：写作前采访、讨论、追问缺失信息、素材盘点和 content brief 构建。
 - `cflow-research`：资料搜寻、事实核查、来源评估、证据包和引用整理。
 - `cflow-topic`：选题发现、选题评分、内容栏目、选题池。
 - `cflow-benchmark`：内容对标、账号拆解、爆款结构拆解、copywork 颗粒度检查。

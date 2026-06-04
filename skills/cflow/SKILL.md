@@ -29,6 +29,7 @@ description: CFlow 总入口和编排系统。用于从任意内容任务、素�
 - offer、funnel、转化路径和营销形态：交给 `$cflow-marketing`。
 - 事实核查、资料搜寻和来源包：交给 `$cflow-research`。
 - 作者声音画像和表达禁区：交给 `$cflow-voice`。
+- 写作前采访、讨论、追问和 brief 构建：交给 `$cflow-brief`。
 - 选题、角度、案例、短内容、SEO、viral、图像和复盘：交给对应专项 skill。
 
 只有当交付物非常短、目标明确、无需专项判断时，`cflow` 可以直接输出一个轻量结果；一旦涉及完整草稿、营销转化、hook、研究、声音或平台适配，就应进入专项 skill 或组合链路。
@@ -40,6 +41,7 @@ description: CFlow 总入口和编排系统。用于从任意内容任务、素�
 常见能力层：
 
 - **内容生产合同**：目标、读者、平台、格式、主张、表达强度和共享写作纪律。
+- **写作前简报**：是否需要采访、讨论、追问缺失信息或整理素材包。
 - **素材边界**：用户提供了什么，哪些不能新增。
 - **事实核查**：是否需要搜索、来源、引用或最新信息。
 - **选题**：内容对象是否具体，是否值得做。
@@ -56,6 +58,8 @@ description: CFlow 总入口和编排系统。用于从任意内容任务、素�
 一个任务可以串联、并行或回跳多个 skills。例如：
 
 ```text
+cflow -> cflow-brief -> cflow-topic -> cflow-angle
+cflow -> cflow-brief -> cflow-draft
 cflow -> cflow-marketing -> cflow-package
 cflow -> cflow-angle -> cflow-draft -> cflow-package
 cflow-edit -> cflow-voice -> cflow-package
@@ -123,6 +127,7 @@ cflow-research -> cflow-draft -> cflow-seo
 
 ## CFlow Skills
 
+- `$cflow-brief`：写作前采访、讨论、追问缺失信息、整理素材包和生成 content brief。
 - `$cflow-topic`：找选题、评估选题、建立选题池。
 - `$cflow-angle`：把话题变成有阅读理由的角度。
 - `$cflow-research`：搜寻资料、事实核查、来源评估、证据包和引用整理。
