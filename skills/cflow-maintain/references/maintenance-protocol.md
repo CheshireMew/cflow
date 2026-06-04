@@ -21,6 +21,7 @@
 - 统筹和套件路由放 `cflow-content`。
 - 发现和评分放 `cflow-topic`。
 - 内容对标、账号拆解、爆款结构拆解和 copywork 颗粒度检查放 `cflow-benchmark`。
+- SEO/GEO/AEO/LLMO、搜索意图、关键词、主题集群和 AI 可引用结构放 `cflow-seo`。
 - 案例故事、真实性标注、未来预演、假设故事和支撑性例子放 `cflow-case`。
 - 主张和读者张力放 `cflow-angle`。
 - 从结构到草稿的指导放 `cflow-draft`。
@@ -41,6 +42,7 @@ D:\Code\cflow
     ├── cflow-content
     ├── cflow-topic
     ├── cflow-benchmark
+    ├── cflow-seo
     ├── cflow-case
     ├── cflow-angle
     ├── cflow-draft
