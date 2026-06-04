@@ -1,0 +1,4 @@
+interface:
+  display_name: "CFlow 内容创作工作台"
+  short_description: "End-to-end content workflow from idea to publishable draft"
+  default_prompt: "Use $cflow-content to turn a rough idea into a content plan, draft, and revision path."

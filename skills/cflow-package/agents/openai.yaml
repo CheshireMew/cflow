@@ -1,0 +1,4 @@
+interface:
+  display_name: "CFlow 包装系统"
+  short_description: "Create titles hooks CTAs and platform publishing variants"
+  default_prompt: "Use $cflow-package to create titles hooks and platform variants for this piece."

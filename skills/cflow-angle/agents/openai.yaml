@@ -1,0 +1,4 @@
+interface:
+  display_name: "CFlow 角度系统"
+  short_description: "Turn plain topics into sharp readable content angles"
+  default_prompt: "Use $cflow-angle to find the strongest angle for this content topic."

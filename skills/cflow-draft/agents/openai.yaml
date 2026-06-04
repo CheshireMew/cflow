@@ -1,0 +1,4 @@
+interface:
+  display_name: "CFlow 成稿系统"
+  short_description: "Draft publishable content from briefs notes and source material"
+  default_prompt: "Use $cflow-draft to write a publishable draft from this brief and material."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "CFlow 复盘系统"
+  short_description: "Review published content and turn feedback into reusable lessons"
+  default_prompt: "Use $cflow-review to analyze this content result and extract lessons for next time."

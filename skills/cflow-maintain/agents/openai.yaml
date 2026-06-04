@@ -1,0 +1,4 @@
+interface:
+  display_name: "CFlow 自更新维护系统"
+  short_description: "Maintain and update CFlow skills with approval gates"
+  default_prompt: "Use $cflow-maintain to classify these new writing rules and propose updates to the CFlow skill suite."
