@@ -27,6 +27,7 @@
 - 案例故事、真实性标注、未来预演、假设故事和支撑性例子放 `cflow-case`。
 - 主张和读者张力放 `cflow-angle`。
 - 从结构到草稿的指导放 `cflow-draft`。
+- 短帖、短视频脚本、小红书图文、社交帖、短内容系列和长文拆短放 `cflow-shortform`。
 - 修改诊断和声音保留放 `cflow-edit`。
 - 作者声音画像、写作人格、灵魂倾向和表达禁区放 `cflow-voice`。
 - 硬广/软广、offer、CTA 强度、funnel stage 和转化路径放 `cflow-marketing`。
@@ -50,6 +51,7 @@ D:\Code\cflow
     ├── cflow-case
     ├── cflow-angle
     ├── cflow-draft
+    ├── cflow-shortform
     ├── cflow-edit
     ├── cflow-voice
     ├── cflow-marketing

@@ -64,6 +64,7 @@ CFlow 以中文为真源。
 - `cflow-case`：案例故事、真实性标注、未来预演、假设故事、支撑性例子。
 - `cflow-angle`：读者张力、核心主张、角度选择、premise 强化。
 - `cflow-draft`：从 brief、笔记、转录或素材写完整一稿。
+- `cflow-shortform`：短帖、短视频脚本、小红书图文、社交帖、短内容系列和长文拆短。
 - `cflow-edit`：已有草稿诊断、编辑深度、声音保留、降低 AI 味。
 - `cflow-voice`：作者声音画像、写作人格、灵魂倾向、表达禁区。
 - `cflow-marketing`：硬广/软广、offer、CTA、funnel stage、转化路径。
