@@ -1,5 +1,9 @@
 # SEO / GEO / AEO 系统
 
+## 共享合同
+
+搜索可发现性受 `$cflow` 的 `references/content-production-contract.md` 约束。本文件只维护搜索意图、关键词角色、结构化答案、FAQ 和可引用段落。SEO 不能为了关键词牺牲读者任务。
+
 ## 搜索意图
 
 先判断搜索者真正要完成什么任务：

@@ -1,5 +1,9 @@
 # 内容对标系统
 
+## 共享合同
+
+对标拆解和迁移受 `$cflow` 的 `references/content-production-contract.md` 约束。本文件只维护对标筛选、copywork 颗粒度和可迁移机制。学到的通用写作规则要回到共享合同或对应专项 skill，不在对标中另立规则。
+
 ## 对标筛选
 
 优先选择这些对标：

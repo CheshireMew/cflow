@@ -1,5 +1,9 @@
 # 角度模式
 
+## 共享合同
+
+角度设计受 `$cflow` 的 `references/content-production-contract.md` 约束。本文件只维护读者张力、核心主张、premise 和 payoff 的上游判断。
+
 ## 强角度类型
 
 - **矛盾**：大家以为是 X，但实践中是 Y。

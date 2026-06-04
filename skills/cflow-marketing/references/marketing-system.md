@@ -1,5 +1,9 @@
 # 营销转化系统
 
+## 共享合同
+
+营销转化受 `$cflow` 的 `references/content-production-contract.md` 约束。本文件只维护 offer、funnel、CTA、转化桥和营销形态。强表达规则是共享合同在转化场景里的应用。
+
 ## 夸张边界
 
 营销文案不反感夸张。夸张是制造注意力、紧迫感和欲望的工具，不是天然错误。
