@@ -19,6 +19,7 @@
 把每项内容放到最窄、最耐用的边界。
 
 - 统筹和套件路由放 `cflow-content`。
+- 资料搜寻、事实核查、来源评估、证据包和引用整理放 `cflow-research`。
 - 发现和评分放 `cflow-topic`。
 - 内容对标、账号拆解、爆款结构拆解和 copywork 颗粒度检查放 `cflow-benchmark`。
 - 分享动机、传播单元、二创入口、截图传播和病毒式传播复盘放 `cflow-viral`。
@@ -41,6 +42,7 @@
 D:\Code\cflow
 └── skills
     ├── cflow-content
+    ├── cflow-research
     ├── cflow-topic
     ├── cflow-benchmark
     ├── cflow-viral

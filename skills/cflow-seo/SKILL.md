@@ -9,14 +9,14 @@ description: CFlow 搜索可发现性系统。用于让内容更容易被搜索�
 
 负责内容的“可发现性”和“可被搜索/AI 系统理解”。名字叫 SEO，但功能覆盖传统 SEO、GEO、AEO、LLMO、AI answer 可引用结构和搜索结果点击。
 
-`cflow-seo` 不是联网搜索工具本身。需要实时 SERP、竞品页面、关键词趋势、政策、价格、人物、产品或事实核查时，使用当前环境可用的联网工具；没有联网工具时，只能做离线结构优化，并明确标注“未联网验证”。
+`cflow-seo` 不是联网搜索工具本身。需要实时 SERP、竞品页面、关键词趋势、政策、价格、人物、产品或事实核查时，资料搜寻和来源整理交给 `$cflow-research`；没有联网工具时，只能做离线结构优化，并明确标注“未联网验证”。
 
-不要替代 `$cflow-draft` 写完整草稿；不要替代 `$cflow-package` 做普通标题包装；不要替代 `$cflow-marketing` 设计 offer 和转化路径；不要替代 `$cflow-benchmark` 做完整竞品内容拆解。
+不要替代 `$cflow-draft` 写完整草稿；不要替代 `$cflow-package` 做普通标题包装；不要替代 `$cflow-marketing` 设计 offer 和转化路径；不要替代 `$cflow-benchmark` 做完整竞品内容拆解；不要替代 `$cflow-research` 做通用资料研究和事实核查。
 
 ## 工作流
 
 1. **判断任务**：确认用户要的是关键词/搜索意图、SEO brief、GEO 结构、内容优化、SERP 竞品判断、发布前检查还是搜索复盘。
-2. **判断数据状态**：区分已联网验证、用户提供来源、离线假设和待核查信息。
+2. **判断数据状态**：区分已联网验证、用户提供来源、离线假设和待核查信息；需要来源包时交给 `$cflow-research`。
 3. **识别搜索意图**：判断 informational、commercial、transactional、navigational、local、comparison、troubleshooting 或 mixed intent。
 4. **建立主题结构**：确定主关键词、长尾词、实体、同义表达、相关问题、主题集群和内部链接方向。
 5. **设计可发现内容结构**：给出 H1/H2、摘要、定义、步骤、比较、FAQ、证据、可引用段落和结论前置。

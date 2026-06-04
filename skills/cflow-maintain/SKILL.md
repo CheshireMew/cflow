@@ -56,6 +56,7 @@ CFlow 以中文为真源。
 ## 路由边界
 
 - `cflow-content`：总入口、端到端路由、事实源维护。
+- `cflow-research`：资料搜寻、事实核查、来源评估、证据包和引用整理。
 - `cflow-topic`：选题发现、选题评分、内容栏目、选题池。
 - `cflow-benchmark`：内容对标、账号拆解、爆款结构拆解、copywork 颗粒度检查。
 - `cflow-viral`：分享动机、传播单元、二创入口、截图传播和病毒式传播复盘。
