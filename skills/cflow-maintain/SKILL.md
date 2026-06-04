@@ -57,6 +57,7 @@ CFlow 以中文为真源。
 
 - `cflow-content`：总入口、端到端路由、事实源维护。
 - `cflow-topic`：选题发现、选题评分、内容栏目、选题池。
+- `cflow-benchmark`：内容对标、账号拆解、爆款结构拆解、copywork 颗粒度检查。
 - `cflow-case`：案例故事、真实性标注、未来预演、假设故事、支撑性例子。
 - `cflow-angle`：读者张力、核心主张、角度选择、premise 强化。
 - `cflow-draft`：从 brief、笔记、转录或素材写完整一稿。

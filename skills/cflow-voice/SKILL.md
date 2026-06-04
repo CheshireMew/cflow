@@ -18,8 +18,9 @@ description: CFlow 作者声音系统。用于建立、维护和调用作者的 
 3. **提炼稳定项**：只记录反复出现、可复用、能指导未来写作的特征。
 4. **标记证据**：每条画像尽量关联样本依据，不凭空发明人格。
 5. **定义禁区**：记录作者不会说、不能说、说了会不像本人的表达。
-6. **生成 voice profile**：输出可被 draft/edit/package 调用的简洁画像。
-7. **调用或交接**：需要成稿交给 `$cflow-draft`；需要改稿交给 `$cflow-edit`；需要标题和 CTA 交给 `$cflow-package`。
+6. **区分 AI 味和本人味**：AI 味不是唯一问题；真正目标是让文本像作者本人，而不是只让文本“不像 AI”。
+7. **生成 voice profile**：输出可被 draft/edit/package 调用的简洁画像。
+8. **调用或交接**：需要成稿交给 `$cflow-draft`；需要改稿交给 `$cflow-edit`；需要标题和 CTA 交给 `$cflow-package`。
 
 ## 输出
 
