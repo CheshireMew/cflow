@@ -1,4 +1,0 @@
-interface:
-  display_name: "CFlow 内容创作工作台"
-  short_description: "统筹选题、角度、成稿、包装和复盘的完整内容生产流程"
-  default_prompt: "Use $cflow-content 帮我把一个粗糙想法推进成内容计划、草稿和修改路径。"

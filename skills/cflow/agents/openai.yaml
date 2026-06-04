@@ -1,0 +1,4 @@
+interface:
+  display_name: "CFlow 总入口"
+  short_description: "编排和调度 CFlow skills，按任务层级组合选题、角度、成稿、营销、包装、研究和复盘"
+  default_prompt: "Use $cflow 帮我判断这个任务需要哪些 CFlow skills 协作，并推进到合适的交付物。"

@@ -18,7 +18,7 @@
 
 把每项内容放到最窄、最耐用的边界。
 
-- 统筹和套件路由放 `cflow-content`。
+- 统筹、套件路由、任务编排和能力层拆解放 `cflow`。
 - 资料搜寻、事实核查、来源评估、证据包和引用整理放 `cflow-research`。
 - 发现和评分放 `cflow-topic`。
 - 内容对标、账号拆解、爆款结构拆解和 copywork 颗粒度检查放 `cflow-benchmark`。
@@ -43,7 +43,7 @@
 ```text
 D:\Code\cflow
 └── skills
-    ├── cflow-content
+    ├── cflow
     ├── cflow-research
     ├── cflow-topic
     ├── cflow-benchmark
@@ -133,7 +133,8 @@ CFlow 使用中文作为唯一正文真源：
 - 迁移后不要保留旧 helper、旧流程或兼容解释。
 - 优先移动规则，不复制规则。
 - `SKILL.md` 保持精简，详细模式放 `references/`。
-- 只有套件边界变化时才更新 `cflow-content` 路由。
+- 只有套件边界、编排规则或协作调度变化时才更新 `cflow`。
+- 规则真源归属和任务执行协作不是一回事。每条规则只保留一个主要归属，是为了避免知识库漂移；一次用户任务可以由多个 skills 串联、并行或回跳协作完成。
 - 只有展示 metadata 过时时才更新 `agents/openai.yaml`。
 
 ## 审批标准
