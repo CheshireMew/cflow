@@ -46,6 +46,7 @@ description: CFlow 内容创作总入口。用于把想法、笔记、转录、�
 
 - `$cflow-topic`：找选题、评估选题、建立选题池。
 - `$cflow-benchmark`：找内容对标、拆爆款结构、做 copywork 颗粒度检查。
+- `$cflow-viral`：研究分享动机、传播单元、二创入口、截图传播和 viral 复盘。
 - `$cflow-seo`：做 SEO/GEO/AEO/LLMO、搜索意图、关键词、主题集群和 AI 可引用结构。
 - `$cflow-case`：为观点、角度、论证或转化寻找和设计案例故事。
 - `$cflow-angle`：把话题变成有阅读理由的角度。
