@@ -60,6 +60,7 @@ CFlow 以中文为真源。
 - `cflow-angle`：读者张力、核心主张、角度选择、premise 强化。
 - `cflow-draft`：从 brief、笔记、转录或素材写完整一稿。
 - `cflow-edit`：已有草稿诊断、编辑深度、声音保留、降低 AI 味。
+- `cflow-voice`：作者声音画像、写作人格、灵魂倾向、表达禁区。
 - `cflow-marketing`：硬广/软广、offer、CTA、funnel stage、转化路径。
 - `cflow-package`：标题、hook、CTA、封面文案、平台发布版本。
 - `cflow-review`：发布后学习、指标解释、反馈循环。

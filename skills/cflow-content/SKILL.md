@@ -15,7 +15,7 @@ description: CFlow 内容创作总入口。用于把想法、笔记、转录、�
 2. 目标读者
 3. 平台和格式
 4. 原始素材
-5. 作者声音
+5. 作者声音画像
 6. 发布约束
 
 如果缺少某项，先根据上下文保守推断并说明假设。只有当缺失信息会实质改变交付物时才提问。
@@ -41,6 +41,7 @@ description: CFlow 内容创作总入口。用于把想法、笔记、转录、�
 - `$cflow-angle`：把话题变成有阅读理由的角度。
 - `$cflow-draft`：从 brief 或素材写成完整草稿。
 - `$cflow-edit`：诊断并修改已有草稿。
+- `$cflow-voice`：建立和调用作者声音画像、写作人格、灵魂倾向和表达禁区。
 - `$cflow-marketing`：判断硬广/软广、offer、CTA、funnel stage 和转化路径。
 - `$cflow-package`：做标题、hook、CTA、封面文案和平台版本。
 - `$cflow-review`：分析发布结果并提炼复用经验。

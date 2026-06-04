@@ -1,0 +1,4 @@
+interface:
+  display_name: "CFlow 作者声音系统"
+  short_description: "建立、维护和调用作者声音画像、表达倾向与表达禁区的系统"
+  default_prompt: "Use $cflow-voice 帮我从这些样稿中提炼作者声音画像和表达禁区。"

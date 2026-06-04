@@ -23,6 +23,7 @@
 - 主张和读者张力放 `cflow-angle`。
 - 从结构到草稿的指导放 `cflow-draft`。
 - 修改诊断和声音保留放 `cflow-edit`。
+- 作者声音画像、写作人格、灵魂倾向和表达禁区放 `cflow-voice`。
 - 硬广/软广、offer、CTA 强度、funnel stage 和转化路径放 `cflow-marketing`。
 - 标题、hook、CTA 和平台发布变体放 `cflow-package`。
 - 表现学习和下一次实验放 `cflow-review`。
@@ -40,6 +41,7 @@ D:\Code\cflow
     ├── cflow-angle
     ├── cflow-draft
     ├── cflow-edit
+    ├── cflow-voice
     ├── cflow-marketing
     ├── cflow-package
     ├── cflow-review
