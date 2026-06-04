@@ -1,0 +1,4 @@
+interface:
+  display_name: "CFlow 案例故事系统"
+  short_description: "寻找、设计和标注支撑观点的案例故事与具体场景素材系统"
+  default_prompt: "Use $cflow-case 帮我为这个观点找几个能增加趣味或提供支撑的案例故事。"

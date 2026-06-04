@@ -20,6 +20,7 @@
 
 - 统筹和套件路由放 `cflow-content`。
 - 发现和评分放 `cflow-topic`。
+- 案例故事、真实性标注、未来预演、假设故事和支撑性例子放 `cflow-case`。
 - 主张和读者张力放 `cflow-angle`。
 - 从结构到草稿的指导放 `cflow-draft`。
 - 修改诊断和声音保留放 `cflow-edit`。
@@ -38,6 +39,7 @@ D:\Code\cflow
 └── skills
     ├── cflow-content
     ├── cflow-topic
+    ├── cflow-case
     ├── cflow-angle
     ├── cflow-draft
     ├── cflow-edit
