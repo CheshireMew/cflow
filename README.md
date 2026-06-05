@@ -64,7 +64,8 @@ cflow-review -> cflow-topic -> cflow-package
 | Skill | 什么时候用 | 示例 |
 |---|---|---|
 | `$cflow` | 总入口、任务编排、能力层拆解、素材边界和端到端交付边界。 | `Use $cflow 帮我判断这件事该怎么拆成内容生产流程。` |
-| `$cflow-brief` | 想法还模糊，需要采访、讨论、追问、盘点素材或生成 content brief。 | `Use $cflow-brief 先问我问题，把这个想法整理成 brief。` |
+| `$cflow-asset` | 需要从旧笔记、manifest、日记或混合个人记录中提取原则、风险、商业资产、开放问题和专项 handoff。 | `Use $cflow-asset 帮我从这些旧笔记里提取可复用的信息资产。` |
+| `$cflow-brief` | 写作任务还模糊，需要采访、讨论、追问、盘点当前写作素材或生成 content brief。 | `Use $cflow-brief 先问我问题，把这个想法整理成 brief。` |
 | `$cflow-topic` | 需要生成选题、评估选题、建立选题池、把模糊方向变成具体 topic。 | `Use $cflow-topic 从这些业务背景里找 10 个值得写的选题。` |
 | `$cflow-angle` | 选题太平，需要主张、矛盾、读者张力、premise 或更 hookable 的 angle。 | `Use $cflow-angle 帮我比较这几个角度哪个最有阅读理由。` |
 | `$cflow-research` | 需要查资料、核查事实、找来源、找数据、整理 source pack 或 research brief。 | `Use $cflow-research 帮我查证这个说法，并整理可引用来源。` |

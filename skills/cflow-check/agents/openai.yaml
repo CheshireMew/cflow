@@ -1,0 +1,4 @@
+interface:
+  display_name: "CFlow 发布前质检"
+  short_description: "检查内容能不能发、哪里会失败、下一刀该交给哪个 skill"
+  default_prompt: "Use $cflow-check 帮我做发布前质检。"

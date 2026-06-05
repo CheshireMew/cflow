@@ -220,6 +220,8 @@
 
 外部信号只能辅助判断，不能替代内容拆解。没有指标和评论时，可以做内容本体复盘；有指标和评论时，要用它们验证或推翻内容本体假设。
 
+不同平台的指标先归一到读者行为，再进入诊断。常读用户数、关注转化、复访评论等优先看账号关系资产；完读率、watch time 和 drop-off 看 retention；点赞、收藏、评论看 engagement；转发、截图、复述和二创看 share / spread；点击、私信、购买、预约看 conversion。用户提供的赞阅比、转阅比、完读率等本地阈值只能作为该账号或该平台的 benchmark，不写成 CFlow 通用标准，也不能用阅读量单独判断内容好坏。
+
 ## 表现信号诊断地图
 
 - 低 reach、强反馈：可能是包装或分发问题。
@@ -233,6 +235,8 @@
 - 前期 retention 强、后期掉：hook 有效，但正文没有刷新张力或兑现 payoff。
 - Watch time 高但 conversion 低：内容有趣，但 desire、proof 或 action 不够。
 - 低 reach 但 conversion 强：题可能窄但有价值，值得用更好的包装重复这个栏目。
+- 同文案不同视觉表现差异大：优先判断封面信息层级、主视觉、thumbnail text、系列识别和第一眼读者任务；只把视觉机制交给 `$cflow-image`，不要直接否定内容主张。
+- 同系列视觉表现逐渐走弱：可能是模板疲劳、变化区不足、固定元素压过本期主张，或老读者识别强但新读者看不懂。
 
 ## 复盘快照
 
@@ -301,7 +305,7 @@ Drop-off points：
 
 ### 可发现元数据
 
-写入 `profiles/content-assets/` 的资产文件必须带 frontmatter，方便 `$cflow` 和相关生产 skill 发现。
+写入 `profiles/content-assets/` 的资产文件必须带 frontmatter，方便 `$cflow` 和相关生产 skill 发现。资产 frontmatter 是运行资产发现真源，必须通过 `scripts/quick_validate.py` 校验。
 
 ```yaml
 ---
@@ -313,6 +317,8 @@ triggers:
   - ""
 use_when:
 avoid_when:
+evidence_level:
+overuse_risk:
 source: cflow-review
 ---
 ```
@@ -325,9 +331,11 @@ source: cflow-review
 - `triggers`：用户任务或素材中可能出现的触发词、场景、动作或内容类型。
 - `use_when`：什么时候应该读取并采用。
 - `avoid_when`：什么时候不该采用，避免模板误用。
+- `evidence_level`：资产证据强度，建议使用 A / B / C / D 或“待验证”。A 表示多次复现且有指标或样本支撑；B 表示有明确样本和部分表现证据；C 表示内容机制清楚但证据弱；D / 待验证表示只适合候选参考。
+- `overuse_risk`：过度套用风险，说明什么时候重复使用会模板化、污染作者声音、误导事实边界或让栏目变腻。
 - `source`：默认写 `cflow-review`，说明资产来自复盘沉淀。
 
-没有 frontmatter 的旧资产仍可人工点名使用，但不视为稳定可发现资产。
+没有 frontmatter 或缺少必填字段的资产不是稳定可发现资产，应补齐元数据后再进入自动发现。
 
 ### 资产层级
 

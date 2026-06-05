@@ -20,6 +20,7 @@ description: CFlow 总入口和编排系统。用于从任意内容任务、素�
 - 选择、排序和组合合适的 CFlow skills。
 - 维护素材边界、联网边界、协作边界和交付边界。
 - 维护内容资产发现边界，把可复用生产资产交给合适专项 skill 使用。
+- 识别个人信息资产提取任务，把旧笔记、manifest 和混合个人记录交给专用 asset skill，而不是自动推进内容生产链。
 - 维护内容生产合同，保证成稿、改稿、包装、营销、短内容、传播、SEO 和案例写入共享同一套底层写作纪律。
 - 在用户连续纠偏时重新判断路由，而不是继续局部润色。
 
@@ -27,11 +28,13 @@ description: CFlow 总入口和编排系统。用于从任意内容任务、素�
 
 - 写完整可发布一稿：交给 `$cflow-draft`。
 - 深度改稿或结构手术：交给 `$cflow-edit`。
+- 发布前质检、能不能发、发哪版和下一刀判断：交给 `$cflow-check`。
 - 标题、hook、CTA、开头和短发布文案：交给 `$cflow-package`。
 - offer、funnel、转化路径和营销形态：交给 `$cflow-marketing`。
 - 事实核查、资料搜寻和来源包：交给 `$cflow-research`。
 - 作者声音画像和表达禁区：交给 `$cflow-voice`。
 - 写作前采访、讨论、追问和 brief 构建：交给 `$cflow-brief`。
+- 旧笔记、manifest、个人知识库和混合记录的信息资产提取：交给 `$cflow-asset`。
 - 账号诊断、选题、角度、案例、短内容、SEO、viral、图像和复盘：交给对应专项 skill。
 
 用户点名 `$cflow` 时，默认需要入口判断、能力层拆解、交互流程或交接 brief。`cflow` 可以输出轻量判断、路由建议、追问、preflight、content brief 或交接说明；不得输出完整草稿、完整改稿、完整包装成品、完整营销稿或完整研究报告。用户想跳过入口交互直接生产，应显式使用对应专项 skill，例如 `$cflow-draft`、`$cflow-edit` 或 `$cflow-package`。
@@ -44,6 +47,7 @@ description: CFlow 总入口和编排系统。用于从任意内容任务、素�
 
 - **内容生产合同**：目标、读者、篇幅、交付形态、发布约束、主张、表达强度和共享写作纪律。
 - **写作前简报**：是否需要采访、讨论、追问缺失信息或整理素材包。
+- **信息资产提取**：是否需要从旧笔记、manifest、日记或混合个人记录中提取原则、风险、决策框架、商业资产和开放问题。
 - **素材边界**：用户提供了什么，哪些不能新增。
 - **事实核查**：是否需要搜索、来源、引用或最新信息。
 - **选题**：内容对象是否具体，是否值得做。
@@ -58,16 +62,18 @@ description: CFlow 总入口和编排系统。用于从任意内容任务、素�
 - **发布约束**：用户明确提到的平台、字数、链接、审核、比例、媒介或入口限制。
 - **视觉资产**：封面、配图、thumbnail、图片 prompt。
 - **复盘**：发布后指标、评论、反馈和下一轮实验。
-- **生产资产**：是否有 `profiles/content-assets/` 中的模式、模板、案例或资产卡片可复用。
+- **运行资产**：是否有 `profiles/voice-profile.md`、`profiles/content-assets/`、`profiles/leadgen-profile.md` 或 `profiles/account-production-system.md` 可按任务边界调用。
 
 一个任务可以串联、并行或回跳多个 skills。例如：
 
 ```text
 cflow -> cflow-brief -> cflow-topic -> cflow-angle
+cflow -> cflow-asset -> cflow-voice
+cflow -> cflow-asset -> cflow-maintain
 cflow -> cflow-account -> cflow-topic -> cflow-package
 cflow -> cflow-brief -> cflow-draft
 cflow -> cflow-marketing -> cflow-package
-cflow -> cflow-angle -> cflow-draft -> cflow-package
+cflow -> cflow-angle -> cflow-draft -> cflow-check -> cflow-package
 cflow-edit -> cflow-voice -> cflow-package
 cflow-research -> cflow-draft -> cflow-seo
 ```
@@ -80,7 +86,7 @@ cflow-research -> cflow-draft -> cflow-seo
 2. **拆能力层**：列出这次任务需要哪些能力层，不把任务压扁成单一 skill。写作任务要尽可能识别完整 skill sequence，按流程顺序推进，而不是直接上手写。
 3. **定主边界**：确认主素材、目标读者、篇幅、交付形态、发布约束、表达目标、主动作和是否需要联网。
    复杂内容任务、外部 brief、连续纠偏、多 skill 任务或用户点名 `$cflow` 的写作任务，按 `references/cflow-framework.md` 的执行闸门先完成 preflight。`cflow` 只输出下一步交互流程或交接 brief，不直接成稿。
-4. **发现生产资产**：任务涉及成稿、改稿、包装、短内容、传播或复盘沉淀时，检查 `profiles/content-assets/` 是否有匹配资产；匹配资产只作为生产参考，不替代用户素材和事实边界。
+4. **发现运行资产**：按 `references/cflow-framework.md` 的 profile 发现规则检查 voice、content assets、leadgen 或账号生产系统资产；资产只作为当前任务参考，不替代用户素材、事实边界或通用 skill 规则。
 5. **选主 skill**：选择当前最核心的专项 skill。主 skill 负责推进主要交付物。
 6. **选协作 skill**：如果有上游或下游缺口，安排协作 skill，而不是让主 skill 越界硬写。
 7. **执行最小链路**：用能完成目标的最短协作链路，不为了完整流程而堆 skill。
@@ -88,11 +94,12 @@ cflow-research -> cflow-draft -> cflow-seo
 
 ## 共享边界
 
-所有会生产、改写、包装或迁移文字的专项 skill，都受 `references/content-production-contract.md` 约束。素材边界、事实核查边界、主动作识别和连续纠偏的详细规则在 `references/cflow-framework.md` 中维护，`SKILL.md` 只保留入口调度职责。
+所有会生产、改写、包装或迁移文字的专项 skill，都受 `references/content-production-contract.md` 约束。路由、preflight、合同状态、profile 发现、主动作识别和连续纠偏的详细规则在 `references/cflow-framework.md` 中维护，`SKILL.md` 只保留入口调度职责。
 
 ## CFlow Skills
 
-- `$cflow-brief`：写作前采访、讨论、追问缺失信息、整理素材包和生成 content brief。
+- `$cflow-brief`：写作前采访、讨论、追问缺失信息、整理当前写作任务素材包和生成 content brief。
+- `$cflow-asset`：从旧笔记、manifest、日记和混合个人记录中提取信息资产、个人原则、风险清单、决策框架、商业资产、开放问题和专项 handoff。
 - `$cflow-topic`：找选题、评估选题、建立选题池。
 - `$cflow-angle`：把话题变成有阅读理由的角度。
 - `$cflow-research`：搜寻资料、事实核查、来源评估、证据包和引用整理。
@@ -104,6 +111,7 @@ cflow-research -> cflow-draft -> cflow-seo
 - `$cflow-draft`：从 brief、角度、大纲、转录、笔记或素材写完整可发布一稿。
 - `$cflow-shortform`：写超短、短内容、短内容系列和长文拆短。
 - `$cflow-edit`：诊断并修改已有草稿。
+- `$cflow-check`：做发布前质检，判断能不能发、哪里会失败、下一刀交给哪个 skill。
 - `$cflow-voice`：建立和调用作者声音画像、写作人格、灵魂倾向和表达禁区。
 - `$cflow-marketing`：判断硬广/软广、offer、CTA、funnel stage 和转化路径。
 - `$cflow-package`：做标题、hook、开头、CTA 和短发布文案。

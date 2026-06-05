@@ -12,6 +12,16 @@ LOCAL_REF_RE = re.compile(r"`((?:references|agents)/[^`]+?)`")
 SKILL_REF_RE = re.compile(r"\$((?:cflow)(?:-[a-z0-9]+)*)\b")
 CFLOW_LIST_RE = re.compile(r"-\s+`\$((?:cflow)(?:-[a-z0-9]+)*)`")
 NAME_RE = re.compile(r"^cflow(?:-[a-z0-9]+)*$")
+ASSET_REQUIRED_SCALARS = {
+    "asset_name",
+    "asset_type",
+    "use_when",
+    "avoid_when",
+    "evidence_level",
+    "overuse_risk",
+    "source",
+}
+ASSET_REQUIRED_LISTS = {"skills", "triggers"}
 
 
 @dataclass(frozen=True)
@@ -48,6 +58,43 @@ def parse_frontmatter(path: Path) -> tuple[dict[str, str], str, str | None]:
     if not match:
         return {}, text, "missing frontmatter block"
     return parse_simple_mapping(match.group(1)), text[match.end() :], None
+
+
+def parse_asset_mapping(raw: str) -> dict[str, str | list[str]]:
+    data: dict[str, str | list[str]] = {}
+    current_list_key: str | None = None
+
+    for line in raw.splitlines():
+        if not line.strip() or line.lstrip().startswith("#"):
+            continue
+
+        stripped = line.strip()
+        if stripped.startswith("- ") and current_list_key:
+            value = stripped[2:].strip()
+            if len(value) >= 2 and value[0] == value[-1] and value[0] in {"'", '"'}:
+                value = value[1:-1]
+            existing = data.setdefault(current_list_key, [])
+            if isinstance(existing, list):
+                existing.append(value)
+            continue
+
+        current_list_key = None
+        if ":" not in stripped:
+            continue
+
+        key, value = stripped.split(":", 1)
+        key = key.strip()
+        value = value.strip()
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in {"'", '"'}:
+            value = value[1:-1]
+
+        if value:
+            data[key] = value
+        else:
+            data[key] = []
+            current_list_key = key
+
+    return data
 
 
 def parse_agent_yaml(path: Path) -> tuple[dict[str, dict[str, str]], str | None]:
@@ -170,6 +217,39 @@ def validate_cflow_index(skills_dir: Path, skill_names: set[str]) -> list[Issue]
     return issues
 
 
+def validate_content_assets(root: Path, skill_names: set[str]) -> list[Issue]:
+    assets_dir = root / "profiles" / "content-assets"
+    if not assets_dir.exists():
+        return []
+
+    issues: list[Issue] = []
+    for path in sorted(assets_dir.rglob("*.md")):
+        text = path.read_text(encoding="utf-8")
+        match = FRONTMATTER_RE.match(text)
+        if not match:
+            issues.append(Issue("FAIL", path, "content asset missing frontmatter block"))
+            continue
+
+        metadata = parse_asset_mapping(match.group(1))
+        for key in sorted(ASSET_REQUIRED_SCALARS):
+            value = metadata.get(key)
+            if not isinstance(value, str) or not value.strip():
+                issues.append(Issue("FAIL", path, f"content asset frontmatter missing non-empty {key}"))
+
+        for key in sorted(ASSET_REQUIRED_LISTS):
+            value = metadata.get(key)
+            if not isinstance(value, list) or not any(item.strip() for item in value):
+                issues.append(Issue("FAIL", path, f"content asset frontmatter missing non-empty list {key}"))
+
+        skills = metadata.get("skills")
+        if isinstance(skills, list):
+            for skill in skills:
+                if skill and skill not in skill_names:
+                    issues.append(Issue("FAIL", path, f"content asset references missing skill {skill!r}"))
+
+    return issues
+
+
 def validate_repository(root: Path) -> list[Issue]:
     skills_dir = root / "skills"
     if not skills_dir.exists():
@@ -188,6 +268,7 @@ def validate_repository(root: Path) -> list[Issue]:
         issues.extend(validate_skill(skill_dir, skill_names))
 
     issues.extend(validate_cflow_index(skills_dir, skill_names))
+    issues.extend(validate_content_assets(root, skill_names))
     return issues
 
 
@@ -214,4 +295,3 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

@@ -8,14 +8,16 @@
 
 - 完整成稿：`$cflow-draft`
 - 深度改稿：`$cflow-edit`
+- 发布前质检：`$cflow-check`
 - hook / title / CTA：`$cflow-package`
 - offer / funnel / 转化路径：`$cflow-marketing`
 - 搜索 / 核查 / 来源：`$cflow-research`
 - 作者声音：`$cflow-voice`
 - 写作前采访 / 讨论 / brief：`$cflow-brief`
+- 旧笔记 / 个人知识 / 信息资产提取：`$cflow-asset`
 - 其他能力层交给对应 skill
 
-内容生产、改写、包装、营销、短内容、传播、SEO、案例写入和对标迁移共享 `content-production-contract.md`。专项 skill 只维护自己的应用规则，不另立一套通用写作纪律。
+内容生产、改写、包装、营销、短内容、传播、SEO、案例写入和对标迁移共享 `content-production-contract.md`。本文件只维护路由、preflight、合同状态、协作链路和运行资产发现；不另立素材边界、事实边界或通用写作纪律。
 
 ## 非排他入口
 
@@ -36,6 +38,7 @@
 
 - 用户点 `$cflow`：先拆任务层，再组合专项 skill。
 - 用户说“先聊聊”“采访我”“我不知道怎么说”：先交给 `$cflow-brief`。
+- 用户给旧笔记、manifest、日记或混合个人记录，并要求提取有用信息、沉淀资产、看出个人倾向：先交给 `$cflow-asset`。
 - 用户点 `$cflow-package`：如果 CTA、offer 或 funnel 不清，先交给 `$cflow-marketing`。
 - 用户点 `$cflow-marketing`：如果要写 hook 或简介第一句，交给 `$cflow-package`。
 - 用户点 `$cflow-package` 且只要 CTA 文案变体：offer、CTA 类型和转化路径稳定时由 `$cflow-package` 执行；策略不清先回 `$cflow-marketing`。
@@ -49,9 +52,11 @@
 
 | 能力层 | 判断问题 | 主要 skill |
 |---|---|---|
-| 内容生产合同 | 目标、读者、篇幅、交付形态、发布约束、主张、表达强度和共享写作纪律 | `$cflow` |
-| 写作前简报 | 是否需要采访、讨论、追问缺失信息或整理素材包 | `$cflow-brief` |
-| 素材边界 | 用户提供了什么，哪些不能新增 | `$cflow` |
+| 内容生产合同 | 目标、读者、篇幅、交付形态、发布约束、主张、表达强度和共享写作纪律 | `content-production-contract.md` |
+| 内容品牌资产 | 爆款、传播、转化或系列内容是否需要沉淀为作者识别、信任、复访理由、栏目承接或账号关系资产 | `$cflow` 共享合同；账号级诊断交给 `$cflow-account`，发布后证据交给 `$cflow-review` |
+| 写作前简报 | 是否需要采访、讨论、追问缺失信息或整理当前写作任务素材包 | `$cflow-brief` |
+| 信息资产提取 | 是否需要从旧笔记、manifest、日记、复盘或混合个人记录中提取原则、风险、决策框架、商业资产、开放问题和专项 handoff | `$cflow-asset` |
+| 素材边界 | 用户提供了什么，哪些不能新增 | `content-production-contract.md` |
 | 事实核查 | 是否需要搜索、来源、引用、最新信息 | `$cflow-research` |
 | 选题 | 内容对象是否具体、值得做 | `$cflow-topic` |
 | 角度 | 是否有读者张力和核心主张 | `$cflow-angle` |
@@ -62,6 +67,7 @@
 | 声音 | 是否需要作者声音画像或表达禁区 | `$cflow-voice` |
 | 营销 | 是否需要判断 offer、CTA 类型、CTA 强度、funnel、转化路径 | `$cflow-marketing` |
 | 包装 | 是否需要 hook、标题、开头、CTA 文案变体或短发布文案 | `$cflow-package` |
+| 发布前质检 | 这条内容现在是否值得发、哪里会失败、用什么形态发、下一刀交给谁 | `$cflow-check` |
 | SEO | 是否需要搜索意图、关键词、结构化答案 | `$cflow-seo` |
 | 对标 | 是否需要找对标、拆爆款、迁移模式 | `$cflow-benchmark` |
 | 传播 | 是否需要发布前分享动机、二创入口、截图点或传播单元设计 | `$cflow-viral` |
@@ -80,6 +86,8 @@
 
 ```text
 brief -> topic -> angle
+asset -> voice
+asset -> maintain
 brief -> draft
 angle -> draft -> package
 marketing -> package
@@ -112,6 +120,34 @@ viral 发现已有发布后传播证据 -> review
 ```
 
 回跳不是失败，是正确的边界控制。
+
+### 链路依赖
+
+组合多个 skills 时，不要只列工具名。每一步都要说明它解决的缺口、产出的交接物、为什么下游需要这个交接物。上一步输出必须能成为下一步的有效输入，否则这条链路只是堆流程。
+
+判断方式：
+
+```text
+当前缺口是什么？
+这个 skill 产出什么交接物？
+下游 skill 为什么需要它？
+是否有互不依赖的步骤可以并行？
+是否需要质检、发布包装或复盘沉淀阶段？
+```
+
+例如，对标不是为了“先走一个 benchmark”，而是为了给选题、角度、结构或包装提供参照系；研究不是为了补百科，而是为了给主张、案例、SEO 或成稿补证据边界；包装不是成稿后的装饰，而是把已经稳定的主张、offer 或 CTA 变成读者入口。
+
+### 组合方案输出
+
+当用户问“怎么组合”“从哪里开始”“完整流程是什么”时，可以给 2-4 条按复杂度递增的 CFlow 路径。每条路径必须写清适用条件、起点输入、终点交付物和跳过后果。不要把示例路径升级成默认硬编码流程。
+
+复杂度可以按任务成熟度划分：
+
+- 两步：只补一个明显上游或下游缺口。
+- 三到四步：覆盖输入澄清、核心生产和包装 / 质检。
+- 五步以上：只用于重要内容、长期决策、系列生产或需要复盘沉淀的任务。
+
+生产完成后，继续判断是否需要发布前质检、包装或沉淀：能不能发、哪里会失败和下一刀交给 `$cflow-check`；AI 味、结构问题和声音问题由 `$cflow-check` 路由到 `$cflow-edit` 或 `$cflow-voice`；标题、hook、CTA 和短发布文案交给 `$cflow-package`；搜索结构交给 `$cflow-seo`；传播入口交给 `$cflow-viral`；发布后表现学习交给 `$cflow-review`；如果复盘发现长期规则缺口，再交给 `$cflow-maintain`。
 
 ## 编排合同
 
@@ -149,6 +185,8 @@ preflight 固定检查：
 流程顺序：
 当前执行 skill：
 是否达到可交接状态：
+是否需要质检 / 发布包装 / 复盘沉淀：
+是否需要发布前质检：
 后续回跳条件：
 禁止动作：
 ```
@@ -172,7 +210,7 @@ preflight 固定检查：
 写作任务进入 `$cflow` 时，preflight 必须尽可能识别完整 skill sequence，而不是只判断下一步。下一步只是当前执行点；流程顺序才是端到端任务路径。例如：
 
 ```text
-cflow -> cflow-brief -> cflow-angle -> cflow-case -> cflow-draft -> cflow-edit -> cflow-package
+cflow -> cflow-brief -> cflow-angle -> cflow-case -> cflow-draft -> cflow-check -> cflow-edit -> cflow-package
 ```
 
 如果流程顺序不确定，先说明不确定点并把当前执行 skill 放在能消除不确定性的最上游位置。用户点名 `$cflow` 时，不允许走 `cflow -> cflow-draft` 的直接短链路；目标看似明确时，也只能输出交接 brief 或下一步交互流程。
@@ -202,20 +240,25 @@ fact_gap / unstable_contract -> weak_angle -> story_needed -> voice_gap -> hando
 
 普通内容生产资产放在 `profiles/content-assets/`，不是 `skills/` 真源。它们可以是优质内容样本、可迁移模式、生产资产、实验记录、voice 证据或复盘快照。
 
-当任务涉及成稿、改稿、包装、短内容、传播、转化、案例、声音或复盘沉淀时，先检查 `profiles/content-assets/` 是否有匹配资产。匹配方式优先看资产 frontmatter：
+当任务涉及成稿、改稿、包装、短内容、传播、转化、案例、声音或复盘沉淀时，先检查 `profiles/content-assets/` 是否有匹配资产。匹配方式优先看资产 frontmatter。资产 frontmatter 必须包含 `asset_name`、`asset_type`、`skills`、`triggers`、`use_when`、`avoid_when`、`evidence_level`、`overuse_risk` 和 `source`，其中 `skills` 和 `triggers` 必须是非空列表：
 
 ```yaml
+asset_name:
 asset_type:
 skills:
 triggers:
 use_when:
 avoid_when:
+evidence_level:
+overuse_risk:
+source:
 ```
 
 发现资产后：
 
 - 只读取与当前任务匹配的资产，不批量加载整个资产库。
 - 把资产作为生产参考、结构模式、检查清单或局部手术依据，不升级成长期 CFlow 规则。
+- 先看 `evidence_level` 和 `overuse_risk`；证据弱或过度套用风险高时，只作为候选参考，不作为主结构。
 - 仍以用户素材为事实边界，不用资产补造人物、数据、案例、承诺、服务或结果。
 - 如果资产会改变 CFlow 长期行为，输出维护建议并交给 `$cflow-maintain`。
 
@@ -226,6 +269,24 @@ avoid_when:
 - `$cflow-package`：可用资产做标题、hook、opening、CTA 和短发布文案策略。
 - `$cflow-viral`：可用资产做分享动机、传播单元、截图点、复述句和二创入口。
 - `$cflow-shortform`：可用资产做单点表达、首屏推进、短链路、段落密度和短脚本结构。
+
+## 发布前质检路由
+
+发布前质检的唯一真源是 `$cflow-check`。用户拿来接近完成的草稿、短内容、发布包、标题、视觉方案、链接文案或多版本候选，并问“能不能发、发哪版、哪里像 AI、传播效果怎么样、读者会不会买账”时，交给 `$cflow-check`。
+
+`cflow` 只负责识别这属于发布前质检，并把任务交给 `$cflow-check`；不得在本入口内维护第二套发布判断标准。需要完整写作、改稿、包装、传播设计、事实核查或发布后复盘时，由 `$cflow-check` 再路由到对应专项 skill。
+
+## Profile 发现
+
+`profiles/` 是运行资产，不是通用 skill 规则真源。不同 profile 的发现方式必须明确：
+
+- `profiles/voice-profile.md`：作者声音唯一画像。`$cflow-draft` 和 `$cflow-edit` 默认读取；`$cflow-voice` 负责创建和更新。
+- `profiles/content-assets/`：可复用内容生产资产。`$cflow` 负责发现候选资产，再按资产 frontmatter 交给对应生产 skill 使用。
+- `profiles/leadgen-profile.md`：个人引流资产档案。只有任务涉及转化、CTA、入口、发布包、引流动作，或用户点名相关资产时，交给 `$cflow-marketing` / `$cflow-package` 调用；不得把具体链接、邀请码或私有入口写进通用 skill 规则。
+- `profiles/account-production-system.md`：账号级生产系统资产。只有任务涉及账号诊断、栏目组合、主页承接、内容生产系统、账号复盘或账号级选题时，交给 `$cflow-account` 或由 `$cflow` 作为账号上下文调用。
+- 其他个人运行资产：例如个人原则、风险清单、商业资产、开放问题或决策框架。只有用户要求提取、沉淀、保存、写入或调用这些个人资产时，交给 `$cflow-asset`；不要在普通写作任务里主动读取整套个人资产。
+
+未命中这些触发条件时，不主动读取私有 profile。profile 可以影响当前任务判断，但不能替代用户当前指令、事实边界、稳定 brief 或通用 skill 规则。
 
 ## 平台处理
 
@@ -239,7 +300,7 @@ avoid_when:
 
 ## 素材边界
 
-用户提供了明确原始素材时，改写、包装、营销强化都不得新增未被素材支撑的事实、功能、服务、承诺或运营范围。
+素材边界的生产规则以 `content-production-contract.md` 为真源。本节只说明路由判断：用户提供了明确原始素材，而任务需要新增素材没有支撑的事实、功能、服务、承诺或运营范围时，不能继续在当前生产 skill 内硬写，必须删掉新增内容、标成“建议补充”，或回到上游补素材。
 
 允许：
 
@@ -259,7 +320,7 @@ avoid_when:
 
 ## 事实核查边界
 
-内容生产默认不联网。用户给出的产品信息、活动信息、卖点、时间节点、链接、案例和背景，默认属于“用户素材”。
+事实边界的生产规则以 `content-production-contract.md` 为真源。本节只说明什么时候路由到 `$cflow-research`。内容生产默认不联网；用户给出的产品信息、活动信息、卖点、时间节点、链接、案例和背景，默认属于“用户素材”。
 
 只有满足下面任一条件时，才交给 `$cflow-research`：
 

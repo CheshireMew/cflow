@@ -1,0 +1,5 @@
+interface:
+  display_name: "CFlow 信息资产"
+  short_description: "从旧笔记、manifest 和混合素材中提取个人原则、风险、资产和开放问题"
+  default_prompt: "Use $cflow-asset 帮我从这些旧笔记里提取可复用的信息资产。"
+
