@@ -37,6 +37,7 @@
 例子：
 
 - 用户点 `$cflow`：先拆任务层，再组合专项 skill。
+- 用户给外部方法论、样稿、对标拆解、课程笔记或失败反馈，并要求“吸收进 CFlow / 让 CFlow 学会”：先交给 `$cflow-absorb`。
 - 用户说“先聊聊”“采访我”“我不知道怎么说”：先交给 `$cflow-brief`。
 - 用户给旧笔记、manifest、日记或混合个人记录，并要求提取有用信息、沉淀资产、看出个人倾向：先交给 `$cflow-asset`。
 - 用户点 `$cflow-package`：如果 CTA、offer 或 funnel 不清，先交给 `$cflow-marketing`。
@@ -73,7 +74,8 @@
 | 传播 | 是否需要发布前分享动机、二创入口、截图点或传播单元设计 | `$cflow-viral` |
 | 图像 | 是否需要封面、配图、thumbnail、图片 prompt | `$cflow-image` |
 | 复盘 | 是否需要分析表现、评论、传播路径、转发截图、二创证据或下一轮实验 | `$cflow-review` |
-| 维护 | 是否需要修改 CFlow skill 本身 | `$cflow-maintain` |
+| 吸收进化 | 是否需要从方法论、样稿、对标、反馈或失败案例中提炼机制，并升级 CFlow 生产能力 | `$cflow-absorb` |
+| 治理维护 | 是否需要修改、合并、删除、重构、校验 CFlow skill，或处理唯一事实源、重复冲突、旧架构清理 | `$cflow-maintain` |
 | 生产资产 | 是否有已沉淀模式、模板、案例或资产卡片可复用 | `$cflow` 发现后交给对应生产 skill |
 
 一项任务可以有多个能力层。只选择必要层，不堆流程。
@@ -87,7 +89,8 @@
 ```text
 brief -> topic -> angle
 asset -> voice
-asset -> maintain
+asset -> absorb
+absorb -> maintain
 brief -> draft
 angle -> draft -> package
 marketing -> package
@@ -147,7 +150,7 @@ viral 发现已有发布后传播证据 -> review
 - 三到四步：覆盖输入澄清、核心生产和包装 / 质检。
 - 五步以上：只用于重要内容、长期决策、系列生产或需要复盘沉淀的任务。
 
-生产完成后，继续判断是否需要发布前质检、包装或沉淀：能不能发、哪里会失败和下一刀交给 `$cflow-check`；AI 味、结构问题和声音问题由 `$cflow-check` 路由到 `$cflow-edit` 或 `$cflow-voice`；标题、hook、CTA 和短发布文案交给 `$cflow-package`；搜索结构交给 `$cflow-seo`；传播入口交给 `$cflow-viral`；发布后表现学习交给 `$cflow-review`；如果复盘发现长期规则缺口，再交给 `$cflow-maintain`。
+生产完成后，继续判断是否需要发布前质检、包装或沉淀：能不能发、哪里会失败和下一刀交给 `$cflow-check`；AI 味、结构问题和声音问题由 `$cflow-check` 路由到 `$cflow-edit` 或 `$cflow-voice`；标题、hook、CTA 和短发布文案交给 `$cflow-package`；搜索结构交给 `$cflow-seo`；传播入口交给 `$cflow-viral`；发布后表现学习交给 `$cflow-review`；如果复盘发现可迁移生产机制，交给 `$cflow-absorb`；如果发现重复、冲突、旧架构或唯一事实源问题，再交给 `$cflow-maintain`。
 
 ## 编排合同
 
@@ -260,7 +263,7 @@ source:
 - 把资产作为生产参考、结构模式、检查清单或局部手术依据，不升级成长期 CFlow 规则。
 - 先看 `evidence_level` 和 `overuse_risk`；证据弱或过度套用风险高时，只作为候选参考，不作为主结构。
 - 仍以用户素材为事实边界，不用资产补造人物、数据、案例、承诺、服务或结果。
-- 如果资产会改变 CFlow 长期行为，输出维护建议并交给 `$cflow-maintain`。
+- 如果资产会改变 CFlow 长期生产行为，输出吸收建议并交给 `$cflow-absorb`；如果涉及去重、移动、删除或唯一事实源，再交给 `$cflow-maintain`。
 
 采用边界：
 
@@ -367,3 +370,8 @@ source:
 规则只能有一个主要真源，但任务执行可以多 skill 协作。
 
 维护时不要把“一个规则归一个 skill”误解成“一个任务只能用一个 skill”。规则归属解决的是知识库一致性；编排解决的是实际任务完成路径。
+
+`$cflow-absorb` 和 `$cflow-maintain` 的区别：
+
+- `$cflow-absorb` 先问“这份材料能让哪个生产 skill 变强”，负责吸收进化。
+- `$cflow-maintain` 先问“事实源是否唯一、规则是否重复冲突、旧架构是否清干净”，负责治理维护。

@@ -47,6 +47,7 @@ description: CFlow 总入口和编排系统。用于从任意内容任务、素�
 
 - **内容生产合同**：目标、读者、篇幅、交付形态、发布约束、主张、表达强度和共享写作纪律。
 - **写作前简报**：是否需要采访、讨论、追问缺失信息或整理素材包。
+- **吸收进化**：是否需要把外部方法论、样稿、反馈、对标或失败案例吸收到 CFlow 生产能力里。
 - **信息资产提取**：是否需要从旧笔记、manifest、日记或混合个人记录中提取原则、风险、决策框架、商业资产和开放问题。
 - **素材边界**：用户提供了什么，哪些不能新增。
 - **事实核查**：是否需要搜索、来源、引用或最新信息。
@@ -69,7 +70,8 @@ description: CFlow 总入口和编排系统。用于从任意内容任务、素�
 ```text
 cflow -> cflow-brief -> cflow-topic -> cflow-angle
 cflow -> cflow-asset -> cflow-voice
-cflow -> cflow-asset -> cflow-maintain
+cflow -> cflow-asset -> cflow-absorb
+cflow -> cflow-absorb -> cflow-maintain
 cflow -> cflow-account -> cflow-topic -> cflow-package
 cflow -> cflow-brief -> cflow-draft
 cflow -> cflow-marketing -> cflow-package
@@ -99,6 +101,7 @@ cflow-research -> cflow-draft -> cflow-seo
 ## CFlow Skills
 
 - `$cflow-brief`：写作前采访、讨论、追问缺失信息、整理当前写作任务素材包和生成 content brief。
+- `$cflow-absorb`：从方法论、样稿、对标、反馈和失败案例中提炼可迁移机制，并升级 CFlow 生产能力。
 - `$cflow-asset`：从旧笔记、manifest、日记和混合个人记录中提取信息资产、个人原则、风险清单、决策框架、商业资产、开放问题和专项 handoff。
 - `$cflow-topic`：找选题、评估选题、建立选题池。
 - `$cflow-angle`：把话题变成有阅读理由的角度。
@@ -117,7 +120,7 @@ cflow-research -> cflow-draft -> cflow-seo
 - `$cflow-package`：做标题、hook、开头、CTA 和短发布文案。
 - `$cflow-image`：做封面、插图、配图、文章头图、thumbnail text、cover text、视觉 brief 和图片 prompt。
 - `$cflow-review`：分析发布结果并提炼复用经验。
-- `$cflow-maintain`：在用户批准后更新、合并、删除、重构和校验 CFlow skill。
+- `$cflow-maintain`：治理、合并、删除、重构和校验 CFlow skill，处理唯一事实源、重复冲突和旧架构清理。
 
 ## 参考
 

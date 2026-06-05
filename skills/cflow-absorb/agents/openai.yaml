@@ -1,0 +1,4 @@
+interface:
+  display_name: "CFlow 吸收进化系统"
+  short_description: "从方法论、样稿、反馈和对标里提炼机制，并升级 CFlow 生产能力"
+  default_prompt: "Use $cflow-absorb 吸收这份材料，把可迁移机制升级到合适的 CFlow skill。"
