@@ -1,0 +1,4 @@
+interface:
+  display_name: "CFlow 账号诊断系统"
+  short_description: "诊断账号定位、内容栏目、主页表达、数据反馈和转化路径，并给出优先级建议"
+  default_prompt: "Use $cflow-account 帮我诊断这个账号的问题，并给出下一步建议。"

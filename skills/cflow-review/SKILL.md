@@ -21,6 +21,8 @@ description: CFlow 复盘系统。用于拆解优质内容、已发布内容、�
 
 `$cflow-review` 默认只输出复盘，不自动写文件。用户明确要求保存、建档、沉淀、写入或创建资产库时，才可以创建或更新复盘资产文件。禁止直接修改 `skills/`、`SKILL.md`、`references/` 或 agent metadata；如果复盘发现需要更新 skill 规则，输出维护建议并交给 `$cflow-maintain`。
 
+如果复盘发现某个机制不只是生产资产，而是会优化其他 CFlow skill 的长期行为、流程、边界或路由，必须输出维护交接包，提交给 `$cflow-maintain` 判断和执行。`$cflow-review` 只负责提供证据、可迁移机制和维护建议，不直接修改 skill 真源。
+
 ## 工作流
 
 1. 判断复盘对象：优质内容样本、已发布内容、失败草稿、低表现内容、评论反馈、创作者笔记或内容库。
@@ -31,8 +33,9 @@ description: CFlow 复盘系统。用于拆解优质内容、已发布内容、�
 6. 提炼可迁移经验，并做跨场景抽象检查。
 7. 执行沉淀动作判断：是否值得沉淀、沉淀成什么资产、归属哪个生产 skill、是否需要写入文件或交给维护入口。
 8. 如果值得沉淀但用户没有要求写入，输出可直接复用的资产卡片；如果用户明确要求保存、建档、沉淀、写入或创建资产库，再进入写入流程。
-9. 推荐下一步：复用结构、换题重做、扩展成栏目、迁移到其他交付形态、保存资产、做对照实验或放弃。
-10. 下一轮生产需要时，按机制归属交给 `$cflow-topic`、`$cflow-angle`、`$cflow-draft`、`$cflow-shortform`、`$cflow-package`、`$cflow-viral`、`$cflow-marketing` 或 `$cflow-case`；规则维护需要时交给 `$cflow-maintain`。
+9. 判断是否形成 skill 优化建议：只有会改变 CFlow 长期行为、流程、边界或路由时，才输出维护交接包；单次案例、账号私有条件、行业题材红利和未验证猜测不交给维护入口。
+10. 推荐下一步：复用结构、换题重做、扩展成栏目、迁移到其他交付形态、保存资产、做对照实验或放弃。
+11. 下一轮生产需要时，按机制归属交给 `$cflow-topic`、`$cflow-angle`、`$cflow-draft`、`$cflow-shortform`、`$cflow-package`、`$cflow-viral`、`$cflow-marketing` 或 `$cflow-case`；规则维护需要时交给 `$cflow-maintain`。
 
 ## 输出
 
@@ -49,6 +52,7 @@ description: CFlow 复盘系统。用于拆解优质内容、已发布内容、�
 - 应保留的经验
 - 可沉淀资产
 - 资产卡片
+- 维护交接包
 - 下一步内容动作
 - 缺失数据
 

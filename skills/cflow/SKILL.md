@@ -31,7 +31,7 @@ description: CFlow 总入口和编排系统。用于从任意内容任务、素�
 - 事实核查、资料搜寻和来源包：交给 `$cflow-research`。
 - 作者声音画像和表达禁区：交给 `$cflow-voice`。
 - 写作前采访、讨论、追问和 brief 构建：交给 `$cflow-brief`。
-- 选题、角度、案例、短内容、SEO、viral、图像和复盘：交给对应专项 skill。
+- 账号诊断、选题、角度、案例、短内容、SEO、viral、图像和复盘：交给对应专项 skill。
 
 只有当交付物非常短、目标明确、无需专项判断时，`cflow` 可以直接输出一个轻量结果；一旦涉及完整草稿、营销转化、hook、研究、声音或发布约束，就应进入专项 skill 或组合链路。
 
@@ -46,6 +46,7 @@ description: CFlow 总入口和编排系统。用于从任意内容任务、素�
 - **素材边界**：用户提供了什么，哪些不能新增。
 - **事实核查**：是否需要搜索、来源、引用或最新信息。
 - **选题**：内容对象是否具体，是否值得做。
+- **账号诊断**：账号定位、主页承诺、内容栏目、数据反馈、转化路径和生产系统是否需要诊断。
 - **角度**：是否有读者张力、核心主张和阅读理由。
 - **案例**：是否需要故事、例子、类比或真实性标注。
 - **成稿**：是否需要完整可发布一稿。
@@ -62,6 +63,7 @@ description: CFlow 总入口和编排系统。用于从任意内容任务、素�
 
 ```text
 cflow -> cflow-brief -> cflow-topic -> cflow-angle
+cflow -> cflow-account -> cflow-topic -> cflow-package
 cflow -> cflow-brief -> cflow-draft
 cflow -> cflow-marketing -> cflow-package
 cflow -> cflow-angle -> cflow-draft -> cflow-package
@@ -93,6 +95,7 @@ cflow-research -> cflow-draft -> cflow-seo
 - `$cflow-angle`：把话题变成有阅读理由的角度。
 - `$cflow-research`：搜寻资料、事实核查、来源评估、证据包和引用整理。
 - `$cflow-benchmark`：找内容对标、拆爆款结构、做 copywork 颗粒度检查。
+- `$cflow-account`：诊断账号定位、主页表达、栏目组合、数据反馈、转化路径和生产系统。
 - `$cflow-viral`：研究分享动机、传播单元、二创入口、截图传播和 viral 复盘。
 - `$cflow-seo`：做 SEO/GEO/AEO/LLMO、搜索意图、关键词、主题集群和 AI 可引用结构。
 - `$cflow-case`：为观点、角度、论证或转化寻找和设计案例故事。

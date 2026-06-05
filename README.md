@@ -14,6 +14,7 @@ CFlow 适合处理这些任务：
 - 对已有草稿做结构诊断、改稿、降 AI 味和声音保留。
 - 为内容设计标题、hook、opening、CTA、caption 和平台版本。
 - 判断内容是否承担营销转化，并设计 offer、funnel 和主动作。
+- 诊断内容账号的定位、主页表达、栏目组合、表现反馈、转化路径和生产系统。
 - 为观点找案例、故事、类比、反例和可标注真实性的素材。
 - 为内容做研究、事实核查、来源包和 SEO/GEO/AEO/LLMO 结构。
 - 把长内容拆成短帖、短视频脚本、小红书图文、thread 或私域文案。
@@ -48,6 +49,7 @@ Use $cflow-marketing 帮我判断这条内容应该做软广、硬广还是完�
 cflow -> cflow-brief -> cflow-topic -> cflow-angle
 cflow -> cflow-brief -> cflow-draft
 cflow -> cflow-angle -> cflow-draft -> cflow-package
+cflow -> cflow-account -> cflow-topic -> cflow-package
 cflow -> cflow-marketing -> cflow-package
 cflow-research -> cflow-draft -> cflow-seo
 cflow-edit -> cflow-voice -> cflow-package
@@ -67,6 +69,7 @@ cflow-review -> cflow-topic -> cflow-package
 | `$cflow-angle` | 选题太平，需要主张、矛盾、读者张力、premise 或更 hookable 的 angle。 | `Use $cflow-angle 帮我比较这几个角度哪个最有阅读理由。` |
 | `$cflow-research` | 需要查资料、核查事实、找来源、找数据、整理 source pack 或 research brief。 | `Use $cflow-research 帮我查证这个说法，并整理可引用来源。` |
 | `$cflow-benchmark` | 需要找对标、拆爆款、拆账号、做 copywork、迁移别人的内容模式。 | `Use $cflow-benchmark 帮我找 5 个值得模仿的账号并拆结构。` |
+| `$cflow-account` | 需要诊断自己的账号定位、主页、栏目、数据反馈、转化路径或生产系统。 | `Use $cflow-account 帮我看看这个账号为什么没起色。` |
 | `$cflow-viral` | 需要提高分享、转发、截图传播、二创、讨论度或设计 viral 机制。 | `Use $cflow-viral 诊断这条内容为什么不容易被转发。` |
 | `$cflow-seo` | 需要 SEO/GEO/AEO/LLMO、关键词、搜索意图、FAQ、结构化答案或 AI 可引用结构。 | `Use $cflow-seo 把这篇文章改成更容易被搜索和 AI answer 引用的结构。` |
 | `$cflow-case` | 观点太干，需要真实案例、假设故事、类比、反面案例、微场景或未来预演。 | `Use $cflow-case 给这个观点找 3 个不同类型的案例。` |
