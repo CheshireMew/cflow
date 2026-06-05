@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 FRONTMATTER_RE = re.compile(r"\A---\r?\n(.*?)\r?\n---\r?\n", re.DOTALL)
-LOCAL_REF_RE = re.compile(r"`((?:references|agents)/[^`]+?)`")
+LOCAL_REF_RE = re.compile(r"`((?:(?:\.\./[a-z0-9-]+/)?(?:references|agents))/[^`]+?)`")
 SKILL_REF_RE = re.compile(r"\$((?:cflow)(?:-[a-z0-9]+)*)\b")
 CFLOW_LIST_RE = re.compile(r"-\s+`\$((?:cflow)(?:-[a-z0-9]+)*)`")
 NAME_RE = re.compile(r"^cflow(?:-[a-z0-9]+)*$")

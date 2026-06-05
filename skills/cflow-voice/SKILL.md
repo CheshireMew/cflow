@@ -7,7 +7,7 @@ description: CFlow 作者声音系统。用于建立、维护和调用作者的 
 
 ## 边界
 
-负责“作者是谁，以及他会怎样表达”。不要替代 `$cflow-draft` 写完整草稿，也不要替代 `$cflow-edit` 做完整改稿。
+负责“作者是谁，以及他会怎样表达”。
 
 `cflow-voice` 产出并维护唯一可复用的作者声音画像，供其他 CFlow skill 调用。唯一持久化位置是 `profiles/voice-profile.md`；不要按题材、平台、项目或文章创建多个 voice profile。题材差异只能写进同一个 profile 的场景调用规则。
 

@@ -1,6 +1,6 @@
 # CFlow
 
-CFlow 是一套中文内容工作流 skills，用来把选题、资料、角度、成稿、改稿、营销、包装、视觉和复盘组织成可协作的内容生产系统。
+CFlow 是一套中文内容工作流 skills，用来把选题、资料、角度、成稿、改稿、发布前质检、营销、包装、视觉、复盘、吸收进化和个人运行资产组织成可协作的内容生产系统。
 
 仓库中的 `skills/` 是唯一真实源码；不要直接编辑 Codex 发现目录里的链接副本，例如 `$HOME\.codex\skills\cflow-*`。
 
@@ -9,9 +9,12 @@ CFlow 是一套中文内容工作流 skills，用来把选题、资料、角度�
 CFlow 适合处理这些任务：
 
 - 从模糊想法整理出可写的 content brief。
+- 从旧笔记、manifest、日记或混合记录里提取可复用的信息资产。
+- 从方法论、样稿、对标、用户反馈或失败案例里吸收可迁移机制。
 - 判断一个选题是否值得做，并找到更有读者张力的 angle。
 - 把笔记、转录、素材或 brief 写成可发布草稿。
 - 对已有草稿做结构诊断、改稿、降 AI 味和声音保留。
+- 对接近完成的内容做发布前质检，判断能不能发、发哪版、下一刀交给谁。
 - 为内容设计标题、hook、opening、CTA、caption 和平台版本。
 - 判断内容是否承担营销转化，并设计 offer、funnel 和主动作。
 - 诊断内容账号的定位、主页表达、栏目组合、表现反馈、转化路径和生产系统。
@@ -37,8 +40,10 @@ Use $cflow-brief 先采访我，帮我把这个想法整理成可写作的 brief
 Use $cflow-angle 帮我为这个选题找到最强角度。
 Use $cflow-draft 根据这个 brief 和素材写一版可发布草稿。
 Use $cflow-edit 帮我诊断并修改这篇草稿，同时保留我的声音。
+Use $cflow-check 帮我做发布前质检，判断这条内容能不能发。
 Use $cflow-package 为这篇内容生成标题、hook 和平台发布版本。
 Use $cflow-marketing 帮我判断这条内容应该做软广、硬广还是完整转化路径。
+Use $cflow-absorb 吸收这份材料，把可迁移机制升级到合适的 CFlow skill。
 ```
 
 点名某个 skill 只代表“从这个视角开始”，不代表排他执行。比如 `$cflow-package` 发现 offer 不清时，应该回跳 `$cflow-marketing`；`$cflow-draft` 发现主张弱时，应该先用 `$cflow-angle`。
@@ -47,13 +52,17 @@ Use $cflow-marketing 帮我判断这条内容应该做软广、硬广还是完�
 
 ```text
 cflow -> cflow-brief -> cflow-topic -> cflow-angle
+cflow -> cflow-asset -> cflow-voice
+cflow -> cflow-asset -> cflow-absorb
+cflow -> cflow-absorb -> cflow-maintain
 cflow -> cflow-brief -> cflow-draft
-cflow -> cflow-angle -> cflow-draft -> cflow-package
+cflow -> cflow-angle -> cflow-draft -> cflow-check -> cflow-package
 cflow -> cflow-account -> cflow-topic -> cflow-package
 cflow -> cflow-marketing -> cflow-package
 cflow-research -> cflow-draft -> cflow-seo
 cflow-edit -> cflow-voice -> cflow-package
 cflow-benchmark -> cflow-angle -> cflow-draft
+cflow-review -> cflow-absorb
 cflow-review -> cflow-topic -> cflow-package
 ```
 
@@ -63,8 +72,9 @@ cflow-review -> cflow-topic -> cflow-package
 
 | Skill | 什么时候用 | 示例 |
 |---|---|---|
-| `$cflow` | 总入口、任务编排、能力层拆解、素材边界和端到端交付边界。 | `Use $cflow 帮我判断这件事该怎么拆成内容生产流程。` |
+| `$cflow` | 总入口、任务编排、能力层拆解、素材边界、运行资产发现和端到端交付边界。 | `Use $cflow 帮我判断这件事该怎么拆成内容生产流程。` |
 | `$cflow-asset` | 需要从旧笔记、manifest、日记或混合个人记录中提取原则、风险、商业资产、开放问题和专项 handoff。 | `Use $cflow-asset 帮我从这些旧笔记里提取可复用的信息资产。` |
+| `$cflow-absorb` | 需要从外部方法论、优质内容、样稿、课程笔记、对标拆解、用户反馈或失败案例中提炼机制，并升级生产能力。 | `Use $cflow-absorb 吸收这份材料，让 CFlow 学会里面真正可迁移的机制。` |
 | `$cflow-brief` | 写作任务还模糊，需要采访、讨论、追问、盘点当前写作素材或生成 content brief。 | `Use $cflow-brief 先问我问题，把这个想法整理成 brief。` |
 | `$cflow-topic` | 需要生成选题、评估选题、建立选题池、把模糊方向变成具体 topic。 | `Use $cflow-topic 从这些业务背景里找 10 个值得写的选题。` |
 | `$cflow-angle` | 选题太平，需要主张、矛盾、读者张力、premise 或更 hookable 的 angle。 | `Use $cflow-angle 帮我比较这几个角度哪个最有阅读理由。` |
@@ -77,6 +87,7 @@ cflow-review -> cflow-topic -> cflow-package
 | `$cflow-draft` | 已经有 brief、angle、大纲、笔记、转录或素材，需要写完整一稿。 | `Use $cflow-draft 根据这份 brief 写一篇 newsletter 草稿。` |
 | `$cflow-shortform` | 需要短帖、短视频脚本、小红书图文、X/Twitter、LinkedIn、thread 或长文拆短。 | `Use $cflow-shortform 把这篇长文拆成 5 条 LinkedIn 短帖。` |
 | `$cflow-edit` | 已有草稿，需要结构手术、段落重排、清晰化、降 AI 味、保留作者声音。 | `Use $cflow-edit 诊断这篇草稿的问题，并做最小必要修改。` |
+| `$cflow-check` | 内容接近完成，需要发布前质检、版本选择、AI 味判断、传播风险判断或下一刀路由。 | `Use $cflow-check 帮我判断这条内容能不能发，下一刀该改哪里。` |
 | `$cflow-voice` | 需要建立 voice profile、提炼作者声音、判断不像本人之处、整理表达禁区。 | `Use $cflow-voice 从这些样稿里提炼我的写作声音。` |
 | `$cflow-marketing` | 内容要服务转化，需要判断硬广/软广、offer、CTA、funnel、lead magnet 或购买路径。 | `Use $cflow-marketing 帮我设计这条内容的主 CTA 和转化路径。` |
 | `$cflow-package` | 内容接近完成，需要标题、hook、opening、subtitle、CTA、caption 或平台发布包。 | `Use $cflow-package 给这篇文章起标题并写 5 个开头。` |
@@ -96,6 +107,16 @@ CFlow 默认不联网。用户提供的产品信息、活动信息、卖点、�
 
 基于用户素材改写、包装或营销强化时，不得新增素材没有支撑的事实、功能、服务、承诺或运营范围。确实需要补信息时，应单独标成“建议补充”，不要混进成稿。
 
+## 运行资产和 profiles
+
+`profiles/` 是个人运行资产，不是通用 skill 规则真源。它只在任务相关时被调用，不能替代当前用户指令、事实边界或 `skills/` 中的通用规则。
+
+- `profiles/voice-profile.md`：唯一作者声音画像，由 `$cflow-voice` 维护，`$cflow-draft` 和 `$cflow-edit` 默认读取。
+- `profiles/content-assets/`：可复用内容生产资产，靠 frontmatter 标注适用 skill、触发条件、证据强度和过度套用风险。
+- `profiles/leadgen-profile.md`：个人引流资产，转化、CTA、发布包和入口相关任务才调用。
+- `profiles/account-production-system.md`：账号级生产系统资产，账号诊断、栏目组合、主页承接和账号级选题时调用。
+- 其他 `profiles/*.md`：个人原则、风险、商业资产、开放问题或决策框架，默认由 `$cflow-asset` 在用户明确要求时提取、保存或调用。
+
 ## 维护原则
 
 - 先判断问题类型，再决定修法。
@@ -110,6 +131,7 @@ CFlow 默认不联网。用户提供的产品信息、活动信息、卖点、�
 
 ```text
 cflow/
+  profiles/            # 个人运行资产，不是通用 skill 规则真源
   skills/              # skill 真源，中文规则继续放这里
   scripts/             # 校验、索引、迁移、生成等维护脚本
   tests/               # 结构校验和回归测试
@@ -143,6 +165,7 @@ python scripts/quick_validate.py
 - `$cflow-*` 引用指向真实 skill。
 - `agents/openai.yaml` 结构满足 CFlow agent metadata 约定。
 - `cflow` 总入口列出的 `$cflow-*` 与实际 skill 目录一致。
+- `profiles/content-assets/` 里的资产 frontmatter 满足运行资产发现约定，并且引用的 skill 真实存在。
 
 ## 生成索引
 
@@ -152,7 +175,7 @@ python scripts/quick_validate.py
 python scripts/build_registry.py --output build/cflow-registry.json
 ```
 
-索引由 `skills/` 真源生成，包含 skill 名称、description、reference 文件、agent metadata 和正文中引用到的 `$cflow-*`。
+索引由 `skills/` 真源生成，包含 skill 名称、description、reference 文件、agent metadata 和正文中引用到的 `$cflow-*`。`profiles/` 不进入 registry；它是运行时资产层。
 
 ## 同步 Codex 个人 Skill 链接
 
@@ -194,11 +217,12 @@ python -m unittest discover -s tests
 
 ## 推荐维护流程
 
-1. 判断用户输入是规则、流程、缺陷报告、测试用例、平台笔记、声音准则、删除请求还是 skill 系统架构请求。
+1. 判断用户输入是内容生产、运行资产、吸收进化、规则治理、缺陷报告、测试用例、平台笔记、声音准则、删除请求还是 skill 系统架构请求。
 2. 读取相关 `SKILL.md` 和必要 `references/`，确认已有覆盖、重复、冲突或缺失。
-3. 给出明确修改计划，说明要改哪些 skill 文件或直接服务 skill 生命周期的工具链文件、移动什么、删除什么、如何校验。
-4. 用户明确批准后再编辑 skill 文件。
-5. 运行 `python scripts/quick_validate.py`。
-6. 创建、删除或重命名 skill 后运行 `powershell -ExecutionPolicy Bypass -File scripts/sync_personal_skills.ps1 -PruneStale`。
-7. 涉及脚本时运行 `python -m unittest discover -s tests`。
-8. 只有用户明确要求提交，或批准计划包含提交时，才在校验通过后提交。
+3. 如果是新方法论、样稿、对标或失败反馈，先用 `$cflow-absorb` 判断该升级哪个生产能力；如果涉及去重、移动、删除或唯一事实源，再交给 `$cflow-maintain`。
+4. 给出明确修改计划，说明要改哪些 skill、reference、profile 或直接服务 skill 生命周期的工具链文件，移动什么、删除什么、如何校验。
+5. 用户明确批准后再编辑 skill 文件、reference 文件或需要持久化的 profile 资产。
+6. 运行 `python scripts/quick_validate.py`。
+7. 创建、删除或重命名 skill 后运行 `powershell -ExecutionPolicy Bypass -File scripts/sync_personal_skills.ps1 -PruneStale`。
+8. 涉及脚本时运行 `python -m unittest discover -s tests`。
+9. 只有用户明确要求提交，或批准计划包含提交时，才在校验通过后提交。

@@ -52,7 +52,7 @@ class CFlowExecutionProtocolTests(unittest.TestCase):
 
         self.assertNotIn("默认直接生成可发布一稿", draft)
         self.assertIn("上游已经产出明确交接 brief", draft)
-        self.assertIn("禁止成稿", draft)
+        self.assertIn("先收口缺口", draft)
 
     def test_ai_feedback_failure_state_is_hard_route(self) -> None:
         framework = read_text("skills/cflow/references/cflow-framework.md")
@@ -75,7 +75,7 @@ class CFlowExecutionProtocolTests(unittest.TestCase):
         package = read_text("skills/cflow-package/SKILL.md")
         framework = read_text("skills/cflow/references/cflow-framework.md")
 
-        self.assertIn("转化策略层", marketing)
+        self.assertIn("负责转化策略", marketing)
         self.assertIn("CTA 类型", marketing)
         self.assertIn("CTA 强度", marketing)
         self.assertIn("包装表达层", package)
@@ -88,7 +88,7 @@ class CFlowExecutionProtocolTests(unittest.TestCase):
         review = read_text("skills/cflow-review/SKILL.md")
         framework = read_text("skills/cflow/references/cflow-framework.md")
 
-        self.assertIn("不负责发布后复盘主权", viral)
+        self.assertIn("已有发布数据、评论、转发、截图、二创、跨环境搬运或传播路径证据时，交给 `$cflow-review` 做复盘", viral)
         self.assertIn("发布后传播表现也归 `$cflow-review`", review)
         self.assertIn("viral 发现已有发布后传播证据 -> review", framework)
 

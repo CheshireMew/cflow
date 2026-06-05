@@ -11,8 +11,6 @@ description: CFlow 搜索可发现性系统。用于让内容更容易被搜索�
 
 `cflow-seo` 不是联网搜索工具本身。需要实时 SERP、竞品页面、关键词趋势、来源包、事实核查或用户明确要求最新资料时，资料搜寻和来源整理交给 `$cflow-research`；普通 SEO/GEO 结构优化可以基于用户素材离线完成，不因为素材涉及政策、价格、人物或产品就自动联网。
 
-不要替代 `$cflow-draft` 写完整草稿；不要替代 `$cflow-package` 做普通标题包装；不要替代 `$cflow-marketing` 设计 offer 和转化路径；不要替代 `$cflow-benchmark` 做完整竞品内容拆解；不要替代 `$cflow-research` 做通用资料研究和事实核查。
-
 ## 工作流
 
 1. **判断任务**：确认用户要的是关键词/搜索意图、SEO brief、GEO 结构、内容优化、SERP 竞品判断、发布前检查还是搜索复盘。
