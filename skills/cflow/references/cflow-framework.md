@@ -28,6 +28,7 @@
 这次任务真正需要哪些能力层？
 哪个 skill 是主执行？
 哪些 skill 是上游或下游协作？
+需要调动哪些 skills，流程顺序是什么？
 是否需要回跳或重新路由？
 ```
 
@@ -128,6 +129,68 @@ marketing 发现需要第一句 hook -> package
 ```
 
 不是每次都要展示完整合同。简单任务可以隐式推断；复杂或连续纠偏任务要显式说明。
+
+## 执行闸门
+
+复杂内容任务、外部 brief、连续纠偏、用户点名 `$cflow` 或任务可能进入多个专项 skill 时，必须先完成 preflight。preflight 可以内部完成，不必每次完整展示给用户；但没有完成判断前，禁止直接成稿、改稿或包装。
+
+preflight 固定检查：
+
+```text
+任务类型：
+已知合同：
+缺失合同：
+合同状态：
+需要调动的 skills：
+流程顺序：
+当前执行 skill：
+是否允许直接成稿：
+后续回跳条件：
+禁止动作：
+```
+
+合同状态只允许落到下列之一：
+
+| 合同状态 | 路由 | 禁止动作 |
+|---|---|---|
+| `stable_contract` | 进入 `$cflow-draft`、`$cflow-shortform`、`$cflow-package` 或其他执行 skill | 禁止继续追问不影响方向的细枝末节 |
+| `unstable_contract` | 进入 `$cflow-brief` | 禁止输出完整正文 |
+| `weak_angle` | 进入 `$cflow-angle` | 禁止把项目资料整理成说明文 |
+| `story_needed` | 进入 `$cflow-case` | 禁止直接编故事或用宏观制度案例冒充生活故事 |
+| `ai_feedback` | 进入 `$cflow-edit` 做根因诊断 | 禁止连续重写 |
+| `fact_gap` | 进入 `$cflow-research` | 禁止把未核查外部事实写成确定事实 |
+| `voice_gap` | 进入 `$cflow-voice` 或先建立轻量声音合同 | 禁止用通用中性解释腔替代作者声音 |
+
+外部 sponsor brief、项目推广 brief、合作邀约或品牌素材属于高风险输入。只要篇幅、联网范围、交付形态、目标读者、作者身份、核心角度或 sponsor 味道强度会改变成稿方向，合同状态就是 `unstable_contract` 或 `weak_angle`，不能进入 `$cflow-draft`。
+
+连续纠偏属于状态切换信号，不是继续局部润色的请求。如果用户连续指出“太长、太 AI、角度不对、案例不贴、声音不对、没有趣味、排版像 AI”，必须重新跑 preflight，并把合同状态改到对应上游层级。
+
+写作任务进入 `$cflow` 时，preflight 必须尽可能识别完整 skill sequence，而不是只判断下一步。下一步只是当前执行点；流程顺序才是端到端任务路径。例如：
+
+```text
+cflow -> cflow-brief -> cflow-angle -> cflow-case -> cflow-draft -> cflow-edit -> cflow-package
+```
+
+如果流程顺序不确定，先说明不确定点并把当前执行 skill 放在能消除不确定性的最上游位置。简单任务可以走短链路，例如 `cflow -> cflow-draft`，但仍要完成隐式流程判断，不能因为目标看似明确就跳过能力层识别。
+
+## 强制路由
+
+这些路由是硬约束，不是建议：
+
+- 缺篇幅、联网范围、交付形态、作者身份且会改变正文形态：`unstable_contract -> $cflow-brief`。
+- 项目 brief 还没有作者判断，只能回答“项目是什么”：`weak_angle -> $cflow-angle`。
+- 用户要求真实故事、历史故事、生活细节或普通人场景：`story_needed -> $cflow-case`。
+- 用户连续反馈 AI、模板、说明书腔、排版 AI：`ai_feedback -> $cflow-edit` 先诊断。
+- 输出需要新增外部事实、具体历史细节、当前项目状态或来源：`fact_gap -> $cflow-research`。
+- 用户明确要求像本人、保留声音、不要 AI 味且缺少声音依据：`voice_gap -> $cflow-voice`。
+
+如果一个任务同时命中多个状态，先处理会改变方向的上游状态。优先级：
+
+```text
+fact_gap / unstable_contract -> weak_angle -> story_needed -> voice_gap -> stable_contract -> draft/edit/package
+```
+
+`ai_feedback` 是例外：一旦用户连续反馈 AI 或模板化，先暂停当前生产链路，进入 `$cflow-edit` 做根因诊断，再决定回到 angle、case、voice、draft 或 package。
 
 ## 生产资产发现
 
