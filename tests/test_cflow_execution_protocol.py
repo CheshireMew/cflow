@@ -37,7 +37,7 @@ class CFlowExecutionProtocolTests(unittest.TestCase):
         self.assertIn("skill sequence", cflow)
         self.assertIn("按流程顺序推进", cflow)
         self.assertIn("不是只判断下一步", framework)
-        self.assertIn("不能因为目标看似明确就跳过能力层识别", framework)
+        self.assertIn("目标看似明确时，也只能输出交接 brief", framework)
 
     def test_sponsor_project_brief_requires_preflight_not_direct_draft(self) -> None:
         framework = read_text("skills/cflow/references/cflow-framework.md")
@@ -51,7 +51,7 @@ class CFlowExecutionProtocolTests(unittest.TestCase):
         draft = read_text("skills/cflow-draft/SKILL.md")
 
         self.assertNotIn("默认直接生成可发布一稿", draft)
-        self.assertIn("只有轻量合同稳定时", draft)
+        self.assertIn("上游已经产出明确交接 brief", draft)
         self.assertIn("禁止成稿", draft)
 
     def test_ai_feedback_failure_state_is_hard_route(self) -> None:
@@ -69,6 +69,28 @@ class CFlowExecutionProtocolTests(unittest.TestCase):
         for requirement in ["人", "动作", "阻碍", "具体物件", "现场顺序"]:
             self.assertIn(requirement, case)
         self.assertIn("前 120 字", case)
+
+    def test_marketing_and_package_have_separate_cta_boundaries(self) -> None:
+        marketing = read_text("skills/cflow-marketing/SKILL.md")
+        package = read_text("skills/cflow-package/SKILL.md")
+        framework = read_text("skills/cflow/references/cflow-framework.md")
+
+        self.assertIn("转化策略层", marketing)
+        self.assertIn("CTA 类型", marketing)
+        self.assertIn("CTA 强度", marketing)
+        self.assertIn("包装表达层", package)
+        self.assertIn("CTA 策略", package)
+        self.assertIn("文案变体", package)
+        self.assertIn("策略不清先回 `$cflow-marketing`", framework)
+
+    def test_viral_post_publish_review_routes_to_review(self) -> None:
+        viral = read_text("skills/cflow-viral/SKILL.md")
+        review = read_text("skills/cflow-review/SKILL.md")
+        framework = read_text("skills/cflow/references/cflow-framework.md")
+
+        self.assertIn("不负责发布后复盘主权", viral)
+        self.assertIn("发布后传播表现也归 `$cflow-review`", review)
+        self.assertIn("viral 发现已有发布后传播证据 -> review", framework)
 
 
 if __name__ == "__main__":

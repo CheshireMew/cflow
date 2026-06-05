@@ -7,7 +7,9 @@ description: CFlow 营销转化系统。用于判断内容如何服务转化，�
 
 ## 边界
 
-负责“内容如何服务转化”。不要替代 `cflow-draft` 写完整正文，也不要替代 `cflow-package` 批量生成标题和 hook。
+负责“内容如何服务转化”。不要替代 `cflow-draft` 写完整正文，也不要替代 `cflow-package` 批量生成标题、hook 或 CTA 文案变体。
+
+`cflow-marketing` 是转化策略层，不是包装文案层。offer、funnel stage、CTA 类型、CTA 强度、主转化路径和异议处理归 `$cflow-marketing`；标题、hook、opening、短发布文案和已经确定策略后的 CTA 文案包装归 `$cflow-package`。如果用户只要“这句话怎么写得更吸引人 / CTA 怎么表达”，且 offer 和转化路径已稳定，交给 `$cflow-package`。
 
 营销文案默认表现力优先。强 urgency、强利益、强对比、强承诺和强 CTA 可以保留并打磨；不要因为“太营销、太广告、太刺激”而自我降温。只有用户要求合规、品牌安全、发布限制或严谨事实时，才处理过度浮夸、不可兑现承诺、证据无法承载的确定性和明显诈骗感。
 
@@ -29,7 +31,7 @@ description: CFlow 营销转化系统。用于判断内容如何服务转化，�
 5. **设计 CTA**：选择低摩擦、中摩擦或高摩擦动作。
 6. **补转化桥**：决定从内容到行动之间需要哪些利益、情绪、故事、异议处理、社会证明或机制解释。
 7. **保护销售温度**：处理异议和边界时融入正文，不默认添加泄气的风控尾巴。
-8. **交付给生产层**：正文交给 `$cflow-draft`，包装资产交给 `$cflow-package`，发布后转化数据交给 `$cflow-review`。
+8. **交付给生产层**：正文交给 `$cflow-draft`；标题、hook、opening、短发布文案和 CTA 文案变体交给 `$cflow-package`；发布后转化数据交给 `$cflow-review`。
 
 ## 输出
 

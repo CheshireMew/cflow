@@ -1,0 +1,4 @@
+interface:
+  display_name: "CFlow 短内容系统"
+  short_description: "把观点、素材、案例、长文或 brief 压成短内容、短脚本和短内容系列"
+  default_prompt: "Use $cflow-shortform 把这些素材写成短内容或短内容系列。"

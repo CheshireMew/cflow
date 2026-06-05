@@ -4,7 +4,7 @@
 
 `cflow` 是 CFlow 套件的编排入口。它负责判断“这次任务需要哪些能力层”，再把每一层交给最合适的专项 skill。
 
-不要把 `cflow` 当成万能写作 skill。它可以做轻量判断、brief 和调度，但完整生产应交给专项 skill：
+不要把 `cflow` 当成万能写作 skill 或直接生产入口。它可以做轻量判断、preflight、brief、追问和调度，但完整生产应交给专项 skill：
 
 - 完整成稿：`$cflow-draft`
 - 深度改稿：`$cflow-edit`
@@ -19,7 +19,7 @@
 
 ## 非排他入口
 
-用户点名哪个 skill，只代表起始视角，不代表排他执行。
+用户点名哪个 skill，只代表起始视角，不代表排他执行；但用户点名 `$cflow` 时，不能把“起始视角”内部化成直接生产。`cflow` 必须先显式完成路由、交互流程或交接 brief。
 
 判断方式：
 
@@ -38,6 +38,8 @@
 - 用户说“先聊聊”“采访我”“我不知道怎么说”：先交给 `$cflow-brief`。
 - 用户点 `$cflow-package`：如果 CTA、offer 或 funnel 不清，先交给 `$cflow-marketing`。
 - 用户点 `$cflow-marketing`：如果要写 hook 或简介第一句，交给 `$cflow-package`。
+- 用户点 `$cflow-package` 且只要 CTA 文案变体：offer、CTA 类型和转化路径稳定时由 `$cflow-package` 执行；策略不清先回 `$cflow-marketing`。
+- 用户点 `$cflow-viral` 但提供的是发布后转发、截图、评论或二创数据：先交给 `$cflow-review` 复盘，必要时采用 `$cflow-viral` 的传播维度。
 - 用户点 `$cflow-draft`：如果主张弱，先交给 `$cflow-angle`；如果需要证据包，交给 `$cflow-research`。
 - 用户点 `$cflow-edit`：如果声音不对，交给 `$cflow-voice`；如果只是标题弱，交给 `$cflow-package`。
 
@@ -58,13 +60,13 @@
 | 短内容 | 是否需要超短或短篇幅的单点内容 | `$cflow-shortform` |
 | 编辑 | 是否需要诊断、重排、局部手术 | `$cflow-edit` |
 | 声音 | 是否需要作者声音画像或表达禁区 | `$cflow-voice` |
-| 营销 | 是否有 offer、CTA、funnel、转化路径 | `$cflow-marketing` |
-| 包装 | 是否需要 hook、标题、开头、CTA 或短发布文案 | `$cflow-package` |
+| 营销 | 是否需要判断 offer、CTA 类型、CTA 强度、funnel、转化路径 | `$cflow-marketing` |
+| 包装 | 是否需要 hook、标题、开头、CTA 文案变体或短发布文案 | `$cflow-package` |
 | SEO | 是否需要搜索意图、关键词、结构化答案 | `$cflow-seo` |
 | 对标 | 是否需要找对标、拆爆款、迁移模式 | `$cflow-benchmark` |
-| 传播 | 是否需要分享动机、二创、截图传播 | `$cflow-viral` |
+| 传播 | 是否需要发布前分享动机、二创入口、截图点或传播单元设计 | `$cflow-viral` |
 | 图像 | 是否需要封面、配图、thumbnail、图片 prompt | `$cflow-image` |
-| 复盘 | 是否需要分析表现、评论、下一轮实验 | `$cflow-review` |
+| 复盘 | 是否需要分析表现、评论、传播路径、转发截图、二创证据或下一轮实验 | `$cflow-review` |
 | 维护 | 是否需要修改 CFlow skill 本身 | `$cflow-maintain` |
 | 生产资产 | 是否有已沉淀模式、模板、案例或资产卡片可复用 | `$cflow` 发现后交给对应生产 skill |
 
@@ -105,6 +107,8 @@ draft 发现主张弱 -> angle
 draft 发现 brief 不稳或素材缺口会改变方向 -> brief
 edit 发现素材越界 -> cflow
 marketing 发现需要第一句 hook -> package
+package 发现 offer、CTA 类型或转化路径不清 -> marketing
+viral 发现已有发布后传播证据 -> review
 ```
 
 回跳不是失败，是正确的边界控制。
@@ -128,11 +132,11 @@ marketing 发现需要第一句 hook -> package
 可用生产资产：
 ```
 
-不是每次都要展示完整合同。简单任务可以隐式推断；复杂或连续纠偏任务要显式说明。
+不是每次都要展示完整合同，但用户点名 `$cflow` 时，必须展示当前路由判断、下一步交互流程或交接 brief。不得用“合同可推断”作为直接输出完整成品的理由。
 
 ## 执行闸门
 
-复杂内容任务、外部 brief、连续纠偏、用户点名 `$cflow` 或任务可能进入多个专项 skill 时，必须先完成 preflight。preflight 可以内部完成，不必每次完整展示给用户；但没有完成判断前，禁止直接成稿、改稿或包装。
+复杂内容任务、外部 brief、连续纠偏、用户点名 `$cflow` 或任务可能进入多个专项 skill 时，必须先完成 preflight。用户点名 `$cflow` 时，preflight 不得完全内部化，必须对用户输出下一步交互流程或交接 brief；禁止直接成稿、改稿、包装或输出完整生产成品。
 
 preflight 固定检查：
 
@@ -144,7 +148,7 @@ preflight 固定检查：
 需要调动的 skills：
 流程顺序：
 当前执行 skill：
-是否允许直接成稿：
+是否达到可交接状态：
 后续回跳条件：
 禁止动作：
 ```
@@ -153,7 +157,7 @@ preflight 固定检查：
 
 | 合同状态 | 路由 | 禁止动作 |
 |---|---|---|
-| `stable_contract` | 进入 `$cflow-draft`、`$cflow-shortform`、`$cflow-package` 或其他执行 skill | 禁止继续追问不影响方向的细枝末节 |
+| `handoff_ready` | 输出交接 brief，说明应由哪个专项 skill 执行；如果用户要完整生产，引导其显式使用 `$cflow-draft`、`$cflow-edit`、`$cflow-package` 或其他执行 skill | 禁止在 `$cflow` 内输出完整正文、完整改稿、完整包装成品或完整营销稿 |
 | `unstable_contract` | 进入 `$cflow-brief` | 禁止输出完整正文 |
 | `weak_angle` | 进入 `$cflow-angle` | 禁止把项目资料整理成说明文 |
 | `story_needed` | 进入 `$cflow-case` | 禁止直接编故事或用宏观制度案例冒充生活故事 |
@@ -161,7 +165,7 @@ preflight 固定检查：
 | `fact_gap` | 进入 `$cflow-research` | 禁止把未核查外部事实写成确定事实 |
 | `voice_gap` | 进入 `$cflow-voice` 或先建立轻量声音合同 | 禁止用通用中性解释腔替代作者声音 |
 
-外部 sponsor brief、项目推广 brief、合作邀约或品牌素材属于高风险输入。只要篇幅、联网范围、交付形态、目标读者、作者身份、核心角度或 sponsor 味道强度会改变成稿方向，合同状态就是 `unstable_contract` 或 `weak_angle`，不能进入 `$cflow-draft`。
+外部 sponsor brief、项目推广 brief、合作邀约或品牌素材属于高风险输入。只要篇幅、联网范围、交付形态、目标读者、作者身份、核心角度或 sponsor 味道强度会改变成稿方向，合同状态就是 `unstable_contract` 或 `weak_angle`，不能进入 `$cflow-draft`。即使这些条件已经明确，用户点名 `$cflow` 时也只能进入 `handoff_ready`，输出交接 brief，不能直接成稿。
 
 连续纠偏属于状态切换信号，不是继续局部润色的请求。如果用户连续指出“太长、太 AI、角度不对、案例不贴、声音不对、没有趣味、排版像 AI”，必须重新跑 preflight，并把合同状态改到对应上游层级。
 
@@ -171,13 +175,15 @@ preflight 固定检查：
 cflow -> cflow-brief -> cflow-angle -> cflow-case -> cflow-draft -> cflow-edit -> cflow-package
 ```
 
-如果流程顺序不确定，先说明不确定点并把当前执行 skill 放在能消除不确定性的最上游位置。简单任务可以走短链路，例如 `cflow -> cflow-draft`，但仍要完成隐式流程判断，不能因为目标看似明确就跳过能力层识别。
+如果流程顺序不确定，先说明不确定点并把当前执行 skill 放在能消除不确定性的最上游位置。用户点名 `$cflow` 时，不允许走 `cflow -> cflow-draft` 的直接短链路；目标看似明确时，也只能输出交接 brief 或下一步交互流程。
 
 ## 强制路由
 
 这些路由是硬约束，不是建议：
 
 - 缺篇幅、联网范围、交付形态、作者身份且会改变正文形态：`unstable_contract -> $cflow-brief`。
+- 用户点名 `$cflow` 且任务目标是完整草稿、完整改稿、完整包装、完整营销稿或完整研究报告：先输出 preflight、交互流程或交接 brief；禁止直接生产完整成品。
+- 用户点名 `$cflow` 并说“我想写一篇 / 想做一篇 / 准备写 / 有个想法”时，默认进入 `$cflow-brief` 或 `$cflow-angle` 的交互流程；除非用户改用 `$cflow-draft`，否则不得直接成稿。
 - 项目 brief 还没有作者判断，只能回答“项目是什么”：`weak_angle -> $cflow-angle`。
 - 用户要求真实故事、历史故事、生活细节或普通人场景：`story_needed -> $cflow-case`。
 - 用户连续反馈 AI、模板、说明书腔、排版 AI：`ai_feedback -> $cflow-edit` 先诊断。
@@ -187,7 +193,7 @@ cflow -> cflow-brief -> cflow-angle -> cflow-case -> cflow-draft -> cflow-edit -
 如果一个任务同时命中多个状态，先处理会改变方向的上游状态。优先级：
 
 ```text
-fact_gap / unstable_contract -> weak_angle -> story_needed -> voice_gap -> stable_contract -> draft/edit/package
+fact_gap / unstable_contract -> weak_angle -> story_needed -> voice_gap -> handoff_ready
 ```
 
 `ai_feedback` 是例外：一旦用户连续反馈 AI 或模板化，先暂停当前生产链路，进入 `$cflow-edit` 做根因诊断，再决定回到 angle、case、voice、draft 或 package。

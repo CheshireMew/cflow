@@ -1,0 +1,4 @@
+interface:
+  display_name: "CFlow 内容对标系统"
+  short_description: "寻找、筛选、拆解和迁移可参考的内容对标、账号、爆款和 copywork 模式"
+  default_prompt: "Use $cflow-benchmark 帮我找对标并拆出可迁移的内容模式。"

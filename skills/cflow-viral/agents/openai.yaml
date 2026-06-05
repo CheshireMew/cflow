@@ -1,0 +1,4 @@
+interface:
+  display_name: "CFlow 病毒式传播系统"
+  short_description: "设计分享动机、传播单元、截图点、复述句、二创入口和传播风险"
+  default_prompt: "Use $cflow-viral 帮我增强这条内容的传播机制。"

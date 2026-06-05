@@ -1,0 +1,4 @@
+interface:
+  display_name: "CFlow 资料研究系统"
+  short_description: "搜寻资料、核查事实、评估来源、整理证据包和研究交接"
+  default_prompt: "Use $cflow-research 帮我查资料、核查事实并整理来源。"

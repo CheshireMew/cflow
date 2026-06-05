@@ -2,7 +2,9 @@
 
 ## 共享合同
 
-营销转化受 `$cflow` 的 `references/content-production-contract.md` 约束。本文件只维护 offer、funnel、CTA、转化桥和营销形态。强表达规则是共享合同在转化场景里的应用。
+营销转化受 `$cflow` 的 `references/content-production-contract.md` 约束。本文件只维护 offer、funnel、CTA 策略、转化桥和营销形态。强表达规则是共享合同在转化场景里的应用。
+
+`cflow-marketing` 只决定转化策略：这次要不要营销化、面向哪个 funnel stage、offer 是什么、主 CTA 是什么、CTA 强度到哪里、转化路径怎么接。已经确定策略后的标题、hook、opening、短发布文案和 CTA 文案变体，交给 `$cflow-package`。
 
 ## 夸张边界
 
@@ -236,7 +238,7 @@
 - 软件化和订阅化只适合已经有重复工作流、持续使用场景或迁移成本的问题；不要把没验证的方法过早包装成工具壁垒。
 - 如果缺少市场信号，先交给 `$cflow-topic` 找痛点，或交给 `$cflow-benchmark` 拆竞品和对标转化路径。
 
-## CTA 类型
+## CTA 策略
 
 ### 低摩擦 CTA
 
@@ -275,6 +277,7 @@ CTA 规则：
 - 一个内容通常只保留一个主要 CTA。
 - CTA 强度必须匹配转化目标；高意向和限时场景可以直接强 CTA。
 - CTA 文案要说明动作后会发生什么。
+- CTA 文案的具体变体、句式、hook 化包装和发布包落地交给 `$cflow-package`。
 - 不要用多个不同目标互相稀释。
 - 如果用户提供个人引流资产档案或 profile，选择一个主引流动作。不要把所有链接堆到文末。
 - 用户明确说明不方便放链接时，用资料入口、置顶入口、回复关键词、私下领取或账号资料入口做迂回 CTA。
@@ -366,7 +369,7 @@ CTA
 
 - 需要生成正文：交给 `$cflow-draft`。
 - 需要寻找案例、客户故事、未来预演或反面案例：交给 `$cflow-case`。
-- 需要标题、hook、CTA 文案变体：交给 `$cflow-package`。
+- 需要标题、hook、opening、短发布文案或 CTA 文案变体：交给 `$cflow-package`。
 - 需要封面、插图、配图或视觉 brief：交给 `$cflow-image`。
 - 需要判断是否值得营销化：交给 `$cflow-angle` 或 `$cflow-topic`。
 - 需要分析转化结果：交给 `$cflow-review`。

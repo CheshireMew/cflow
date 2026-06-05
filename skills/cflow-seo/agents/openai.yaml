@@ -1,0 +1,4 @@
+interface:
+  display_name: "CFlow 搜索可发现性系统"
+  short_description: "设计 SEO、GEO、AEO、LLMO、搜索意图、关键词和 AI 可引用结构"
+  default_prompt: "Use $cflow-seo 帮我做 SEO/GEO brief 和 AI 可引用结构优化。"
