@@ -48,6 +48,11 @@ description: CFlow 总入口。只用于识别用户意图，并把任务放入�
 - `$cflow-seo`：仅当用户明确要 SEO / GEO / AEO / LLMO、关键词、搜索意图或 AI 可引用结构时直达。
 - `$cflow-viral`：仅当用户明确要传播机制、分享动机、截图点、二创或 viral 诊断时直达。
 
+## 使用例子
+
+- 使用过程中遇到问题，用户可以先在对话中提出自己的意见或想法；对话结束后，用 `$cflow-maintain` 复盘这段对话并改进相关 skill。
+- 用 `$cflow-review` 复盘优秀案例或失败案例后，如果发现可重复的生产经验，再用 `$cflow-absorb` 吸收并写入相关 skill。
+
 ## 固定线性流程
 
 流程节点索引只用于可见性和结构校验，不允许据此自由组合流程：
@@ -109,7 +114,7 @@ $cflow-review -> $cflow-topic -> $cflow-angle -> $cflow-draft -> $cflow-check ->
 - 如果用户任务已经处在流程中段，从当前节点开始，不回到前置节点重做。
 - 如果某个节点的信息已经满足，标注“跳过该节点”，继续进入下一节点。
 - `$cflow-research` 和 `$cflow-case` 是顺序节点，不是强制节点；没有事实核查、来源、数据、案例或故事缺口时可以跳过。
-- `$cflow-shortform` 只在用户需要短内容分发、短脚本、短帖或长文拆短时执行；否则停在 `$cflow-package`。
+- `$cflow-shortform` 只在用户需要超短文案、单条短文案或短帖时执行；否则停在 `$cflow-package`。
 - 普通内容不自动进入 `$cflow-seo` 或 `$cflow-viral`；只有用户明确提出搜索或传播机制目标时才直达特殊 skill。
 - 外部 sponsor brief、项目推广 brief 或品牌资料再完整，也不能跳过 `$cflow-interview` 对作者身份、发布形态、核心角度和表达强度的确认；已经确认过时才标注跳过。
 
