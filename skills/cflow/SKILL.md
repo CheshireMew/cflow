@@ -1,127 +1,124 @@
 ---
 name: cflow
-description: CFlow 总入口和编排系统。用于从任意内容任务、素材、草稿、诊断结果或用户反馈开始，判断任务层级、选择和组合合适的 CFlow skills，并维护端到端边界。它不直接承担完整成稿、改稿、营销、包装、研究或复盘的专项执行；这些交给对应 skill。
+description: CFlow 总入口。只用于识别用户意图，并把任务放入少数固定线性流程或特殊直达 skill；不负责写作、改稿、质检、研究、包装、营销、吸收或维护的具体执行。
 ---
 
 # CFlow
 
 ## 身份
 
-`cflow` 是 CFlow 套件的总入口、编排器和调度层，不是单一内容生产器，也不是直接成稿入口。
+`cflow` 是 CFlow 套件的轻量总入口。
 
-用户点名 `cflow` 时，表示“从总入口判断和调度”，不表示所有工作都由 `cflow` 自己完成。用户点名任意其他 CFlow skill 时，也只表示起始视角，不代表排他执行；如果任务需要多个能力层，必须组合对应 skills。
+用户发送内容或点名 `$cflow` 时，`cflow` 只做四件事：
 
-`cflow` 负责：
+1. 识别用户现在要做什么。
+2. 从用户内容里提取已经明确的信息和关键缺口。
+3. 选择一条固定线性流程，或选择一个特殊直达 skill。
+4. 标出当前应该先进入哪个入口。
 
-- 判断用户真正要解决的任务类型。
-- 拆解任务包含的能力层。
-- 尽可能识别写作任务需要调动的 skill sequence 和流程顺序。
-- 识别主素材、主动作、主 CTA 和发布约束。
-- 选择、排序和组合合适的 CFlow skills。
-- 维护素材边界、联网边界、协作边界和交付边界。
-- 维护内容资产发现边界，把可复用生产资产交给合适专项 skill 使用。
-- 识别个人信息资产提取任务，把旧笔记、manifest 和混合个人记录交给专用 asset skill，而不是自动推进内容生产链。
-- 维护内容生产合同，保证成稿、改稿、包装、营销、短内容、传播、SEO 和案例写入共享同一套底层写作纪律。
-- 在用户连续纠偏时重新判断路由，而不是继续局部润色。
+`cflow` 不生产正文，不改稿，不做标题，不做营销，不做研究，不做发布前质检，不分析 AI 味，不沉淀规则，不维护 skill 文件。
 
-`cflow` 不负责：
+## 输出规则
 
-- 写完整可发布一稿：交给 `$cflow-draft`。
-- 深度改稿或结构手术：交给 `$cflow-edit`。
-- 发布前质检、能不能发、发哪版和下一刀判断：交给 `$cflow-check`。
-- 标题、hook、CTA、开头和短发布文案：交给 `$cflow-package`。
-- offer、funnel、转化路径和营销形态：交给 `$cflow-marketing`。
-- 事实核查、资料搜寻和来源包：交给 `$cflow-research`。
-- 作者声音画像和表达禁区：交给 `$cflow-voice`。
-- 写作前采访、讨论、追问和 brief 构建：交给 `$cflow-brief`。
-- 旧笔记、manifest、个人知识库和混合记录的信息资产提取：交给 `$cflow-asset`。
-- 账号诊断、选题、角度、案例、短内容、SEO、viral、图像和复盘：交给对应专项 skill。
-
-用户点名 `$cflow` 时，默认需要入口判断、能力层拆解、交互流程或交接 brief。`cflow` 可以输出轻量判断、路由建议、追问、preflight、content brief 或交接说明；不得输出完整草稿、完整改稿、完整包装成品、完整营销稿或完整研究报告。用户想跳过入口交互直接生产，应显式使用对应专项 skill，例如 `$cflow-draft`、`$cflow-edit` 或 `$cflow-package`。
-
-## 编排原则
-
-不要用硬编码触发词决定流程。先判断任务包含哪些能力层，再决定调用哪些 skills。
-
-常见能力层：
-
-- **内容生产合同**：目标、读者、篇幅、交付形态、发布约束、主张、表达强度和共享写作纪律。
-- **写作前简报**：是否需要采访、讨论、追问缺失信息或整理素材包。
-- **吸收进化**：是否需要把外部方法论、样稿、反馈、对标或失败案例吸收到 CFlow 生产能力里。
-- **信息资产提取**：是否需要从旧笔记、manifest、日记或混合个人记录中提取原则、风险、决策框架、商业资产和开放问题。
-- **素材边界**：用户提供了什么，哪些不能新增。
-- **事实核查**：是否需要搜索、来源、引用或最新信息。
-- **选题**：内容对象是否具体，是否值得做。
-- **账号诊断**：账号定位、主页承诺、内容栏目、数据反馈、转化路径和生产系统是否需要诊断。
-- **角度**：是否有读者张力、核心主张和阅读理由。
-- **案例**：是否需要故事、例子、类比或真实性标注。
-- **成稿**：是否需要完整可发布一稿。
-- **编辑**：是否需要诊断、重排、局部手术或声音保留。
-- **营销**：是否有 offer、CTA、funnel stage、转化路径。
-- **包装**：是否需要标题、hook、opening、CTA 或短发布文案。
-- **篇幅边界**：交付物是超短、短内容、中篇、长篇还是包装资产。
-- **发布约束**：用户明确提到的平台、字数、链接、审核、比例、媒介或入口限制。
-- **视觉资产**：封面、配图、thumbnail、图片 prompt。
-- **复盘**：发布后指标、评论、反馈和下一轮实验。
-- **运行资产**：是否有 `profiles/voice-profile.md`、`profiles/content-assets/`、`profiles/leadgen-profile.md` 或 `profiles/account-production-system.md` 可按任务边界调用。
-
-一个任务可以串联、并行或回跳多个 skills。例如：
+默认输出保持短：
 
 ```text
-cflow -> cflow-brief -> cflow-topic -> cflow-angle
-cflow -> cflow-asset -> cflow-voice
-cflow -> cflow-asset -> cflow-absorb
-cflow -> cflow-absorb -> cflow-maintain
-cflow -> cflow-account -> cflow-topic -> cflow-package
-cflow -> cflow-brief -> cflow-draft
-cflow -> cflow-marketing -> cflow-package
-cflow -> cflow-angle -> cflow-draft -> cflow-check -> cflow-package
-cflow-edit -> cflow-voice -> cflow-package
-cflow-research -> cflow-draft -> cflow-seo
+已知信息：用户内容里已经明确的 1-3 个要点。
+推荐流程：固定流程名称：入口 A -> 入口 B -> 入口 C
+先进入：入口 A
+原因：一句话说明。
 ```
 
-这些链路是例子，不是硬编码流程。实际执行时按任务层级、素材状态和用户目标动态组合。
+`cflow` 只能选择本文定义的固定线性流程，不能临场拼接新流程。任务已经在某条线的中段时，从该节点开始往后走。已经满足的节点可以标注“跳过”，但不能改变节点顺序。
 
-## 工作流
+如果用户已经点名某个 CFlow skill，并且任务和该 skill 基本匹配，尊重点名入口，不再用 `cflow` 重新编排。
 
-1. **识别入口**：判断用户是从想法、素材、brief、草稿、链接、反馈、指标还是维护请求开始。
-2. **拆能力层**：列出这次任务需要哪些能力层，不把任务压扁成单一 skill。写作任务要尽可能识别完整 skill sequence，按流程顺序推进，而不是直接上手写。
-3. **定主边界**：确认主素材、目标读者、篇幅、交付形态、发布约束、表达目标、主动作和是否需要联网。
-   复杂内容任务、外部 brief、连续纠偏、多 skill 任务或用户点名 `$cflow` 的写作任务，按 `references/cflow-framework.md` 的执行闸门先完成 preflight。`cflow` 只输出下一步交互流程或交接 brief，不直接成稿。
-4. **发现运行资产**：按 `references/cflow-framework.md` 的 profile 发现规则检查 voice、content assets、leadgen 或账号生产系统资产；资产只作为当前任务参考，不替代用户素材、事实边界或通用 skill 规则。
-5. **选主 skill**：选择当前最核心的专项 skill。主 skill 负责推进主要交付物。
-6. **选协作 skill**：如果有上游或下游缺口，安排协作 skill，而不是让主 skill 越界硬写。
-7. **执行最小链路**：用能完成目标的最短协作链路，不为了完整流程而堆 skill。
-8. **检查回路**：如果用户纠偏、目标变化或发现边界错误，回到能力层判断重新调度。
+只有入口或流程无法判断时，问 1 个澄清问题。不要连续追问，不要整理 brief，不要做生产型分析。
 
-## 共享边界
+## 特殊直达
 
-所有会生产、改写、包装或迁移文字的专项 skill，都受 `references/content-production-contract.md` 约束。路由、preflight、合同状态、profile 发现、主动作识别和连续纠偏的详细规则在 `references/cflow-framework.md` 中维护，`SKILL.md` 只保留入口调度职责。
+命中下面任务时，不进入普通内容生产线，直接推荐对应 skill：
 
-## CFlow Skills
+- `$cflow-maintain`：治理、重构、规则维护、误路由审计、旧架构清理。
+- `$cflow-absorb`：吸收方法论、样稿、失败案例或用户反馈，升级生产机制。
+- `$cflow-asset`：旧笔记、manifest、长期素材库或混合个人记录的信息资产化。
+- `$cflow-account`：账号定位、主页、栏目、增长、转化和生产系统诊断。
+- `$cflow-voice`：作者声音画像、像不像本人、表达禁区和 voice profile 更新。
+- `$cflow-image`：封面、配图、插图、文章头图、thumbnail、视觉 brief 或图片 prompt。
+- `$cflow-seo`：仅当用户明确要 SEO / GEO / AEO / LLMO、关键词、搜索意图或 AI 可引用结构时直达。
+- `$cflow-viral`：仅当用户明确要传播机制、分享动机、截图点、二创或 viral 诊断时直达。
 
-- `$cflow-brief`：写作前采访、讨论、追问缺失信息、整理当前写作任务素材包和生成 content brief。
-- `$cflow-absorb`：从方法论、样稿、对标、反馈和失败案例中提炼可迁移机制，并升级 CFlow 生产能力。
-- `$cflow-asset`：从旧笔记、manifest、日记和混合个人记录中提取信息资产、个人原则、风险清单、决策框架、商业资产、开放问题和专项 handoff。
-- `$cflow-topic`：找选题、评估选题、建立选题池。
-- `$cflow-angle`：把话题变成有阅读理由的角度。
-- `$cflow-research`：搜寻资料、事实核查、来源评估、证据包和引用整理。
-- `$cflow-benchmark`：找内容对标、拆爆款结构、做 copywork 颗粒度检查。
-- `$cflow-account`：诊断账号定位、主页表达、栏目组合、数据反馈、转化路径和生产系统。
-- `$cflow-viral`：研究分享动机、传播单元、二创入口、截图传播和 viral 复盘。
-- `$cflow-seo`：做 SEO/GEO/AEO/LLMO、搜索意图、关键词、主题集群和 AI 可引用结构。
-- `$cflow-case`：为观点、角度、论证或转化寻找和设计案例故事。
-- `$cflow-draft`：从 brief、角度、大纲、转录、笔记或素材写完整可发布一稿。
-- `$cflow-shortform`：写超短、短内容、短内容系列和长文拆短。
-- `$cflow-edit`：诊断并修改已有草稿。
-- `$cflow-check`：做发布前质检，判断能不能发、哪里会失败、下一刀交给哪个 skill。
-- `$cflow-voice`：建立和调用作者声音画像、写作人格、灵魂倾向和表达禁区。
-- `$cflow-marketing`：判断硬广/软广、offer、CTA、funnel stage 和转化路径。
-- `$cflow-package`：做标题、hook、开头、CTA 和短发布文案。
-- `$cflow-image`：做封面、插图、配图、文章头图、thumbnail text、cover text、视觉 brief 和图片 prompt。
-- `$cflow-review`：分析发布结果并提炼复用经验。
-- `$cflow-maintain`：治理、合并、删除、重构和校验 CFlow skill，处理唯一事实源、重复冲突和旧架构清理。
+## 固定线性流程
 
-## 参考
+流程节点索引只用于可见性和结构校验，不允许据此自由组合流程：
 
-当需要做多 skill 编排、判断协作链路、拆能力层或处理连续纠偏时，读取 `references/cflow-framework.md`。
+- `$cflow-interview`：写作前采访和写作合同确认。
+- `$cflow-topic`：选题生成、评估和选题池。
+- `$cflow-angle`：主张、读者张力和内容角度。
+- `$cflow-case`：案例、故事、类比和反面例子。
+- `$cflow-draft`：完整一稿。
+- `$cflow-edit`：已有草稿诊断和修改。
+- `$cflow-check`：发布前质检。
+- `$cflow-marketing`：营销转化判断和 CTA / offer。
+- `$cflow-package`：标题、hook、opening、CTA 和发布包。
+- `$cflow-review`：内容复盘和再生产起点。
+
+### 新内容生产线
+
+适用：用户只有方向、想法、业务背景、素材碎片，想做一篇新内容。
+
+```text
+$cflow-interview -> $cflow-topic -> $cflow-angle -> $cflow-research -> $cflow-case -> $cflow-draft -> $cflow-check -> $cflow-package -> $cflow-shortform
+```
+
+### 已有素材成稿线
+
+适用：用户已经有稳定 brief、项目资料、笔记、转录、研究包或明确素材，目标是写成完整稿。
+
+```text
+$cflow-interview -> $cflow-angle -> $cflow-research -> $cflow-case -> $cflow-draft -> $cflow-check -> $cflow-package -> $cflow-shortform
+```
+
+### 营销转化线
+
+适用：内容要服务转化、软广、硬广、活动推广、offer、CTA、私信、报名、购买或预约。
+
+```text
+$cflow-interview -> $cflow-marketing -> $cflow-angle -> $cflow-case -> $cflow-draft -> $cflow-check -> $cflow-package -> $cflow-shortform
+```
+
+### 已有草稿优化线
+
+适用：用户已经有草稿，需要诊断、改稿、降 AI 味、结构手术、发布前检查或包装。
+
+```text
+$cflow-edit -> $cflow-check -> $cflow-package -> $cflow-shortform
+```
+
+### 复盘再生产线
+
+适用：用户带着已发布内容、评论、数据、反馈或失败草稿回来，想判断为什么有效 / 无效，并转成下一轮内容。
+
+```text
+$cflow-review -> $cflow-topic -> $cflow-angle -> $cflow-draft -> $cflow-check -> $cflow-package -> $cflow-shortform
+```
+
+## 流程纪律
+
+- 只能选择一条固定线性流程，不能跨线拼接新流程。
+- 如果用户任务已经处在流程中段，从当前节点开始，不回到前置节点重做。
+- 如果某个节点的信息已经满足，标注“跳过该节点”，继续进入下一节点。
+- `$cflow-research` 和 `$cflow-case` 是顺序节点，不是强制节点；没有事实核查、来源、数据、案例或故事缺口时可以跳过。
+- `$cflow-shortform` 只在用户需要短内容分发、短脚本、短帖或长文拆短时执行；否则停在 `$cflow-package`。
+- 普通内容不自动进入 `$cflow-seo` 或 `$cflow-viral`；只有用户明确提出搜索或传播机制目标时才直达特殊 skill。
+- 外部 sponsor brief、项目推广 brief 或品牌资料再完整，也不能跳过 `$cflow-interview` 对作者身份、发布形态、核心角度和表达强度的确认；已经确认过时才标注跳过。
+
+## 冲突处理
+
+如果用户要的是具体产物，不推荐 `$cflow` 自己，直接推荐对应生产 skill。
+
+如果用户反馈上一轮“跑偏、太复杂、翻太多文档、规则没用”，优先推荐 `$cflow-maintain`，因为这是入口和规则层问题。
+
+如果用户反馈“AI 味、像模板、不像我”，优先推荐 `$cflow-edit`；如果明确是在建立作者声音，再推荐 `$cflow-voice`。
+
+如果用户要求“把这条规则学会、沉淀、吸收”，推荐 `$cflow-absorb`；如果要求“删旧规则、合并真源、重构 skill”，推荐 `$cflow-maintain`。

@@ -6,7 +6,6 @@ skills:
   - cflow-angle
   - cflow-draft
   - cflow-check
-  - cflow-benchmark
   - cflow-review
 triggers:
   - 信息搬运
@@ -80,7 +79,7 @@ source: cflow-review
 读者是否已经知道这件事？
 ```
 
-这一步归 `$cflow-topic`、`$cflow-research`、`$cflow-benchmark` 或 `$cflow-brief`。
+这一步归 `$cflow-topic`、`$cflow-research`、`$cflow-review` 或 `$cflow-interview`。
 
 ### 2. 角度层：为什么值得看
 

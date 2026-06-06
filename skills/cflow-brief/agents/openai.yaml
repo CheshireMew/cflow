@@ -1,4 +1,0 @@
-interface:
-  display_name: "CFlow 写作前简报系统"
-  short_description: "通过讨论、采访和追问，把模糊想法与零散素材整理成可交接的内容 brief"
-  default_prompt: "Use $cflow-brief 先采访我，帮我把这个想法整理成可写作的 brief。"

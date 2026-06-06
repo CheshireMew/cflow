@@ -6,7 +6,7 @@ skills:
   - cflow-package
   - cflow-check
   - cflow-viral
-  - cflow-benchmark
+  - cflow-review
 triggers:
   - thread
   - 线程
@@ -180,7 +180,7 @@ Hook 机制：
 - `$cflow-package`：负责 hook、opening、标题、首屏承诺和 hook 变体纪律。
 - `$cflow-check`：负责发布前判断 hook 与正文是否互相兑现，以及下一刀交给谁。
 - `$cflow-viral`：负责截图点、复述句、转发理由、评论入口和分享动机。
-- `$cflow-benchmark`：负责拆解对标 thread 的结构、张力和节奏，不复制不可迁移事实。
+- `$cflow-review`：负责拆解用户已提供的 thread 样本结构、张力和节奏，不复制不可迁移事实。
 
 ## 下一次使用方式
 

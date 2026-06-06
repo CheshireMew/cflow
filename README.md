@@ -8,7 +8,7 @@ CFlow 是一套中文内容工作流 skills，用来把选题、资料、角度�
 
 CFlow 适合处理这些任务：
 
-- 从模糊想法整理出可写的 content brief。
+- 从模糊想法问出可写作合同和素材缺口。
 - 从旧笔记、manifest、日记或混合记录里提取可复用的信息资产。
 - 从方法论、样稿、对标、用户反馈或失败案例里吸收可迁移机制。
 - 判断一个选题是否值得做，并找到更有读者张力的 angle。
@@ -36,7 +36,7 @@ Use $cflow 帮我判断这个任务需要哪些 CFlow skills 协作，并推进�
 如果你已经知道要做什么，可以直接点名专项 skill：
 
 ```text
-Use $cflow-brief 先采访我，帮我把这个想法整理成可写作的 brief。
+Use $cflow-interview 先采访我，问清这篇内容应该怎么写。
 Use $cflow-angle 帮我为这个选题找到最强角度。
 Use $cflow-draft 根据这个 brief 和素材写一版可发布草稿。
 Use $cflow-edit 帮我诊断并修改这篇草稿，同时保留我的声音。
@@ -51,17 +51,17 @@ Use $cflow-absorb 吸收这份材料，把可迁移机制升级到合适的 CFlo
 ## 常见链路
 
 ```text
-cflow -> cflow-brief -> cflow-topic -> cflow-angle
+cflow -> cflow-interview -> cflow-topic -> cflow-angle
 cflow -> cflow-asset -> cflow-voice
 cflow -> cflow-asset -> cflow-absorb
 cflow -> cflow-absorb -> cflow-maintain
-cflow -> cflow-brief -> cflow-draft
+cflow -> cflow-interview -> cflow-draft
 cflow -> cflow-angle -> cflow-draft -> cflow-check -> cflow-package
 cflow -> cflow-account -> cflow-topic -> cflow-package
 cflow -> cflow-marketing -> cflow-package
 cflow-research -> cflow-draft -> cflow-seo
 cflow-edit -> cflow-voice -> cflow-package
-cflow-benchmark -> cflow-angle -> cflow-draft
+cflow-review -> cflow-angle -> cflow-draft
 cflow-review -> cflow-absorb
 cflow-review -> cflow-topic -> cflow-package
 ```
@@ -75,11 +75,10 @@ cflow-review -> cflow-topic -> cflow-package
 | `$cflow` | 总入口、任务编排、能力层拆解、素材边界、运行资产发现和端到端交付边界。 | `Use $cflow 帮我判断这件事该怎么拆成内容生产流程。` |
 | `$cflow-asset` | 需要从旧笔记、manifest、日记或混合个人记录中提取原则、风险、商业资产、开放问题和专项 handoff。 | `Use $cflow-asset 帮我从这些旧笔记里提取可复用的信息资产。` |
 | `$cflow-absorb` | 需要从外部方法论、优质内容、样稿、课程笔记、对标拆解、用户反馈或失败案例中提炼机制，并升级生产能力。 | `Use $cflow-absorb 吸收这份材料，让 CFlow 学会里面真正可迁移的机制。` |
-| `$cflow-brief` | 写作任务还模糊，需要采访、讨论、追问、盘点当前写作素材或生成 content brief。 | `Use $cflow-brief 先问我问题，把这个想法整理成 brief。` |
+| `$cflow-interview` | 写作任务还模糊，需要采访、讨论、追问、盘点当前写作素材或问清写作合同。 | `Use $cflow-interview 先问我问题，把这篇内容的写法问清楚。` |
 | `$cflow-topic` | 需要生成选题、评估选题、建立选题池、把模糊方向变成具体 topic。 | `Use $cflow-topic 从这些业务背景里找 10 个值得写的选题。` |
 | `$cflow-angle` | 选题太平，需要主张、矛盾、读者张力、premise 或更 hookable 的 angle。 | `Use $cflow-angle 帮我比较这几个角度哪个最有阅读理由。` |
 | `$cflow-research` | 需要查资料、核查事实、找来源、找数据、整理 source pack 或 research brief。 | `Use $cflow-research 帮我查证这个说法，并整理可引用来源。` |
-| `$cflow-benchmark` | 需要找对标、拆爆款、拆账号、做 copywork、迁移别人的内容模式。 | `Use $cflow-benchmark 帮我找 5 个值得模仿的账号并拆结构。` |
 | `$cflow-account` | 需要诊断自己的账号定位、主页、栏目、数据反馈、转化路径或生产系统。 | `Use $cflow-account 帮我看看这个账号为什么没起色。` |
 | `$cflow-viral` | 需要提高分享、转发、截图传播、二创、讨论度或设计 viral 机制。 | `Use $cflow-viral 诊断这条内容为什么不容易被转发。` |
 | `$cflow-seo` | 需要 SEO/GEO/AEO/LLMO、关键词、搜索意图、FAQ、结构化答案或 AI 可引用结构。 | `Use $cflow-seo 把这篇文章改成更容易被搜索和 AI answer 引用的结构。` |
@@ -92,7 +91,7 @@ cflow-review -> cflow-topic -> cflow-package
 | `$cflow-marketing` | 内容要服务转化，需要判断硬广/软广、offer、CTA、funnel、lead magnet 或购买路径。 | `Use $cflow-marketing 帮我设计这条内容的主 CTA 和转化路径。` |
 | `$cflow-package` | 内容接近完成，需要标题、hook、opening、subtitle、CTA、caption 或平台发布包。 | `Use $cflow-package 给这篇文章起标题并写 5 个开头。` |
 | `$cflow-image` | 需要封面、插图、配图、文章头图、社交图、thumbnail text、视觉 brief 或图片 prompt。 | `Use $cflow-image 为这篇内容设计封面方案和图片生成 prompt。` |
-| `$cflow-review` | 内容已经发布或草稿失败，需要复盘指标、评论、受众反馈和下一轮实验。 | `Use $cflow-review 分析这次发布为什么表现不好。` |
+| `$cflow-review` | 需要拆解已提供的优质样本、爆款、copywork 对象，或复盘发布内容、指标、评论、受众反馈和下一轮实验。 | `Use $cflow-review 分析这次发布为什么表现不好。` |
 | `$cflow-maintain` | 需要维护 CFlow skill 系统：新增规则、移动规则、合并重复、删除过时内容和结构校验。 | `Use $cflow-maintain 判断这条新规则应该更新到哪个 skill。` |
 
 ## 事实和素材边界

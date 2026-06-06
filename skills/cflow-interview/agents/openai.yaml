@@ -1,0 +1,4 @@
+interface:
+  display_name: "CFlow 写作前采访系统"
+  short_description: "通过讨论、采访和追问，先问清写法、作者身份、素材缺口和写作合同"
+  default_prompt: "Use $cflow-interview 先采访我，问清这篇内容应该怎么写。"
